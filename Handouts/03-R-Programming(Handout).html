@@ -8,7 +8,7 @@
 
 <meta name="author" content="Prof. Matthew G. Son">
 
-<title>Shell Command Line Basics</title>
+<title>Programming for FinTech</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -3082,77 +3082,34 @@ vertical-align: -.125em;
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
   <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Overview</h2>
+    <h2 id="toc-title">Table of Contents</h2>
    
   <ul class="collapse">
-  <li><a href="#navigating-the-filesystem" id="toc-navigating-the-filesystem" class="nav-link active" data-scroll-target="#navigating-the-filesystem">Navigating the Filesystem</a>
+  <li><a href="#r-programming-basics" id="toc-r-programming-basics" class="nav-link active" data-scroll-target="#r-programming-basics">R Programming Basics</a>
   <ul class="collapse">
-  <li><a href="#basic-commands" id="toc-basic-commands" class="nav-link" data-scroll-target="#basic-commands">Basic Commands</a></li>
-  <li><a href="#special-symbols-in-filesystem-navigation" id="toc-special-symbols-in-filesystem-navigation" class="nav-link" data-scroll-target="#special-symbols-in-filesystem-navigation">Special Symbols in Filesystem Navigation</a></li>
-  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">Exercise</a></li>
-  </ul></li>
-  <li><a href="#file-management" id="toc-file-management" class="nav-link" data-scroll-target="#file-management">File Management</a>
-  <ul class="collapse">
-  <li><a href="#creating-and-deleting-files-and-directories" id="toc-creating-and-deleting-files-and-directories" class="nav-link" data-scroll-target="#creating-and-deleting-files-and-directories">Creating and Deleting Files and Directories</a></li>
-  <li><a href="#renaming-and-moving-files" id="toc-renaming-and-moving-files" class="nav-link" data-scroll-target="#renaming-and-moving-files">Renaming and Moving Files</a></li>
-  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise</a></li>
-  </ul></li>
-  <li><a href="#using-echo-and-pipes" id="toc-using-echo-and-pipes" class="nav-link" data-scroll-target="#using-echo-and-pipes">Using <code>echo</code> and Pipes</a>
-  <ul class="collapse">
-  <li><a href="#displaying-text-with-echo" id="toc-displaying-text-with-echo" class="nav-link" data-scroll-target="#displaying-text-with-echo">Displaying Text with <code>echo</code></a></li>
-  <li><a href="#combining-with-pipes" id="toc-combining-with-pipes" class="nav-link" data-scroll-target="#combining-with-pipes">Combining with Pipes</a></li>
-  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise</a></li>
-  </ul></li>
-  <li><a href="#introduction-to-text-editors" id="toc-introduction-to-text-editors" class="nav-link" data-scroll-target="#introduction-to-text-editors">Introduction to Text Editors</a>
-  <ul class="collapse">
-  <li><a href="#using-nano" id="toc-using-nano" class="nav-link" data-scroll-target="#using-nano">Using <code>nano</code></a></li>
-  <li><a href="#using-vim" id="toc-using-vim" class="nav-link" data-scroll-target="#using-vim">Using <code>vim</code></a></li>
-  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise</a></li>
-  </ul></li>
-  <li><a href="#web-api-tools-for-data-retrieval" id="toc-web-api-tools-for-data-retrieval" class="nav-link" data-scroll-target="#web-api-tools-for-data-retrieval">Web API Tools for Data Retrieval</a>
-  <ul class="collapse">
-  <li><a href="#download-data" id="toc-download-data" class="nav-link" data-scroll-target="#download-data">Download data</a></li>
-  <li><a href="#exercise-using-wget-or-curl" id="toc-exercise-using-wget-or-curl" class="nav-link" data-scroll-target="#exercise-using-wget-or-curl">Exercise: Using <code>wget</code> or <code>curl</code></a></li>
-  </ul></li>
-  <li><a href="#working-with-data-files" id="toc-working-with-data-files" class="nav-link" data-scroll-target="#working-with-data-files">Working with Data Files</a>
-  <ul class="collapse">
-  <li><a href="#viewing-text-files" id="toc-viewing-text-files" class="nav-link" data-scroll-target="#viewing-text-files">Viewing (text) Files</a></li>
-  <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise</a></li>
-  </ul></li>
-  <li><a href="#permissions-and-access" id="toc-permissions-and-access" class="nav-link" data-scroll-target="#permissions-and-access">Permissions and Access</a>
-  <ul class="collapse">
-  <li><a href="#understanding-ls--l-output" id="toc-understanding-ls--l-output" class="nav-link" data-scroll-target="#understanding-ls--l-output">Understanding <code>ls -l</code> Output</a></li>
-  <li><a href="#detailed-example" id="toc-detailed-example" class="nav-link" data-scroll-target="#detailed-example">Detailed Example</a></li>
-  <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise</a></li>
-  <li><a href="#changing-permissions" id="toc-changing-permissions" class="nav-link" data-scroll-target="#changing-permissions">Changing Permissions</a></li>
-  <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6">Exercise</a></li>
-  </ul></li>
-  <li><a href="#writing-and-running-script-files" id="toc-writing-and-running-script-files" class="nav-link" data-scroll-target="#writing-and-running-script-files">Writing and Running Script Files</a>
-  <ul class="collapse">
-  <li><a href="#how-to-write-a-script-file" id="toc-how-to-write-a-script-file" class="nav-link" data-scroll-target="#how-to-write-a-script-file">How to Write a Script File</a></li>
-  <li><a href="#how-to-run-a-script-file" id="toc-how-to-run-a-script-file" class="nav-link" data-scroll-target="#how-to-run-a-script-file">How to Run a Script File</a></li>
-  <li><a href="#exercise-writing-and-running-scripts" id="toc-exercise-writing-and-running-scripts" class="nav-link" data-scroll-target="#exercise-writing-and-running-scripts">Exercise: Writing and Running Scripts</a></li>
-  </ul></li>
-  <li><a href="#working-with-processes" id="toc-working-with-processes" class="nav-link" data-scroll-target="#working-with-processes">Working with Processes</a>
-  <ul class="collapse">
-  <li><a href="#viewing-processes" id="toc-viewing-processes" class="nav-link" data-scroll-target="#viewing-processes">Viewing Processes</a></li>
-  <li><a href="#managing-processes" id="toc-managing-processes" class="nav-link" data-scroll-target="#managing-processes">Managing Processes</a></li>
-  <li><a href="#exercise-7" id="toc-exercise-7" class="nav-link" data-scroll-target="#exercise-7">Exercise</a></li>
-  </ul></li>
-  <li><a href="#command-line-productivity" id="toc-command-line-productivity" class="nav-link" data-scroll-target="#command-line-productivity">Command-Line Productivity</a>
-  <ul class="collapse">
-  <li><a href="#history-and-shortcuts" id="toc-history-and-shortcuts" class="nav-link" data-scroll-target="#history-and-shortcuts">History and Shortcuts</a></li>
-  <li><a href="#exercise-8" id="toc-exercise-8" class="nav-link" data-scroll-target="#exercise-8">Exercise</a></li>
-  <li><a href="#essential-shortcuts" id="toc-essential-shortcuts" class="nav-link" data-scroll-target="#essential-shortcuts">Essential Shortcuts</a></li>
+  <li><a href="#print-function" id="toc-print-function" class="nav-link" data-scroll-target="#print-function">Print function</a></li>
+  <li><a href="#basic-calculations" id="toc-basic-calculations" class="nav-link" data-scroll-target="#basic-calculations">Basic Calculations</a></li>
+  <li><a href="#arithmetic-operators" id="toc-arithmetic-operators" class="nav-link" data-scroll-target="#arithmetic-operators">Arithmetic Operators</a></li>
+  <li><a href="#logical-test-operators" id="toc-logical-test-operators" class="nav-link" data-scroll-target="#logical-test-operators">Logical Test Operators</a></li>
+  <li><a href="#comments" id="toc-comments" class="nav-link" data-scroll-target="#comments">Comments</a></li>
+  <li><a href="#combine-multiple-elements" id="toc-combine-multiple-elements" class="nav-link" data-scroll-target="#combine-multiple-elements"><code>C</code>ombine multiple elements</a></li>
+  <li><a href="#length-of-a-vector" id="toc-length-of-a-vector" class="nav-link" data-scroll-target="#length-of-a-vector">Length of a vector</a></li>
+  <li><a href="#vectorized-operations" id="toc-vectorized-operations" class="nav-link" data-scroll-target="#vectorized-operations">Vectorized operations</a></li>
+  <li><a href="#why-vectorized" id="toc-why-vectorized" class="nav-link" data-scroll-target="#why-vectorized">Why vectorized?</a></li>
+  <li><a href="#repl-vs-script" id="toc-repl-vs-script" class="nav-link" data-scroll-target="#repl-vs-script">REPL vs Script</a></li>
+  <li><a href="#assigning-values" id="toc-assigning-values" class="nav-link" data-scroll-target="#assigning-values">Assigning values</a></li>
+  <li><a href="#interactive-prompt" id="toc-interactive-prompt" class="nav-link" data-scroll-target="#interactive-prompt">Interactive prompt</a></li>
+  <li><a href="#in-class-exercise" id="toc-in-class-exercise" class="nav-link" data-scroll-target="#in-class-exercise">In class Exercise</a></li>
   </ul></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="02-Shell(Slides).html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="01-R-Programming(Slides).html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
 </div>
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Shell Command Line Basics</h1>
+<h1 class="title">Programming for FinTech</h1>
+<p class="subtitle lead">Module 1: R</p>
 </div>
 
 
@@ -3182,231 +3139,179 @@ vertical-align: -.125em;
 </header>
 
 
-<section id="navigating-the-filesystem" class="level1">
-<h1>Navigating the Filesystem</h1>
-<section id="basic-commands" class="level2">
-<h2 class="anchored" data-anchor-id="basic-commands">Basic Commands</h2>
-<ul>
-<li><strong><code>pwd</code></strong>: Print working directory</li>
-</ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="bu">pwd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li><strong><code>ls</code></strong>: List directory contents</li>
-</ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">ls</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="fu">ls</span> <span class="at">-a</span>  <span class="co"># Include hidden files</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="fu">ls</span> <span class="at">-l</span>  <span class="co"># Detailed list view</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="fu">ls</span> <span class="at">-lh</span>  <span class="co"># human readable format for size</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li><strong><code>cd</code></strong>: Change directory</li>
-</ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="bu">cd</span> /path/to/directory</span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="bu">cd</span> ..  <span class="co"># Go up one level</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="bu">cd</span> ~ <span class="co"># Go home Directory</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="r-programming-basics" class="level1">
+<h1>R Programming Basics</h1>
+<section id="print-function" class="level2">
+<h2 class="anchored" data-anchor-id="print-function">Print function</h2>
+<p>You can print the value on the console with <code>print()</code> function.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">print</span>(<span class="st">&quot;Hello World!&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] &quot;Hello World!&quot;</code></pre>
+</div>
+</div>
+<p>In many cases <code>print()</code> function is implicitly called.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="st">&quot;Hello there!&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] &quot;Hello there!&quot;</code></pre>
+</div>
+</div>
 </section>
-<section id="special-symbols-in-filesystem-navigation" class="level2">
-<h2 class="anchored" data-anchor-id="special-symbols-in-filesystem-navigation">Special Symbols in Filesystem Navigation</h2>
-<ol type="1">
-<li><strong><code>.</code> (dot)</strong>:
-<ul>
-<li>Represents the current directory.</li>
-<li>Example: <code>cd .</code> keeps you in the current directory, useful for commands where specifying the current directory explicitly is needed.</li>
-</ul></li>
-<li><strong><code>..</code> (double dot)</strong>:
-<ul>
-<li>Represents the parent directory (one level up).</li>
-<li>Example: <code>cd ..</code> moves you up one directory level.</li>
-</ul></li>
-<li><strong><code>~</code> (tilde)</strong>:
-<ul>
-<li>Represents the user’s home directory.</li>
-<li>Example: <code>cd ~</code> navigates to the home directory.</li>
-</ul></li>
-<li><strong><code>/</code> (slash)</strong>:
-<ul>
-<li>Represents the root directory of the filesystem.</li>
-<li>Example: <code>cd /</code> navigates to the root directory.</li>
-</ul></li>
-<li><strong><code>-</code> (hyphen)</strong>:
-<ul>
-<li>Represents the previous directory.</li>
-<li>Example: <code>cd -</code> navigates to the previous directory.</li>
-</ul></li>
-<li><strong>Relative vs. Absolute Paths</strong>:
-<ul>
-<li>Relative paths start from the current directory (e.g., <code>cd ../folder</code>).</li>
-<li>Absolute paths start from the root directory (e.g., <code>cd /home/user/folder</code>).</li>
-</ul></li>
-</ol>
+<section id="basic-calculations" class="level2">
+<h2 class="anchored" data-anchor-id="basic-calculations">Basic Calculations</h2>
+<p>You can use R to do basic math calculations</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="dv">1</span> <span class="sc">/</span> <span class="dv">200</span> <span class="sc">*</span> <span class="dv">30</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.15</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>(<span class="dv">59</span> <span class="sc">+</span> <span class="dv">73</span> <span class="sc">+</span> <span class="dv">2</span>) <span class="sc">/</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 44.66667</code></pre>
+</div>
+</div>
+<p><strong>Question</strong>: What is <code>500 * (100 / 2.5) + 770</code>?</p>
 </section>
-<section id="exercise" class="level2">
-<h2 class="anchored" data-anchor-id="exercise">Exercise</h2>
-<ol type="1">
-<li>Use <code>pwd</code> to display your current working directory.</li>
-<li>Navigate to your home directory using <code>~</code> and display the address.</li>
-<li>List all files in your home directory, including hidden files.</li>
-<li>Navigate to Classroom cloned repository.</li>
-</ol>
+<section id="arithmetic-operators" class="level2">
+<h2 class="anchored" data-anchor-id="arithmetic-operators">Arithmetic Operators</h2>
 <ul>
-<li>YourFIN4770 &gt; Classroom &gt; FIN4770_{Semester}{Year}</li>
+<li><strong>Addition (<code>+</code>), Subtraction (<code>-</code>)</strong></li>
+<li><strong>Multiplication (<code>*</code>), Division (<code>/</code>)</strong></li>
+<li><strong>Exponentiation (<code>^</code> or <code>**</code>)</strong></li>
+<li><strong>Modulo (<code>%%</code>)</strong>: Returns the remainder of a division</li>
 </ul>
-<ol start="5" type="1">
-<li>Execute <code>git pull</code> from the folder.</li>
-</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="dv">5</span> <span class="sc">%%</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+</div>
+<ul>
+<li><strong>Integer Division (<code>%/%</code>)</strong>: Returns the integer quotient</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="dv">8</span> <span class="sc">%/%</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+</div>
 </section>
-</section>
-<section id="file-management" class="level1">
-<h1>File Management</h1>
-<section id="creating-and-deleting-files-and-directories" class="level2">
-<h2 class="anchored" data-anchor-id="creating-and-deleting-files-and-directories">Creating and Deleting Files and Directories</h2>
+<section id="logical-test-operators" class="level2">
+<h2 class="anchored" data-anchor-id="logical-test-operators">Logical Test Operators</h2>
 <ul>
-<li><strong>Create a file</strong>:</li>
+<li><strong>Less than (<code>&lt;</code> or <code>&gt;</code>)</strong></li>
+<li><strong>Less than or equal (<code>&lt;=</code> or <code>&gt;=</code>)</strong></li>
+<li><strong>Equality (<code>==</code>)</strong> and <strong>Inequality (<code>!=</code>)</strong></li>
+<li><strong>Logical NOT (<code>!</code>)</strong></li>
+<li><strong>Element-wise AND (<code>&amp;</code>), OR (<code>|</code>)</strong></li>
 </ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">touch</span> filename.txt <span class="co"># create empty file with .txt extension</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+<p><strong>Exercise</strong>: Check</p>
 <ul>
-<li><strong>Create a directory</strong>:</li>
-</ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">mkdir</span> directory_name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li><strong>Remove a file</strong>:</li>
-</ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">rm</span> filename.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li><strong>Remove a directory</strong>:</li>
-</ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">rmdir</span> directory_name <span class="co"># works when dir is empty</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">rm</span> <span class="at">-r</span> directory_name <span class="co"># works when dir is filled</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="renaming-and-moving-files" class="level2">
-<h2 class="anchored" data-anchor-id="renaming-and-moving-files">Renaming and Moving Files</h2>
-<ul>
-<li><strong>Rename a file</strong>:</li>
-</ul>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">mv</span> old_name.txt new_name.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li><strong>Move a file</strong>:</li>
-</ul>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">mv</span> file.txt /new/path/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="exercise-1" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-1">Exercise</h2>
-<ol type="1">
-<li>Navigate to your home folder, using <code>~</code>.</li>
-<li>Navigate back to your <code>FIN4770</code> folder.</li>
-<li>Make a subfolder <code>Shell</code>.</li>
-<li>Create a file called <code>test.sh</code> then rename it to <code>example.sh</code>.</li>
-<li>Move <code>example.sh</code> into the <code>Shell</code> subdirectory.</li>
-<li>Delete <code>example.sh</code> you just created.</li>
-</ol>
-</section>
-</section>
-<section id="using-echo-and-pipes" class="level1">
-<h1>Using <code>echo</code> and Pipes</h1>
-<section id="displaying-text-with-echo" class="level2">
-<h2 class="anchored" data-anchor-id="displaying-text-with-echo">Displaying Text with <code>echo</code></h2>
-<ul>
-<li><p><strong>Basic usage</strong>:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1"></a><span class="bu">echo</span> <span class="st">&quot;Hello, Shell&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p><strong>Redirecting output to a file</strong>:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1"></a><span class="bu">echo</span> <span class="st">&quot;This is a line of text&quot;</span> <span class="op">&gt;</span> file.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p><strong>Appending output to an (existing) file</strong>:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1"></a><span class="bu">echo</span> <span class="st">&quot;Yet another line of text&quot;</span> <span class="op">&gt;&gt;</span> file.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><code>3 &gt;= 5</code>,</li>
+<li><code>TRUE == FALSE</code>,</li>
+<li><code>TRUE &amp; FALSE</code>,</li>
+<li><code>(3 &gt; 1) &amp; (3 &lt;= 5)</code></li>
+<li><code>TRUE | FALSE</code>,</li>
+<li><code>!TRUE == FALSE</code></li>
+<li><code>!(3 &gt; 1) &amp; (3 &lt;= 5)</code></li>
 </ul>
 </section>
-<section id="combining-with-pipes" class="level2">
-<h2 class="anchored" data-anchor-id="combining-with-pipes">Combining with Pipes</h2>
+<section id="comments" class="level2">
+<h2 class="anchored" data-anchor-id="comments">Comments</h2>
+<p>Comments are meant to explain the code and redable, but ignored by the computer.</p>
 <ul>
-<li><p><strong>Using <code>echo</code> with <code>wc</code></strong>:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1"></a><span class="bu">echo</span> <span class="st">&quot;one two three four&quot;</span> <span class="kw">|</span> <span class="fu">wc</span></span>
-<span id="cb13-2"><a href="#cb13-2"></a><span class="bu">echo</span> <span class="st">&quot;one two three four&quot;</span> <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
-<span id="cb13-3"><a href="#cb13-3"></a><span class="bu">echo</span> <span class="st">&quot;one two three four&quot;</span> <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-w</span></span>
-<span id="cb13-4"><a href="#cb13-4"></a><span class="bu">echo</span> <span class="st">&quot;one two three four&quot;</span> <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-c</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li>Use <code>#</code> to make comment</li>
+<li>Anything written after <code>#</code> on the line are ignored</li>
 </ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># this is comment</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">2</span> <span class="co"># This is another comment</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use <code>Ctrl (Cmd) + /</code> hotkey to toggle comments.</p>
+</div>
+</div>
 </section>
-<section id="exercise-2" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-2">Exercise</h2>
-<ol type="1">
-<li>Write a command using <code>echo</code> to display the text <code>Learning Shell is fun</code>.</li>
-<li>Redirect the output of <code>echo &quot;Learning Shell is fun&quot;</code> to a file named <code>Shell_fun.txt</code>.</li>
-<li>Use <code>echo</code> and <code>wc</code> to:
-<ul>
-<li>Count the number of <strong>lines</strong> in the string <code>Shell pipes are powerful</code>.</li>
-<li>Count the number of <strong>words</strong>.</li>
-<li>Count the number of <strong>characters</strong>.</li>
-</ul></li>
-</ol>
+<section id="combine-multiple-elements" class="level2">
+<h2 class="anchored" data-anchor-id="combine-multiple-elements"><code>C</code>ombine multiple elements</h2>
+<p>To <code>c</code>oncatenate multiple elements to a vector, se <code>c()</code> function.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>An (atomic) vector in R is an ordered pair of multiple elements.</p>
+<p>An individual element, known as “scalars”, is represented as a vector of length 1 in R.</p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>) <span class="co"># a vector (2 elements)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">7</span>) <span class="co"># a vector with 5 elements</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2 3 4 6 7</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">c</span>(<span class="dv">3</span>) <span class="co"># a vector of 1 element</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+</div>
 </section>
+<section id="length-of-a-vector" class="level2">
+<h2 class="anchored" data-anchor-id="length-of-a-vector">Length of a vector</h2>
+<p>To check the number of elements of a vector, use <code>length()</code> function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">length</span>(<span class="dv">3</span>) <span class="co"># Scalar is length 1 vector in R</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">length</span>(<span class="fu">c</span>(<span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="fu">length</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+</div>
 </section>
-<section id="introduction-to-text-editors" class="level1">
-<h1>Introduction to Text Editors</h1>
-<section id="using-nano" class="level2">
-<h2 class="anchored" data-anchor-id="using-nano">Using <code>nano</code></h2>
-<ul>
-<li><strong>Open a file</strong>:</li>
-</ul>
-<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">nano</span> file.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li><strong>Basic commands</strong>:
-<ul>
-<li><code>Ctrl + O</code>: Save file</li>
-<li><code>Ctrl + X</code>: Exit editor</li>
-<li><code>Ctrl + K</code>: Cut line</li>
-</ul></li>
-</ul>
+<section id="vectorized-operations" class="level2">
+<h2 class="anchored" data-anchor-id="vectorized-operations">Vectorized operations</h2>
+<p>Vectorized operations mean <strong>vector-in-vector-out</strong>, as opposed to scalar operation (one-in-one-out).</p>
+<p>In R, most operations are <strong>vector in mind</strong>.</p>
+<p>For example, <code>+</code> and <code>*</code> are vectorized operators.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>) <span class="sc">+</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>) <span class="co"># plus on each element of vector</span></span>
+<span id="cb27-2"><a href="#cb27-2"></a><span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>) <span class="sc">*</span> <span class="dv">3</span> <span class="co"># multiply each (broadcast x3 to all elements)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<hr>
+<p><strong>Question</strong>:</p>
+<p>What do you get when <code>c(2,3) * c(3,9)</code>?</p>
+<p>What’s the length of the output?</p>
 </section>
-<section id="using-vim" class="level2">
-<h2 class="anchored" data-anchor-id="using-vim">Using <code>vim</code></h2>
-<ul>
-<li><strong>Open a file</strong>:</li>
-</ul>
-<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1"></a><span class="ex">vim</span> file.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li><strong>Modes</strong>:
-<ul>
-<li><code>i</code>: Insert mode (to edit text)</li>
-<li><code>Esc</code>: Command mode</li>
-</ul></li>
-<li><strong>Basic commands</strong>:
-<ul>
-<li><code>:w</code>: Write file</li>
-<li><code>:q</code>: Quit editor</li>
-<li><code>:wq</code>: Write and quit</li>
-<li><code>:q!</code>: Quit without saving</li>
-</ul></li>
-<li><strong>Navigation</strong>:
-<ul>
-<li><code>h</code>, <code>j</code>, <code>k</code>, <code>l</code>: Move left, down, up, right</li>
-</ul></li>
-</ul>
-</section>
-<section id="exercise-3" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-3">Exercise</h2>
-<ol type="1">
-<li>Open a file in <code>nano</code>, write some and save it as <code>nano_text.txt</code> in Shell folder.</li>
-<li>Generate a text with <code>vim</code>, edit the text, and save as <code>vim_text.txt</code> in Shell folder.</li>
-</ol>
-</section>
-</section>
-<section id="web-api-tools-for-data-retrieval" class="level1">
-<h1>Web API Tools for Data Retrieval</h1>
-<section id="download-data" class="level2">
-<h2 class="anchored" data-anchor-id="download-data">Download data</h2>
-<p><strong>Downloading Data on current directory</strong><br>
-1. Using <code>wget</code>:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">wget</span> https://example.com/data.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="2" type="1">
-<li>Using <code>curl</code>:</li>
-</ol>
-<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># Caution: Capital letter &quot;O&quot; for original, not zero!</span></span>
-<span id="cb17-2"><a href="#cb17-2"></a><span class="ex">curl</span> <span class="at">-O</span> https://example.com/data.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="exercise-using-wget-or-curl" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-using-wget-or-curl">Exercise: Using <code>wget</code> or <code>curl</code></h2>
-<ol type="1">
-<li><p>Navigate to your <code>FIN4770</code> folder, make a subfolder <code>Data</code> then navigate to it.</p></li>
-<li><p>Download a sample dataset using either <code>wget</code> or <code>curl</code>.</p></li>
-</ol>
-<p>https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv</p>
+<section id="why-vectorized" class="level2">
+<h2 class="anchored" data-anchor-id="why-vectorized">Why vectorized?</h2>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -3417,304 +3322,4823 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>In case of certification error, try:</p>
-<p>curl –ssl-no-revoke -O https://…/iris.csv</p>
+<p>Vectorized operation is <strong>much, much faster</strong> than iterating over each single (scalar) elements.</p>
+<p><strong>Avoid using loops</strong> and utilize vectorized operation <strong>whenever possible</strong>.</p>
+</div>
+</div>
+<p>For computers, using vectorization or not is like a difference in our mental calculation between</p>
+<ul>
+<li>3 * 9 and</li>
+<li>(3 + 3 + 3 + 3 + 3 + 3 + 3 + 3 + 3).</li>
+</ul>
+</section>
+<section id="repl-vs-script" class="level2">
+<h2 class="anchored" data-anchor-id="repl-vs-script">REPL vs Script</h2>
+<p><strong>REPL</strong></p>
+<p>So far, we’ve done <strong>interactive</strong> programming, <strong>REPL</strong>:</p>
+<ul>
+<li><strong>R</strong>ead, <strong>E</strong>valuate, <strong>P</strong>rint, <strong>L</strong>oop</li>
+<li>For rapid prototyping, exploration, debugging, etc.</li>
+</ul>
+<hr>
+<p><strong>Script (Batch)</strong></p>
+<p>Instead, you can run the whole script outside of R environment, using <code>Rscript</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1"></a><span class="co"># from outside of R environment (e.g., bash)</span></span>
+<span id="cb28-2"><a href="#cb28-2"></a><span class="ex">Rscript</span> my_code.R </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Running a script file on current R session:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="co"># from inside of R environment</span></span>
+<span id="cb29-2"><a href="#cb29-2"></a><span class="fu">source</span>(<span class="st">&quot;my_code.R&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Writing a complete script is your final goal in programming.</p>
+<ul>
+<li>For production and deployment</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>REPL for development, and script for production.</p>
+<p>To run the (whole) script, <code>Ctrl (Cmd) + Shift + Return</code></p>
 </div>
 </div>
 </section>
-</section>
-<section id="working-with-data-files" class="level1">
-<h1>Working with Data Files</h1>
-<section id="viewing-text-files" class="level2">
-<h2 class="anchored" data-anchor-id="viewing-text-files">Viewing (text) Files</h2>
+<section id="assigning-values" class="level2">
+<h2 class="anchored" data-anchor-id="assigning-values">Assigning values</h2>
+<p>Use <code>&lt;-</code> to assign a value to a symbol (name).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>my_number <span class="ot">&lt;-</span> <span class="dv">3</span>  <span class="co"># object of value 3 is created, with its symbol my_number </span></span>
+<span id="cb30-2"><a href="#cb30-2"></a><span class="fu">print</span>(my_number <span class="sc">*</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 9</code></pre>
+</div>
+</div>
+<p>Here, <code>my_number</code> is called <strong>symbol</strong>, or <strong>name</strong> of an object.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Style guide: though you still can use <code>=</code>, use <code>&lt;-</code> for assignment.</p>
+<p>Use <code>=</code> for specifying function arguments instead.</p>
+<p>Some IDEs (i.e. RStudio / Positron / VScode) have <code>Alt (Option) + -</code> as a shortcut.</p>
+</div>
+</div>
+<hr>
+<p>R has strict rules about a <strong>syntactic</strong> name (symbol).</p>
 <ul>
-<li><strong>View the contents of a file</strong>:</li>
+<li>It is case sensitive</li>
 </ul>
-<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">cat</span> file.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>a <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb32-2"><a href="#cb32-2"></a><span class="fu">print</span>(A)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in eval(expr, envir, enclos): object &#39;A&#39; not found</code></pre>
+</div>
+</div>
 <ul>
-<li><strong>View the first or last lines</strong>:</li>
+<li>It <strong>cannot contain whitespace</strong></li>
 </ul>
-<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">head</span> file.txt  <span class="co"># First 10 lines</span></span>
-<span id="cb19-2"><a href="#cb19-2"></a><span class="fu">head</span> <span class="at">-n</span> 5 file.txt  <span class="co"># First 5 lines</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">tail</span> file.txt  <span class="co"># Last 10 lines</span></span>
-<span id="cb20-2"><a href="#cb20-2"></a><span class="fu">tail</span> <span class="at">-n</span> 5 file.txt  <span class="co"># Last 5 lines</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>my number <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="co"># error</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error: &lt;text&gt;:1:4: unexpected symbol
+1: my number
+       ^</code></pre>
+</div>
+</div>
+<ul>
+<li>It cannot start with numbers</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>my_number_1 <span class="ot">&lt;-</span> <span class="dv">15</span></span>
+<span id="cb36-2"><a href="#cb36-2"></a><span class="dv">1</span>_my_number <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="co"># error</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error: &lt;text&gt;:2:2: unexpected input
+1: my_number_1 &lt;- 15
+2: 1_
+    ^</code></pre>
+</div>
+</div>
+<hr>
+<ul>
+<li><p>You can’t use <strong>reserved words</strong> like <code>TRUE</code>, <code>NULL</code>, <code>if</code>, etc.</p></li>
+<li><p>If you’d deliberately use <strong>non-syntactic</strong> names, use backtick `</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="co"># Use backtick escaping only when you have to</span></span>
+<span id="cb38-2"><a href="#cb38-2"></a><span class="st">`</span><span class="at">my number</span><span class="st">`</span> <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb38-3"><a href="#cb38-3"></a><span class="fu">print</span>(<span class="st">`</span><span class="at">my number</span><span class="st">`</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+</div>
+<hr>
+<p>Since objects cannot contain whitespace as symbol, there are two naming conventions.</p>
+<ul>
+<li><p><code>snake_case</code></p></li>
+<li><p><code>CamelCase</code></p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a>when_you_have_very_long_name_object <span class="ot">&lt;-</span> <span class="dv">12</span></span>
+<span id="cb40-2"><a href="#cb40-2"></a>YouCanNameItLikeThis <span class="ot">&lt;-</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It is better to make a short, self-explanatory name.</p>
+<p>e.g. weight &lt;- 15 is easier to understand than my_variable_quantity &lt;- 15</p>
+</div>
+</div>
 </section>
-<section id="exercise-4" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-4">Exercise</h2>
+<section id="interactive-prompt" class="level2">
+<h2 class="anchored" data-anchor-id="interactive-prompt">Interactive prompt</h2>
+<p><code>readline()</code> gemerates prompt for interactive input.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="fu">readline</span>(<span class="st">&quot;What is your age?&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The response can be a value and assigned as an object.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a>response_age <span class="ot">&lt;-</span> <span class="fu">readline</span>(<span class="st">&quot;What is your age?&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="in-class-exercise" class="level2">
+<h2 class="anchored" data-anchor-id="in-class-exercise">In class Exercise</h2>
 <ol type="1">
-<li>Browse head of the iris dataset you downloaded.</li>
-<li>Browse last 5 lines of iris dataset.</li>
+<li>Create a vector object of numbers: 98,99,100,101,102</li>
+<li>Assign above to a symbol <code>bond_prices</code>.</li>
+<li>If you follow CamalStyle naming convention, what would it be?</li>
+<li>Generate an interactive prompt that asks interest rate, and assign it with symbol <code>interest_rate</code></li>
 </ol>
-</section>
-</section>
-<section id="permissions-and-access" class="level1">
-<h1>Permissions and Access</h1>
-<section id="understanding-ls--l-output" class="level2">
-<h2 class="anchored" data-anchor-id="understanding-ls--l-output">Understanding <code>ls -l</code> Output</h2>
-<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1"></a><span class="ex">-rw-r--r--</span>  1 user group  1234 Jan 25 10:30 example.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol type="1">
-<li><p><strong><code>-rw-r--r--</code></strong>: File type and permissions:</p>
-<ul>
-<li>The first character indicates the <strong>type</strong> of file:
-<ul>
-<li><code>-</code>: Regular file</li>
-<li><code>d</code>: Directory</li>
-<li><code>l</code>: Symbolic link (symlink)</li>
-</ul></li>
-<li>The next <strong>9</strong> characters represent the <strong>permissions</strong>:
-<ul>
-<li>Split into <strong>3</strong> groups of 3 characters each:
-<ul>
-<li><strong>Owner (user)</strong>: First three characters (e.g., <code>rw-</code>)</li>
-<li><strong>Group</strong>: Middle three characters (e.g., <code>r--</code>)</li>
-<li><strong>Others</strong>: Last three characters (e.g., <code>r--</code>)</li>
-</ul></li>
-<li>Each group consists of:
-<ul>
-<li><code>r</code>: Read permission</li>
-<li><code>w</code>: Write permission</li>
-<li><code>x</code>: Execute permission</li>
-<li><code>-</code>: No permission</li>
-</ul></li>
-</ul></li>
-<li>Example:
-<ul>
-<li><code>rw-</code>: Read and write, but no execute</li>
-<li><code>r--</code>: Read-only</li>
-<li><code>rwx</code>: Read, write, and execute</li>
-</ul></li>
-</ul></li>
-<li><p><strong><code>1</code></strong>: Number of hard links to the file or directory.</p></li>
-<li><p><strong><code>user</code></strong>: The owner of the file.</p></li>
-<li><p><strong><code>group</code></strong>: The group associated with the file.</p></li>
-<li><p><strong><code>1234</code></strong>: The size of the file in bytes.</p></li>
-<li><p><strong><code>Jan 25 10:30</code></strong>: The last modification date and time.</p></li>
-<li><p><strong><code>example.txt</code></strong>: The name of the file or directory.</p></li>
-</ol>
-</section>
-<section id="detailed-example" class="level2">
-<h2 class="anchored" data-anchor-id="detailed-example">Detailed Example</h2>
-<p>Output:</p>
-<pre><code>drwxr-xr-x  2 user group   4096 Jan 25 12:00 folder
--rw-r--r--  1 user group   1234 Jan 25 10:30 file.txt
-lrwxrwxrwx  1 user group     20 Jan 25 10:45 link -&gt; /path/to/target</code></pre>
-<p>Explanation of <code>drwxr-xr-x</code> for <code>folder</code>:</p>
-<ul>
-<li><strong>d</strong>: Directory.</li>
-<li><strong>rwx</strong>: Owner (user) has read, write, and execute permissions.</li>
-<li><strong>r-x</strong>: Group has read and execute permissions.</li>
-<li><strong>r-x</strong>: Others have read and execute permissions.</li>
-</ul>
-</section>
-<section id="exercise-5" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-5">Exercise</h2>
-<ol type="1">
-<li><p>Check the permissions of <code>iris</code> file you downloaded.</p>
-<ul>
-<li>What is the file type?</li>
-<li>What is the access permission for owner (user)?</li>
-<li>What is the access permission for group?</li>
-<li>What is the access permission for others?</li>
-</ul></li>
-</ol>
-</section>
-<section id="changing-permissions" class="level2">
-<h2 class="anchored" data-anchor-id="changing-permissions">Changing Permissions</h2>
-<ul>
-<li><strong>Change permissions</strong>:</li>
-</ul>
-<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">chmod</span> 756 file.txt  <span class="co"># Set read-write-execute</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>Each digit corresponds to <strong>user</strong>, <strong>group</strong>, and <strong>others</strong>
-<ul>
-<li><strong>Read (<code>r</code>)</strong>: <code>4</code></li>
-<li><strong>Write (<code>w</code>)</strong>: <code>2</code></li>
-<li><strong>Execute (<code>x</code>)</strong>: <code>1</code></li>
-<li><strong>No permission (<code>-</code>)</strong>: <code>0</code></li>
-</ul></li>
-<li><code>756</code> breaks down as:
-<ul>
-<li><strong>User (7)</strong>: <code>rwx</code> (4 + 2 + 1 = 7)</li>
-<li><strong>Group (5)</strong>: <code>r-x</code> (4 + 0 + 1 = 5)</li>
-<li><strong>Others (6)</strong>: <code>rw-</code> (4 + 2 + 0 = 6)</li>
-</ul></li>
-</ul>
-</section>
-<section id="exercise-6" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-6">Exercise</h2>
-<ol type="1">
-<li>Create a file and view its permissions with <code>ls -l</code>.</li>
-<li>Change the permissions of the file to <code>rwxr---w-</code> using <code>chmod</code>.</li>
-<li>Interpret <code>chmod 600 file.txt</code>.</li>
-</ol>
-</section>
-</section>
-<section id="writing-and-running-script-files" class="level1">
-<h1>Writing and Running Script Files</h1>
-<section id="how-to-write-a-script-file" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-write-a-script-file">How to Write a Script File</h2>
-<ol type="1">
-<li><strong>Create a Script File</strong>:
-<ul>
-<li><p>Use a text editor like <code>nano</code> or <code>vim</code> to create a script file:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">nano</span> myscript.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-</ul></li>
-<li><strong>Add Commands to the Script</strong>:
-<ul>
-<li><p>Begin with a <strong>shebang</strong> to specify the shell interpreter:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1"></a><span class="co">#!/bin/bash</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Add commands to the script:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1"></a><span class="bu">echo</span> <span class="st">&quot;Hello, Shell!&quot;</span></span>
-<span id="cb26-2"><a href="#cb26-2"></a><span class="bu">echo</span> <span class="st">&quot;My current shell is </span><span class="va">$SHELL</span><span class="st">&quot;</span></span>
-<span id="cb26-3"><a href="#cb26-3"></a><span class="fu">date</span></span>
-<span id="cb26-4"><a href="#cb26-4"></a><span class="bu">pwd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-</ul></li>
-<li><strong>Save the File</strong>:
-<ul>
-<li>Save and exit the editor (<code>Ctrl + O</code> and <code>Ctrl + X</code> in <code>nano</code>).</li>
-</ul></li>
-</ol>
-</section>
-<section id="how-to-run-a-script-file" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-run-a-script-file">How to Run a Script File</h2>
-<ol type="1">
-<li><strong>Make the Script Executable</strong>:
-<ul>
-<li><p>Grant execute permissions to the script using <code>chmod</code>:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">chmod</span> 755 myscript.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-</ul></li>
-<li><strong>Run the Script</strong>:
-<ul>
-<li><p>Execute the script by specifying its path:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1"></a><span class="ex">./myscript.sh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-</ul></li>
-<li><strong>Alternative Method</strong>:
-<ul>
-<li><p>Run the script without changing permissions by invoking the shell directly:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">bash</span> myscript.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-</ul></li>
-</ol>
-</section>
-<section id="exercise-writing-and-running-scripts" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-writing-and-running-scripts">Exercise: Writing and Running Scripts</h2>
-<ol type="1">
-<li><p>Create a script file named <code>greet.sh</code> that:</p>
-<ul>
-<li>Prints “Welcome to Shell scripting.”.</li>
-<li>Displays the current date and time.</li>
-</ul></li>
-<li><p>Add execute permissions.</p></li>
-<li><p>Run the script.</p></li>
-</ol>
-</section>
-</section>
-<section id="working-with-processes" class="level1">
-<h1>Working with Processes</h1>
-<section id="viewing-processes" class="level2">
-<h2 class="anchored" data-anchor-id="viewing-processes">Viewing Processes</h2>
-<ul>
-<li><strong>List running processes</strong>:</li>
-</ul>
-<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">ps</span></span>
-<span id="cb30-2"><a href="#cb30-2"></a><span class="fu">ps</span> u  <span class="co"># only current user </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li><strong>Interactive process viewer</strong>:</li>
-</ul>
-<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1"></a><span class="ex">top</span></span>
-<span id="cb31-2"><a href="#cb31-2"></a><span class="ex">htop</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="managing-processes" class="level2">
-<h2 class="anchored" data-anchor-id="managing-processes">Managing Processes</h2>
-<ul>
-<li><strong>Kill a process</strong>:</li>
-</ul>
-<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1"></a><span class="bu">kill</span> PID</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li><strong>Background and foreground processes</strong>:</li>
-</ul>
-<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1"></a><span class="bu">command</span> <span class="kw">&amp;</span>  <span class="co"># Run in background, PID is printed</span></span>
-<span id="cb33-2"><a href="#cb33-2"></a><span class="bu">fg</span>  <span class="co"># Bring to foreground</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="exercise-7" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-7">Exercise</h2>
-<ol type="1">
-<li>Use <code>ps u</code> to display your running processes.</li>
-<li>Start a background process using <code>sleep 100 &amp;</code> and view it with <code>jobs</code>.</li>
-<li>Kill above sleep process with <code>kill &lt;PID&gt;</code>.</li>
-</ol>
-</section>
-</section>
-<section id="command-line-productivity" class="level1">
-<h1>Command-Line Productivity</h1>
-<section id="history-and-shortcuts" class="level2">
-<h2 class="anchored" data-anchor-id="history-and-shortcuts">History and Shortcuts</h2>
-<ul>
-<li><p><strong>View command history</strong>:</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1"></a><span class="bu">history</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>Displays a list of previously executed commands.</li>
-</ul></li>
-<li><p><strong>Repeat a command</strong>:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1"></a><span class="ex">!!</span>  <span class="co"># Repeat the last command</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p><strong>Run a specific command from history</strong>:</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1"></a><span class="ex">!</span><span class="op">&lt;</span>number<span class="op">&gt;</span>  <span class="co"># Replace &lt;number&gt; with the history entry number</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p><strong>Clear the command history</strong>:</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1"></a><span class="bu">history</span> <span class="at">-c</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-</ul>
-</section>
-<section id="exercise-8" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-8">Exercise</h2>
-<ol type="1">
-<li>View your command history and re-run the last three commands.</li>
-<li>Use <code>!!</code> to repeat the last command.</li>
-<li>Use <code>!&lt;number&gt;</code> to execute a specific command from the history list.</li>
-<li>Experiment with <code>Ctrl + r</code> to find a previously used command interactively.</li>
-<li>Clear your command history and verify it is empty with <code>history</code>.</li>
-</ol>
-<section id="git" class="level3">
-<h3 class="anchored" data-anchor-id="git">Git</h3>
-<ol start="6" type="1">
-<li>Finally, save all of your work, commit and push to <em>your</em> Github repository.</li>
-</ol>
-</section>
-</section>
-<section id="essential-shortcuts" class="level2">
-<h2 class="anchored" data-anchor-id="essential-shortcuts">Essential Shortcuts</h2>
-<section id="navigation" class="level3">
-<h3 class="anchored" data-anchor-id="navigation">Navigation</h3>
-<ul>
-<li><strong><code>Ctrl + A</code></strong>: Move to the beginning of the line<br>
-</li>
-<li><strong><code>Ctrl + E</code></strong>: Move to the end of the line</li>
-</ul>
-</section>
-<section id="line-editing" class="level3">
-<h3 class="anchored" data-anchor-id="line-editing">Line Editing</h3>
-<ul>
-<li><strong><code>Ctrl + U</code></strong>: Delete everything before the cursor<br>
-</li>
-<li><strong><code>Ctrl + K</code></strong>: Delete everything after the cursor<br>
-</li>
-<li><strong><code>Ctrl + W</code></strong>: Delete the word before the cursor</li>
-</ul>
-</section>
-<section id="command-history" class="level3">
-<h3 class="anchored" data-anchor-id="command-history">Command History</h3>
-<ul>
-<li><strong><code>Ctrl + R</code></strong>: Search your command history interactively
-<ul>
-<li>Press <code>Ctrl + R</code> repeatedly to cycle through matches<br>
-</li>
-</ul></li>
-<li><strong><code>Ctrl + G</code></strong>: Cancel the history search</li>
-</ul>
-</section>
-<section id="miscellaneous" class="level3">
-<h3 class="anchored" data-anchor-id="miscellaneous">Miscellaneous</h3>
-<ul>
-<li><strong><code>Ctrl + L</code></strong>: Clear the terminal screen (same as <code>clear</code>)</li>
-</ul>
-</section>
+<!--
+
+## Evaluating is NOT assigning
+
+Think about below code. What is the printed value of `a` at the last code line?
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+a <- 3.5
+a * 2
+print(a)
+```
+:::
+
+
+
+
+------------------------------------------------------------------------
+
+`a * 2` is evaluated and the outcome is printed, but it is not assigned to any symbol.
+
+To store the value,
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+a <- a * 2 # overwrite or
+b <- a * 2 # assign to other symbol
+```
+:::
+
+
+
+
+# R Data Types
+
+## Object types in R
+
+- **Vector type**: common data type
+
+- Special type (non-vector): non-vectors
+
+  - functions, environments, etc.
+  
+**Vectors** are the most important family of data types in R.
+
+
+## Vector type
+
+
+Vector is a data structure that stores multiple elements. It comes in two flavors:
+
+-   Atomic vector: all elements same type
+-   Generic vector: known as **list**, can have different types of elements
+
+![](images/clipboard-258280418.png){fig-align="center" width="278"}
+
+`NULL` is not a vector, but often serves as zero length vector.
+
+
+## Atomic vectors
+
+There are **four primary types** of atomic vector in R, and two others.
+
+![](images/clipboard-2469180807.png){fig-align="center" width="348"}
+
+
+## Type of Atomic vectors
+
+1.  **Logical** (or Boolean): `TRUE`, `FALSE`, `NA`
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+logical_test <- 3 > 5
+print(logical_test) 
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] FALSE
+```
+
+
+:::
+
+```{.r .cell-code}
+typeof(logical_test)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "logical"
+```
+
+
+:::
+:::
+
+
+
+
+2.  **Integer**: integer numbers
+
+Attach `L` to treat the number as strict integer number.
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+my_integer <- 3L # L specifies the number is integer
+typeof(my_integer) 
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "integer"
+```
+
+
+:::
+:::
+
+
+
+
+------------------------------------------------------------------------
+
+3.  **Double**: real numbers
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+my_number <- 3.125 # A length of 1 vector
+typeof(my_number) 
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "double"
+```
+
+
+:::
+:::
+
+
+
+
+::: callout-caution
+"**numeric**" is a collective term for both double and integers but often used as if it were **a synonym for "double" or "real number"** in practice. 
+:::
+
+------------------------------------------------------------------------
+
+4.  **Character** (or string): words, wrapped by `"` or `'`
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+my_name <- "Matthew Son" # wrap double quotes around
+korean_name <- 'Gunsu Son' # or single quotes
+typeof(my_name); typeof(korean_name)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "character"
+```
+
+
+:::
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "character"
+```
+
+
+:::
+:::
+
+
+
+
+::: callout-tip
+Style guide: **Use double quote** `"` for character instead of `'` if possible.
+:::
+
+------------------------------------------------------------------------
+
+5.  Two other types: raw type and complex type
+
+-   rarely needed in Finance
+
+
+
+## Missing values: NA
+
+![](images/image-948652324.png){fig-align="center" width="300"}
+
+-   Missing values are denoted by `NA`
+
+```         
+-  Not Applicable: similar to "undefined" above
+```
+
+-   They are not identical to zero or NULL
+
+```         
+-   `NULL` is intentional empty "placeholder" in R
+```
+
+------------------------------------------------------------------------
+
+`NA` is considered as logical length 1 vector.
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+typeof(NA) # "logical"
+length(NA) # 1
+```
+:::
+
+
+
+
+`NULL` is a special type (NULL), length 0
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+typeof(NULL) # "NULL"
+length(NULL) # 0
+```
+:::
+
+
+
+
+`NaN` a **numeric missing value**, length 1.
+  
+  - unrepresentable numeric results (e.g., 0/0, log(-1)).
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+typeof(NaN)   # "double"
+length(NaN)   # 1
+```
+:::
+
+
+
+
+
+
+## Exercise
+
+1.  What are four primary types of atomic vector?
+
+2.  What are the types of `a,b,c,d` below?
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+a <- TRUE
+b <- 3.56
+c <- "Logical"
+d <- 6
+```
+:::
+
+
+
+
+Confirm your answer with `typeof()`.
+
+## List
+
+List is a **generic vector** that is not atomic.
+
+-   Atomic vector can have **only one type** for its elements (Double, Integer, Logical, ...)
+
+-   List can hold multiple data types for its member (even list itself)
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+example_list <- list(1L, 3.5, 'Hi', TRUE)
+print(example_list)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[[1]]
+[1] 1
+
+[[2]]
+[1] 3.5
+
+[[3]]
+[1] "Hi"
+
+[[4]]
+[1] TRUE
+```
+
+
+:::
+
+```{.r .cell-code}
+typeof(example_list)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "list"
+```
+
+
+:::
+:::
+
+
+
+
+------------------------------------------------------------------------
+
+List can have atomic vectors as its elements, with varying lengths:
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# List construction example
+# Use "=" inside function
+my_list <- list(first_element = c(1L,2L,3L), # integer type, length of 3
+               second_element = c('how','what','why','where'), # character type, length 4
+               third_element = c(3 < 5, 3 == 5, 3 > 5) #logical type, length 3
+               )
+print(my_list)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+$first_element
+[1] 1 2 3
+
+$second_element
+[1] "how"   "what"  "why"   "where"
+
+$third_element
+[1]  TRUE FALSE FALSE
+```
+
+
+:::
+
+```{.r .cell-code}
+typeof(my_list)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "list"
+```
+
+
+:::
+:::
+
+
+
+
+**Question**: What is the length of `my_list`?
+
+
+
+# R Object Attributes
+
+## Attributes
+
+Attributes are **metadata** that is attached to R objects so that it provides more information.
+
+Common attributes:
+
+-   **Names**: Labels for elements in a vector or list
+
+-   **Dimensions (`dim`)**: Used for matrices, arrays
+
+-   **Class**: Defines **how** an object should be treated **by functions**
+
+-   etc.
+
+## Names attribute
+
+Elements of vector (atomic, generic) can be named.
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+stock_prices <- c(150, 200, 250, 300)
+attributes(stock_prices)  # No attributes
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+NULL
+```
+
+
+:::
+:::
+
+
+
+
+To assign *names* attribute:
+
+### Method 1: names()
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+names(stock_prices) <- c("AAPL", "GOOG", "MSFT", "AMZN")
+attributes(stock_prices)  # stock_prices now have "names" attribute
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+$names
+[1] "AAPL" "GOOG" "MSFT" "AMZN"
+```
+
+
+:::
+
+```{.r .cell-code}
+print(stock_prices)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+AAPL GOOG MSFT AMZN 
+ 150  200  250  300 
+```
+
+
+:::
+:::
+
+
+
+
+### Method 2: attr()
+
+Or use `attr()` function to set attribute:
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# method 3
+stock_prices <- c(150, 200, 250, 300)
+attr(stock_prices, "names") <- c("AAPL", "GOOG", "MSFT", "AMZN")
+attributes(stock_prices)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+$names
+[1] "AAPL" "GOOG" "MSFT" "AMZN"
+```
+
+
+:::
+:::
+
+
+
+
+### Method 3
+
+Or assign names by construct:
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# method 2
+stock_prices2 <- c(
+  "AAPL" = 150,
+  "GOOG" = 200,
+  "MSFT" = 250,
+  "AMZN" = 300)
+attributes(stock_prices2) 
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+$names
+[1] "AAPL" "GOOG" "MSFT" "AMZN"
+```
+
+
+:::
+:::
+
+
+
+
+## Exercise
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+stock_prices <- c(100, 150)
+```
+:::
+
+
+
+
+Give `names` attribute to `stock_prices` vector using aforementioned three methods.
+
+  - `names(obj) <- `
+  - `attr(obj, "names") <- `
+  - by construct
+
+## Dim attribute
+
+Adding a dim attribute to a vector allows it to behave like a **2-dimensional matrix** or a **multi-dimensional array**.
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# matrix
+x <- 1:6
+dim(x) <- c(2,3) # 2 by 3
+print(x)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+     [,1] [,2] [,3]
+[1,]    1    3    5
+[2,]    2    4    6
+```
+
+
+:::
+:::
+
+::: {.cell}
+
+```{.r .cell-code}
+# array
+y <- 1:8
+dim(y) <- c(2,2,2) # 2 by 2 by 2
+print(y)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+, , 1
+
+     [,1] [,2]
+[1,]    1    3
+[2,]    2    4
+
+, , 2
+
+     [,1] [,2]
+[1,]    5    7
+[2,]    6    8
+```
+
+
+:::
+:::
+
+
+
+
+## Class attribute
+
+The **class** attributes in R is used to define the **behavior of objects** with functions.
+
+Especially important classes in Finance are:
+
+-   Date, Time
+-   Factors
+-   Dataframe
+-   or your own custom-built class
+
+## Class Example 1: Date/Time
+
+Very important class in Finance.
+
+They are built from **double type atomic vector** (type), but has own **specific rule for uses** (class).
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+today <- Sys.Date() # returns today's date
+now <- Sys.time() # returns time now
+print(today)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "2025-02-03"
+```
+
+
+:::
+
+```{.r .cell-code}
+print(now)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "2025-02-03 14:13:51 EST"
+```
+
+
+:::
+:::
+
+
+
+
+------------------------------------------------------------------------
+
+Check their data type:
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+typeof(today)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "double"
+```
+
+
+:::
+
+```{.r .cell-code}
+typeof(now)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "double"
+```
+
+
+:::
+:::
+
+
+
+
+------------------------------------------------------------------------
+
+Check their attributes: they have *class* attributes.
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+attributes(today)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+$class
+[1] "Date"
+```
+
+
+:::
+
+```{.r .cell-code}
+attributes(now)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+$class
+[1] "POSIXct" "POSIXt" 
+```
+
+
+:::
+:::
+
+
+
+
+------------------------------------------------------------------------
+
+To directly access the class attribute:
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+class(today)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "Date"
+```
+
+
+:::
+
+```{.r .cell-code}
+class(now)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "POSIXct" "POSIXt" 
+```
+
+
+:::
+:::
+
+
+
+
+------------------------------------------------------------------------
+
+### Class attribute and change of behavior
+
+For an example, see how it works with `+` function.
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+print(today + 1) # adds one day
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "2025-02-04"
+```
+
+
+:::
+
+```{.r .cell-code}
+print(now + 1) # adds one seconds 
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "2025-02-03 14:13:52 EST"
+```
+
+
+:::
+:::
+
+
+
+
+**Q**: Why +1 yield different results?
+
+**A**: Because they are in **different classes**. +1 is inferred differently.
+
+Class attribute gives some *context* how it should behave with functions.
+
+------------------------------------------------------------------------
+
+In the deep down, they are just numbers:
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# strip off class attribute (only)
+unclass(today)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 20122
+```
+
+
+:::
+
+```{.r .cell-code}
+unclass(now)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 1738610032
+```
+
+
+:::
+:::
+
+
+
+
+-   Date: The value of double represents the number of days since "1970-01-01" (Unix Epoch)
+-   Time: the number of seconds since Unix Epoch
+
+------------------------------------------------------------------------
+
+### Time zone attribute
+
+Time has "tzone" attribute (time-zone) that controls "formatting" of date-time.
+
+-   The lower-level data (double) for the time is not changing.
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+now <- Sys.time()
+print(now) # EDT time zone
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "2025-02-03 14:13:51 EST"
+```
+
+
+:::
+
+```{.r .cell-code}
+unclass(now) # a double number
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 1738610032
+```
+
+
+:::
+
+```{.r .cell-code}
+# set attribute tzone to UTC
+attr(now, "tzone") <- "UTC"
+print(now) # formatted for UTC zone
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "2025-02-03 19:13:51 UTC"
+```
+
+
+:::
+
+```{.r .cell-code}
+unclass(now) # same underlying number
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 1738610032
+attr(,"tzone")
+[1] "UTC"
+```
+
+
+:::
+:::
+
+
+
+
+## Class Example 2: Factors
+
+Factors (or Categorical) can only have a set of predefined values.
+
+-   It is built on top of integer type
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# Factors can be ordered or unordered
+firm_size <- factor(c("Large","Mid","Small"), levels = c('Small','Mid','Large')) # ordered (levels)
+political_parties <- factor(c("Democratic", "Republican")) # unordered example
+
+typeof(firm_size)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "integer"
+```
+
+
+:::
+
+```{.r .cell-code}
+class(firm_size)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "factor"
+```
+
+
+:::
+:::
+
+
+
+
+If I strip off all attributes:
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+attributes(firm_size) <- NULL # remove all attributes
+firm_size
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 3 2 1
+```
+
+
+:::
+:::
+
+
+
+
+## Class Example 3: Dataframe
+
+A class built on top of `list` type, for 2D tabular representations
+
+-   Similar to matrix, but
+-   dataframe can have different types of columns
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# iris is available dataframe
+head(iris) # prints first 6 rows
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1          5.1         3.5          1.4         0.2  setosa
+2          4.9         3.0          1.4         0.2  setosa
+3          4.7         3.2          1.3         0.2  setosa
+4          4.6         3.1          1.5         0.2  setosa
+5          5.0         3.6          1.4         0.2  setosa
+6          5.4         3.9          1.7         0.4  setosa
+```
+
+
+:::
+
+```{.r .cell-code}
+typeof(iris) # list type
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "list"
+```
+
+
+:::
+
+```{.r .cell-code}
+class(iris)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "data.frame"
+```
+
+
+:::
+:::
+
+
+
+
+------------------------------------------------------------------------
+
+Let's browse the attributes of `iris` dataframe:
+
+-   It has multiple attributes
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# names (column names), class, row.names
+attributes(iris) 
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+$names
+[1] "Sepal.Length" "Sepal.Width"  "Petal.Length" "Petal.Width"  "Species"     
+
+$class
+[1] "data.frame"
+
+$row.names
+  [1]   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
+ [19]  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36
+ [37]  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53  54
+ [55]  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71  72
+ [73]  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89  90
+ [91]  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107 108
+[109] 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126
+[127] 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144
+[145] 145 146 147 148 149 150
+```
+
+
+:::
+:::
+
+
+
+
+## Implicit Class
+
+Primary data types (Logical, Integer, Double, Character) are also (implicit) class.
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+a <- TRUE
+typeof(a) # type logical
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "logical"
+```
+
+
+:::
+
+```{.r .cell-code}
+class(a) # class logical
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "logical"
+```
+
+
+:::
+
+```{.r .cell-code}
+b <- 3L
+typeof(b)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "integer"
+```
+
+
+:::
+
+```{.r .cell-code}
+class(b)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "integer"
+```
+
+
+:::
+
+```{.r .cell-code}
+c <- 3.5
+typeof(c)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "double"
+```
+
+
+:::
+
+```{.r .cell-code}
+class(c) # double is given implicit numeric class
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "numeric"
+```
+
+
+:::
+
+```{.r .cell-code}
+d <- "A"
+typeof(d)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "character"
+```
+
+
+:::
+
+```{.r .cell-code}
+class(d)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "character"
+```
+
+
+:::
+:::
+
+
+
+
+## Exercise (Long)
+
+1.  Execute `typeof(c(1,2,3))` and `typeof(c(1L, 2L, 3L))`. What's the difference?
+2.  Assign a vector with three elements: 1,3,5, and name it as `my_first_object`
+3.  Assign another object with one element: 5, name it as `MySecondObject`
+4.  Multiply `my_first_object` with `MySecondObject`. What do you get?
+5.  Assign a vector with your name: `my_name`
+6.  What do you get when you execute `my_name + 3`? (Expect error)
+
+## Importance of class attribute
+
+It is crucial to check your data class especially performing function calls.
+
+::: callout-tip
+Calling a function means executing/applying a function.
+:::
+
+As you cannot use add function on `character` and `numeric`.
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# Another way to perform plus
+`+`(3, 4) # good
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 7
+```
+
+
+:::
+
+```{.r .cell-code}
+`+`(3, "Hi") # error
+```
+
+::: {.cell-output .cell-output-error}
+
+```
+Error in 3 + "Hi": non-numeric argument to binary operator
+```
+
+
+:::
+:::
+
+
+
+
+------------------------------------------------------------------------
+
+### Other example: `c()`
+
+If needed, **some** functions in R **coerces** the class / type.
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+my_vector <- c(1,3,'hello', 5) # Does it work? 
+typeof(my_vector)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "character"
+```
+
+
+:::
+
+```{.r .cell-code}
+class(my_vector) # it works by coercion
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "character"
+```
+
+
+:::
+:::
+
+
+
+
+::: callout-tip
+`c()` does coercion when inputs are in different types, but not all functions do coercion.
+:::
+
+## Exercise: coercion
+
+Let's see how coercion works with `c()`.
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+test <- c(3.14, Sys.Date(), Sys.time())
+```
+:::
+
+
+
+
+What is the type of `test`?
+
+What is the class of `test`?
+
+## Coercion precedence
+
+In general, coercion is performed in fixed order:
+
+**Character (heavy) \<\< Double \<\< Integer \<\< Logical (light)**
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+typeof(c(TRUE, 2L))
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "integer"
+```
+
+
+:::
+
+```{.r .cell-code}
+typeof(c(TRUE, 2L, 3.14))
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "double"
+```
+
+
+:::
+
+```{.r .cell-code}
+typeof(c(TRUE, 2L, 3.14, "A"))
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "character"
+```
+
+
+:::
+:::
+
+
+
+
+## Data type and memory footprint
+
+Given same length, logical and integer takes least amount of memory, then double, then character
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+lobstr::obj_size(c(TRUE, FALSE, TRUE))
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+64 B
+```
+
+
+:::
+
+```{.r .cell-code}
+lobstr::obj_size(c(3L, 15L, -5L))
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+64 B
+```
+
+
+:::
+
+```{.r .cell-code}
+lobstr::obj_size(c(3.12, 53.1, 6.22))
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+80 B
+```
+
+
+:::
+
+```{.r .cell-code}
+lobstr::obj_size(c("A", "B", "C"))
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+248 B
+```
+
+
+:::
+:::
+
+
+
+
+# R Access Operation
+
+## Accessing Elements in R
+
+-   There are 3 basic operators to access a subset of data in R
+
+-   Single square brackets `[` and `]` always returns subset in **original** data type
+
+-   Double brackets `[[` and `]]` to retrieve subset in the **element's type**
+
+-   Dollar sign `$` achieves similar purpose as double brackets (works only with lists and dataframes)
+
+## Indexing a vector
+
+Square brackets `[` and `]` always returns subset in original class
+
+-   by index: x\[1\] retrieves first element
+-   by name: x\['Bob'\] retrives element named 'Bob'
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+prices <- c(AAPL = 150, MSFT = 205, GOOGL = 250, AMZN = 303)
+# Access by name attributes
+prices["AAPL"] 
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+AAPL 
+ 150 
+```
+
+
+:::
+
+```{.r .cell-code}
+prices[c("MSFT","GOOGL")]
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+ MSFT GOOGL 
+  205   250 
+```
+
+
+:::
+
+```{.r .cell-code}
+# Access by index
+prices[1] # first element
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+AAPL 
+ 150 
+```
+
+
+:::
+
+```{.r .cell-code}
+prices[c(1,3)] # 1st and 3rd element
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+ AAPL GOOGL 
+  150   250 
+```
+
+
+:::
+
+```{.r .cell-code}
+prices[-c(1,4)] # excluding first and fourth element
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+ MSFT GOOGL 
+  205   250 
+```
+
+
+:::
+:::
+
+
+
+
+------------------------------------------------------------------------
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# Modify elements
+prices[1] <- 230 # assign (replace) 200 to the first element
+print(prices)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+ AAPL  MSFT GOOGL  AMZN 
+  230   205   250   303 
+```
+
+
+:::
+:::
+
+
+
+
+-   You can't mix positive and negative index
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+prices[c(-1, 5)]
+```
+
+::: {.cell-output .cell-output-error}
+
+```
+Error in prices[c(-1, 5)]: only 0's may be mixed with negative subscripts
+```
+
+
+:::
+:::
+
+
+
+
+------------------------------------------------------------------------
+
+::: callout-tip
+Style guide: It is still a good idea to use `[[` on atomic vectors especially when you intend to access **single value (scalar)**, to *reinforce* your expectation. It throws error when user tries to get multiple - a good safety net.
+:::
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# single value from an atomic vector
+
+prices[1] # Keeps original attributes
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+AAPL 
+ 230 
+```
+
+
+:::
+
+```{.r .cell-code}
+prices[[1]] # Better
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 230
+```
+
+
+:::
+:::
+
+
+
+
+------------------------------------------------------------------------
+
+You can subset vector with logical conditions
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+prices[prices > 200] # subset price greater than 200
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+ AAPL  MSFT GOOGL  AMZN 
+  230   205   250   303 
+```
+
+
+:::
+:::
+
+::: {.cell}
+
+```{.r .cell-code}
+(prices %% 2) == 0 # a logical vector : TRUE if even number
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+ AAPL  MSFT GOOGL  AMZN 
+ TRUE FALSE  TRUE FALSE 
+```
+
+
+:::
+:::
+
+::: {.cell}
+
+```{.r .cell-code}
+is_even <- (prices %% 2) == 0
+prices[is_even] # subset of x that is even number
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+ AAPL GOOGL 
+  230   250 
+```
+
+
+:::
+
+```{.r .cell-code}
+prices[(prices %% 2) == 0] # is the same as above
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+ AAPL GOOGL 
+  230   250 
+```
+
+
+:::
+:::
+
+
+
+
+## Subset & Assignment on Vector
+
+Subsetting vector can be combined with assignment `<-` to modify selected values.
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+print(prices)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+ AAPL  MSFT GOOGL  AMZN 
+  230   205   250   303 
+```
+
+
+:::
+
+```{.r .cell-code}
+prices[[1]] <- 235
+print(prices)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+ AAPL  MSFT GOOGL  AMZN 
+  235   205   250   303 
+```
+
+
+:::
+:::
+
+::: {.cell}
+
+```{.r .cell-code}
+prices[["AMZN"]] <- 295
+print(prices)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+ AAPL  MSFT GOOGL  AMZN 
+  235   205   250   295 
+```
+
+
+:::
+:::
+
+
+
+
+## Exercise
+
+Generate below stock prices:
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+stock_prices <- c(TSLA = 680, FB = 355, NFLX = 540, NVDA = 800, AAPL = 145)
+```
+:::
+
+
+
+
+Subset and get the following:
+
+-   Price of the third stock
+-   All prices greater than \$250
+-   The price of a TSLA and NVDA using its name
+-   Subset prices that are even
+-   Modify 2nd element(FB) to 360
+
+## List Indexing
+
+Lists can contain different types of elements
+
+-   Index lists using double square brackets `[[` `]]`
+-   or dollor sign operator `$`
+-   or single square brackets `[` `]`
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+portfolio <- list(stocks = c(AAPL = 150, TSLA = 680), 
+                 bonds = c(TBOND = 1000), 
+                 cash = 5000,
+                 brokerage = 'Robinhood')
+```
+:::
+
+
+
+
+------------------------------------------------------------------------
+
+Subset by number index:
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+portfolio[[1]] # double bracket: returns vector
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+AAPL TSLA 
+ 150  680 
+```
+
+
+:::
+
+```{.r .cell-code}
+portfolio[1] # single bracket: returns list
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+$stocks
+AAPL TSLA 
+ 150  680 
+```
+
+
+:::
+:::
+
+
+
+
+Subset by name:
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+portfolio[["bonds"]] # double bracket: returns vector
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+TBOND 
+ 1000 
+```
+
+
+:::
+
+```{.r .cell-code}
+portfolio$bonds # dollar sign: returns vector
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+TBOND 
+ 1000 
+```
+
+
+:::
+
+```{.r .cell-code}
+portfolio["bonds"]# single bracket: returns list 
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+$bonds
+TBOND 
+ 1000 
+```
+
+
+:::
+:::
+
+
+
+
+## Assignment on Lists
+
+When you want to modify (add) a value at a specific location in a list, use assign operator.
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+portfolio[["stocks"]][["TSLA"]] <- 630
+portfolio[["bonds"]][["TBOND5Y"]] <- 210
+print(portfolio)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+$stocks
+AAPL TSLA 
+ 150  630 
+
+$bonds
+  TBOND TBOND5Y 
+   1000     210 
+
+$cash
+[1] 5000
+
+$brokerage
+[1] "Robinhood"
+```
+
+
+:::
+:::
+
+
+
+
+You can remove a component of list by assigning `NULL`
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+portfolio[["brokerage"]] <- NULL
+print(portfolio)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+$stocks
+AAPL TSLA 
+ 150  630 
+
+$bonds
+  TBOND TBOND5Y 
+   1000     210 
+
+$cash
+[1] 5000
+```
+
+
+:::
+:::
+
+
+
+
+## Exercise
+
+Create a list object `portfolio` as:
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+portfolio <- list(stocks = c(AAPL = 150, TSLA = 680), 
+                 bonds = c(TBOND = 1000), 
+                 cash = 5000,
+                 brokerage = 'Robinhood')
+```
+:::
+
+
+
+
+Subset the portfolio to:
+
+1.  Retrieve the stocks vector using index
+2.  Retrieve the cash vector using its name
+3.  Return a list of stocks and cash using their names
+4.  Return a list containing only bonds
+5.  Remove brokerage element from portfolio
+
+# R Functions
+
+## Functions
+
+> Everything that **exists** is an object.\
+> Everything that **happens** is a function call.
+>
+> — *John Chambers*
+
+## Function calls
+
+Fuction calls in R come in four varieties.
+
+1.  **prefix**: function name comes before its arguments
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# Prefix example
+function_name(argument1 = value1, argument2 = value2, ...)
+```
+:::
+
+
+
+
+2.  **infix**: function name comes in between arguments
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# Infix example
+x + y
+```
+:::
+
+
+
+
+3.  **replacement**: function that replaces value by assignments
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# Replacement example
+names(stock_prices) <- c("AAPL", "BAC", "CA")
+```
+:::
+
+
+
+
+4.  **special**: Built-in R syntax like `[[` `for` `if`, and don't have consistent structure.
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# Special example
+stock_prices[[1]]
+```
+:::
+
+
+
+
+## Rewriting to prefix form
+
+An intersting property of R is that every inflix, replacement, and special form can be rewritten in **prefix** form.
+
+-   use backtick `` ` `` to wrap the function symbol
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+3 >= 4 # infix call
+`>=`(3,4) # prefix call
+
+x <- c(1, 2)
+
+x[[1]] # special call
+`[[`(x, 1) # prefix call
+```
+:::
+
+
+
+
+------------------------------------------------------------------------
+
+Our first *prefix* function call, `c()` concatenates all the values and generate a single object.
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+c(1,3,5) # c() function takes arbitrary number of arguments (... part)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 1 3 5
+```
+
+
+:::
+
+```{.r .cell-code}
+c(1,3,5,7,9)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 1 3 5 7 9
+```
+
+
+:::
+:::
+
+
+
+
+------------------------------------------------------------------------
+
+`seq()` function generates a sequence of numbers.
+
+-   It has three arguments: `from` and `to` and `by`.
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# generate a vector of sequence from 1 to 10 by 2
+seq(from = 1, to = 10, by = 2) 
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 1 3 5 7 9
+```
+
+
+:::
+:::
+
+
+
+
+-   If users don't specify the argument name, it reads input in order.
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+seq(1, 10, 2) # reads first three
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 1 3 5 7 9
+```
+
+
+:::
+:::
+
+
+
+
+-   If user enters more args than the function space, raises error.
+
+
+
+
+::: {.cell .fragment}
+
+```{.r .cell-code}
+seq(1,10, 2, 5)
+```
+
+::: {.cell-output .cell-output-error}
+
+```
+Error in seq.default(1, 10, 2, 5): too many arguments
+```
+
+
+:::
+:::
+
+
+
+
+## Defining a function
+
+You can define custom function in R with the following syntax:
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+my_first_function <- function(argument1, argument2){ # input arguments
+  # write what the function would to with arguments
+  
+  return() # output
+}
+```
+:::
+
+
+
+
+And can it be called in prefix form:
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+my_first_function(argument1 = 1, argument2 = "hi")
+```
+:::
+
+
+
+
+## Getting Help on Functions
+
+All R functions are built by someone, and documentation is typically provided.
+
+For detailed description of any function, use `?` followed by the function's name.
+
+For example, try below code in your console:
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+?seq
+```
+:::
+
+
+
+
+Or, use `help()`
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+help(seq)
+```
+:::
+
+
+
+
+## Build a Perpetuity Calculator
+
+The present value of a perpetuity, where the cash flow grows at a constant rate **g**, is given by:
+
+$$
+PV_{PER} = \frac{PMT}{r - g}
+$$
+
+where
+
+-   PMT is the payment or cash flow.
+-   r is the discount rate.
+-   g is the growth rate of the cash flow.
+
+This formula applies when r \> g.
+
+## Defining a function
+
+You can design your perpetuity function in R with following syntax:
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+pv_per <- function(pmt, r, g){
+  # write what the function would to with arguments
+  n <- pmt
+  d <- r - g
+  
+  # then return the result
+  return(n / d)
+}
+```
+:::
+
+
+
+
+## Calling a function
+
+Let's call the function above:
+
+-   What is the PV of perpetuity, when PMT = \$10,000, r = 7% and g = 3%?
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+pv_per(pmt = 10000, r = 0.07, g = 0.03)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 250000
+```
+
+
+:::
+:::
+
+
+
+
+-   Assign the result value of the function
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+answer <- pv_per(10000, 0.07, 0.03)
+print(answer)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 250000
+```
+
+
+:::
+:::
+
+
+
+
+-   Vector can be the input (vectorized)
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+pv_per(c(100,1000,10000), 0.07, 0.03) # r, g broadcasted
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1]   2500  25000 250000
+```
+
+
+:::
+:::
+
+::: {.cell}
+
+```{.r .cell-code}
+pv_per(c(100,1000,10000), c(0.07, 0.05, 0.04), 0.03) # g broadcasted
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1]    2500   50000 1000000
+```
+
+
+:::
+:::
+
+
+
+
+## Exercise
+
+1.  Define a perpetuity calculator function, `pv_per()`. What is the pv when PMT = \$50,000, r = 4%, g = 0%?
+
+2.  What is the pv when PMT = \$50,000, r = 4%, but g are 1%, 2%, 3%?
+
+## Default Arguments
+
+What happens if user doesn't specify one argument?
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+pv_per(10000, 0.07) # g is missing!
+```
+
+::: {.cell-output .cell-output-error}
+
+```
+Error in pv_per(10000, 0.07): argument "g" is missing, with no default
+```
+
+
+:::
+:::
+
+
+
+
+------------------------------------------------------------------------
+
+You can set default values for arguments, allowing them to be omitted when calling the function.
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# set default g to be zero
+pv_per2 <- function(pmt, r, g = 0){ 
+  n <- pmt
+  d <- r - g
+  # then return the result
+  return(n / d)
+}
+# prefix call without g specified
+pv_per2(10000, 0.07)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 142857.1
+```
+
+
+:::
+:::
+
+
+
+
+## Anonymous function
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# Anonymous function example
+function(x,y) {
+  return(x + y + 1)
+}
+```
+:::
+
+
+
+
+Functions are typically named so they can be reused multiple times.
+
+However, you can skip naming a custom function, and they are called *anonymous function*.
+
+-   Useful when the function is simple and called only one time.
+
+All functions that are not named are anonymous. They are not stored as objects since they do not have symbols (names).
+
+## Syntactic sugar: Function
+
+(Anonymous) functions can be defined with syntactic sugar (concise expression):
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+\(x,y) x + y + 1
+
+\(x,y) {x + y + 1} # or with curly braces
+```
+:::
+
+
+
+
+::: callout-note
+Syntactic sugar refers to a feature in programming that makes the code simple to read or write, without adding functionality.
+:::
+
+## Exercise
+
+Convert below perpetuity function (`pv_per`) using synctactic sugar:
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+pv_per <- function(pmt, r, g){
+  return(pmt / (r-g))
+}
+```
+:::
+
+
+
+
+## Syntactic sugar: Pipe Operator
+
+### A Motivating example
+
+Solve below math problem. Describe your steps. What was the first and the last step?
+
+$$
+\sqrt{(2+4)^2 - 3 * 4} = ?
+$$
+
+------------------------------------------------------------------------
+
+$$
+\sqrt{(2+4)^2 - 3 * 4}
+$$
+
+1.  Do 2+4 `and then` square it, and save it in your memory
+2.  Do 3\*4 `and then` subtract it from previous, and update your memory
+3.  `and then` square root the value
+
+-   Similarly, codes can be written **not** in the order we calculate.
+
+-   It is easier for us to read & write code in the order it is operated.
+
+------------------------------------------------------------------------
+
+When we have composite function calls such as
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+f(g(h(k(x)))) 
+```
+:::
+
+
+
+
+The call sequence is `x -> k() -> h() -> g() -> f()`.
+
+It is rather easier to read, write and debug if we can write a code like:
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# Note: this is not a real code!
+x then
+  call k() on above and then
+  call h() on above output and then 
+  call g() on above output and then
+  call f() on above output
+```
+:::
+
+
+
+
+## Pipe operator & Function Chain
+
+This is where pipe operator `|>` becomes handy in R.
+
+The pipe operator does **"and then"** job, and it can be written as:
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+x |>
+  k() |> 
+  h() |> 
+  g() |> 
+  f()    # Do not put pipe at the end!
+```
+:::
+
+
+
+
+------------------------------------------------------------------------
+
+::: callout-tip
+For pipe, use shortcut `Cmd (Ctrl) + Shift + M`.
+
+Sometimes you'll see `%>%` operator instead, which comes from external library in R (magrittr), meanwhile `|>` is R native. In order to use `%>%`, external package `library(magrittr)` should be imported.
+
+Style guide: use `|>` instead of `%>%`.
+:::
+
+## Exercise (challenge!)
+
+Solve $\sqrt{2^3}$ using pipe operator.
+
+1.  First, solve above procedual way
+
+-   For square root, use `sqrt()` function
+
+2.  Next, solve using the pipe operator.
+
+-   Define function named `cube` that does `x^3`
+-   Code should start with `2`.
+
+## External packages
+
+(external) **Packages** are add-on libraries that extend the functionality of R.
+
+-   They provide additional **functions**, datasets, and tools for various tasks
+-   Can be easily installed and loaded in R
+
+Install packages:
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# Installs tidyverse package if not installed
+# Once installed, you don't need to install again
+if (!requireNamespace("tidyverse", quietly = TRUE)){
+  install.packages("tidyverse")
+}
+```
+:::
+
+
+
+
+Load packages: you need to load packages to use its functionality.
+
+-   Need to load only once per session
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+library(tidyverse)
+```
+:::
+
+
+
+
+# Control Structure
+
+## Control Structure?
+
+Control structure dictates **which** code gets executed and **when**.
+
+1.  Conditional Statements:
+    -   **`if` statements**: Execute code if a condition is true.
+    -   **`else`/`else if` statements**: Execute alternative code if the condition is false.
+2.  Loops:
+    -   **`for` loops**: Repeat code block a specified number of times.
+    -   **`while` loops**: Continue executing code as long as a condition is true.
+3.  Map (apply):
+    -   Map a **function** to each element of a collection without explicitly writing loops.
+
+## If-else
+
+The basic form of if and if-else statement in R:
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+if (condition) true_action
+if (condition) true_action else false_action
+```
+:::
+
+::: {.cell}
+
+```{.r .cell-code}
+x1 <- if (TRUE) 1 else 2
+x2 <- if (FALSE) 1 else 2
+print(c(x1,x2))
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 1 2
+```
+
+
+:::
+:::
+
+
+
+
+------------------------------------------------------------------------
+
+Example 1: *if* and *else* executes code based on logical conditions.
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+stock_price <- 115
+if (stock_price > 110) {
+  print("The stock price has increased significantly!")
+}
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "The stock price has increased significantly!"
+```
+
+
+:::
+:::
+
+
+
+
+------------------------------------------------------------------------
+
+Example 2: If condition is not met, then nothing happens (skipped).
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+stock_price <- 100
+if (stock_price > 105) {
+  print("The stock price has increased!") 
+}
+```
+:::
+
+
+
+
+------------------------------------------------------------------------
+
+Example 3: *else if* checks one more logic condition:
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+stock_price <- 115
+if (stock_price > 120) {
+  print("The stock price has surged!")
+} else if (stock_price > 110) {
+  print("The stock price has increased moderately.")
+}
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "The stock price has increased moderately."
+```
+
+
+:::
+:::
+
+
+
+
+------------------------------------------------------------------------
+
+Example 4: There can be multiple *else if*
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+stock_price <- 108
+if (stock_price > 120) {
+  print("The stock price has surged!")
+} else if (stock_price > 110) {
+  print("The stock price has increased moderately.")
+} else if (stock_price > 105) {
+  print("The stock price has increased slightly.")
+} 
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "The stock price has increased slightly."
+```
+
+
+:::
+:::
+
+
+
+
+------------------------------------------------------------------------
+
+Example 5: *else* is executed when all of if conditions are not met.
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+stock_price <- 100
+if (stock_price > 120) {
+  print("The stock price has surged!")
+} else if (stock_price > 110) {
+  print("The stock price has increased moderately.")
+} else if (stock_price > 105) {
+  print("The stock price has increased slightly.")
+} else {
+  print("The stock price has decreased.")
+}
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "The stock price has decreased."
+```
+
+
+:::
+:::
+
+
+
+
+## Exercise
+
+Write an if-else statement:
+
+-   If PMT \> 1000, add PMT with 10000 (i.e., `PMT <- PMT + 10000`)
+-   Else if PMT \> 500, add PMT with 100
+-   Else, set PMT = 0
+
+What is the outcome of above if-else, if initial PMT was 750?
+
+## For loops
+
+For loops are used when code has to be *iterated* a specified number of times.
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+for (i in 1:5){ 
+  # i is a symbol for iterator
+  # 1:5 is iterable
+  print(i)
+}
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 1
+[1] 2
+[1] 3
+[1] 4
+[1] 5
+```
+
+
+:::
+:::
+
+
+
+
+------------------------------------------------------------------------
+
+To use number index for each element: use `seq_along()` in the loop.
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+x <- c('a','b','c','d')
+for (a in seq_along(x)){ 
+  print(x[a])
+}
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "a"
+[1] "b"
+[1] "c"
+[1] "d"
+```
+
+
+:::
+:::
+
+
+
+
+------------------------------------------------------------------------
+
+What does seq_along() do?
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+seq_along(x) # generate integer squence along the vector x
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 1 2 3 4
+```
+
+
+:::
+:::
+
+
+
+
+------------------------------------------------------------------------
+
+`x` itself can be a iterable
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+for (el in x){
+  # direct elements
+  print(el)
+}
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "a"
+[1] "b"
+[1] "c"
+[1] "d"
+```
+
+
+:::
+:::
+
+
+
+
+------------------------------------------------------------------------
+
+When using for loop for generating an output, make sure to **preallocate** output container.
+
+Otherwise, for loop will be **very slow**!
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# Think about the type and length of output before loop
+N <- 10
+output <- vector(mode = 'numeric', length = N ) # container
+
+for (n in 1:N) {
+  output[[n]] <- n**2 # same as n^2
+}
+print(output)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+ [1]   1   4   9  16  25  36  49  64  81 100
+```
+
+
+:::
+:::
+
+
+
+
+## next and break
+
+Generally used with if-else condition tests inside loop.
+
+`next` is used to skip an iteration of loop.
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+for (i in 1:5){
+  if (i == 3) {
+    # skip if i == 3
+    next
+  }
+  print(i)
+}
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 1
+[1] 2
+[1] 4
+[1] 5
+```
+
+
+:::
+:::
+
+
+
+
+------------------------------------------------------------------------
+
+`break` is used to exit loop immediately.
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+for (i in 1:5){
+  if (i == 4){
+    break
+  }
+  print(i)
+}
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 1
+[1] 2
+[1] 3
+```
+
+
+:::
+:::
+
+
+
+
+## For loop: Compound interest
+
+How to calculate compound interest over multiple years using a `for` loop?
+
+-   Principal: \$10,000
+-   Interest rate: 5%
+-   Number of years: 10
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+principal <- 10000
+rate <- 0.05
+num_years_after <- 10
+# generate placeholder vector for the amount output
+amount <- vector("numeric", length = num_years_after) 
+
+for (i in 1:num_years_after){
+  amount[[i]] <- principal * (1+rate)^i
+}
+print(amount)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+ [1] 10500.00 11025.00 11576.25 12155.06 12762.82 13400.96 14071.00 14774.55
+ [9] 15513.28 16288.95
+```
+
+
+:::
+:::
+
+
+
+
+## Exercise
+
+Based on the previous example, do the following:
+
+-   Q1. Skip the first year using if and next
+
+-   Q2. Stop the calculation if amount exceeds \$14,000
+
+## While loops
+
+While loops begin with testing condition, and iterates the code **as long as** the condition is `TRUE`.
+
+-   If not written properly, it can be infinite loop.
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+count <- 0
+while (count < 3){
+  print(count)
+  count <- count + 1 # add 1
+}
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 0
+[1] 1
+[1] 2
+```
+
+
+:::
+:::
+
+
+
+
+## Exercise
+
+1.  Write code that print 1 to 10 using for loop.
+2.  Achieve same result using while loop instead.
+3.  Based on 2, tweak the code that skips printing number if it is 5.
+
+
+
+
+
+
+
+
+
+## Exercise 2
+
+Write a **function** that checks class of an input.
+
+If the input is `numeric`, print "Numeric input!", otherwise, print "Not numeric!"
+
+-   use `is.numeric()` for logical test.
+
+
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# example outcome
+my_function(c(1,4,5))
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "Numeric input!"
+```
+
+
+:::
+
+```{.r .cell-code}
+my_function(c('a','b','c'))
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "Not numeric!"
+```
+
+
+:::
+:::
+
+
+
+
+## function mapping
+
+![](images/paste-3.png){fig-align="center"}
+
+*map* or *apply* is an implicit function loop.
+
+-   a function `f` is an input arg for `map()`
+-   `map()` requires `tidyverse` or `purrr` package
+-   Succinct and easy to read than `for` loops
+
+::: callout-note
+Functions that take other function as inputs are called **functionals** in R.
+
+If vectorized operation is possible, avoid using for loops or map.
+:::
+
+## Example: `map()`
+
+-   Output is always list
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+plus_one <- function(x) {
+  return(x + 1)
+}
+# need to import package to use map()
+library(tidyverse) 
+map(1:3, plus_one) # 1 2 3 is input for plus_one()
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[[1]]
+[1] 2
+
+[[2]]
+[1] 3
+
+[[3]]
+[1] 4
+```
+
+
+:::
+:::
+
+
+
+
+------------------------------------------------------------------------
+
+If for loop was used:
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# define empty list for output first
+temp_list <- vector("list", length = 3) 
+
+for (i in 1:3) {
+  # assign each to the list
+  temp_list[[i]] <- plus_one(i) 
+}
+print(temp_list)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[[1]]
+[1] 2
+
+[[2]]
+[1] 3
+
+[[3]]
+[1] 4
+```
+
+
+:::
+:::
+
+
+
+
+With for loop, code tends to be longer and requires creating pre-allocated empty container list.
+
+## Exercise
+
+1.  Generate `times_two()` function that multiplies input by 2.
+2.  map `times_two` function over `1:10`
+3.  Achieve same result with for loop.
+
+## map function 2
+
+If the desired *output* is not list but atomic vector:
+
+-   **`map_dbl()`** a numeric (double) vector
+-   **`map_chr()`** a character vector
+-   **`map_lgl()`** a logical vector
+-   **`map_int()`** an integer vector
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+map(1:3, plus_one) |> class()
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "list"
+```
+
+
+:::
+
+```{.r .cell-code}
+map_dbl(1:3, plus_one) |> class()
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "numeric"
+```
+
+
+:::
+:::
+
+
+
+
+## Vectorized Operation and Loops
+
+Most function operations in R are vectorized by default.
+
+-   Intuitive and faster: easier to read, write
+-   R is built for those operations in mind
+-   **Avoid** using `for` loops or `map` **if vectorization is possible**
+
+------------------------------------------------------------------------
+
+### Example: portfolio value
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+stock_prices <- c(150, 250, 100)
+shares_held <- c(10, 5, 20)
+# multiplication is vectorized
+portfolio_value = stock_prices * shares_held 
+print(portfolio_value) # easy!
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 1500 1250 2000
+```
+
+
+:::
+:::
+
+
+
+
+------------------------------------------------------------------------
+
+If `for` loop or `map` was used for `*` multiplication:
+
+-   It loops over each single elements of a vector
+
+A `for` loop approach:
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+N <- length(stock_prices) # length 3
+portfolio_value <- vector('list', N) # container
+
+for (i in 1:N){
+  portfolio_value[[i]] <- stock_prices[[i]] * shares_held[[i]]
+}
+print(portfolio_value)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[[1]]
+[1] 1500
+
+[[2]]
+[1] 1250
+
+[[3]]
+[1] 2000
+```
+
+
+:::
+:::
+
+
+
+
+------------------------------------------------------------------------
+
+`map` approach:
+
+-   map `*` function to two input vectors (price, share)
+-   `map2()` for this case, see `?map2` for more info
+
+![](images/paste-1.png){fig-align="center" width="580"}
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+portfolio_value = map2(stock_prices, shares_held, `*`)
+print(portfolio_value)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[[1]]
+[1] 1500
+
+[[2]]
+[1] 1250
+
+[[3]]
+[1] 2000
+```
+
+
+:::
+:::
+
+
+
+
+## Exercise
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+stock_prices <- c(150, 250, 100, 250, 300)
+shares_held <- c(10, 5, 20, 5, 10)
+```
+:::
+
+
+
+
+Generate portfolio value of each asset, using:
+
+1.  Vectorized multiplication (vector output)
+2.  for loop
+3.  map (implicit loop)
+
+## Vectorized if-else
+
+`ifelse()` function is a vectorized if else statement.
+
+-   Useful when you have *a vector* of TRUE / FASE condition tests
+-   No need to loop over
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+ifelse(test, yes, no)
+```
+:::
+
+
+
+
+------------------------------------------------------------------------
+
+### Example: Dividend Payments
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+stock_prices <- c(45, 60, 52, 48, 55, 49)
+
+dividends <- ifelse(
+  stock_prices > 50, # test
+  stock_prices * 0.02, # yes
+  stock_prices * 0.015 # no
+)
+
+print(dividends)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 0.675 1.200 1.040 0.720 1.100 0.735
+```
+
+
+:::
+:::
+
+
+
+
+## Exercise
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+stock_prices <- c(45, 60, 52, 48, 55, 49)
+```
+:::
+
+
+
+
+Practice `ifelse()`:
+
+-   if stock price is greater than 53, assign "Bull"
+-   otherwise "Bear"\
+-   assign it to `sentiment`
+
+## Vectorized if-else 2
+
+`case_when()` from `tidyverse` package is a **general** vectorized if-else.
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+library(tidyverse)
+stock_prices <- c(45, 60, 52, 48, 55, 49)
+
+sentiment2 <- case_when(
+  stock_prices > 55 ~ "Bull", # if TRUE
+  stock_prices > 50 ~ "Normal", # else if TRUE
+  .default = "Bear" # else
+)
+print(sentiment2)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "Bear"   "Bull"   "Normal" "Bear"   "Normal" "Bear"  
+```
+
+
+:::
+:::
+
+
+
+
+# File Systems
+
+## Package fs
+
+`fs` package provides simple and consistent way to:
+
+-   Path operations
+-   File and directory control
+-   File information
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# Install package
+if (!requireNamespace("fs", quietly = TRUE)) {
+  install.packages("fs")
+}
+```
+:::
+
+
+
+
+## What is a Path?
+
+A **path** is a string of characters used to uniquely identify a file or folder in a file system.
+
+Types of paths:
+
+-   **Absolute path**: exact location of a file or directory from the root.
+-   **Relative path**: location relative to the current working directory.
+
+## Working Directory
+
+The working directory is the location **where the program (R, bash, Python, etc) is running on**.
+
+-   `getwd()` shows the current working directory.
+-   `setwd("/path/to/directory")` changes working directory to specified path.
+
+## Absolute Paths
+
+-   Begins from the root directory (`/` in Mac/Linux, `C:\` in Windows)
+-   Example (Mac/Linux): `/Users/username/Documents/project/data.csv`
+-   Example (Windows): `C:\Users\username\Documents\project\data.csv`
+
+Absoulte paths are unambiguous.
+
+## Relative Paths
+
+-   Path that is relative to the current working directory.
+-   Example: `./data/project/data.csv` (The `.` denotes the current directory)
+-   Succinct and easier to manage path in projects
+
+## Directory references
+
+**`.`**: the current directory.
+
+-   From `/Users/john/projects`, `./data` refers to `/Users/john/projects/data`.
+
+**`..`**: the parent directory; one level up from the current directory.
+
+-   From `/Users/john/projects`, `../data` refers to `/Users/john/data`.
+
+**`~`**: the home directory.
+
+-   Default directory for user in OS
+
+## Home Directory
+
+The "default" directory for user in operating system
+
+**Mac/Linux**: `/Users/<username>`. - Example: If your username is `john`, your home directory would be `/Users/john`.
+
+**Windows**: `C:\Users\<username>` - Example: If your username is `john`, your home directory would be `C:\Users\john`
+
+## Tilde `~`
+
+Represents the user's home directory.
+
+Example: `~/cases` refers to the cases folder in the user's home directory:
+
+-   `C:\Users\<username>\cases` for windows
+-   `/Users/john/cases` for Mac/Linux
+
+## Creating File/Directory
+
+Creatie / delete file and directory are simple:
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# Create file and folder in the working directory
+library(fs)
+file_create("my_Rscript.R")
+dir_create("my_folder")
+```
+:::
+
+::: {.cell}
+
+```{.r .cell-code}
+file_delete("my_Rscript.R")
+dir_delete("my_folder")
+```
+:::
+
+
+
+
+## List files and directories
+
+List files and directories:
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+dir_ls(".") # list files in current directory
+```
+:::
+
+
+
+
+It's especially useful with globbing / regex:
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+dir_ls(glob = "*.txt") # list txt files
+```
+:::
+
+
+
+
+## Exercise
+
+1.  Create an R script file named: `fs_exercise.R` on your working directory.
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# Check your working directory with
+getwd()
+```
+:::
+
+
+
+
+2.  List all files that has `.R` file extension.
+
+3.  What is the absolute path of the script file?
+
+4.  From your home(`~`), what is the relative path of the script file?
+
+## CSV files
+
+A plain, human-readable `text` data file, delimited with `,`
+
+-   hence its name, Comma-Separated Values
+-   Since it is `text`, R tries to "guess" the correct data type of each column when importing
+-   Typically opened with Excel, but it is not an excel file!
+
+## CSV example
+
+A csv data file looks like:
+
+-   usually the first line is header (column names)
+-   data values separated by comma(",")
+
+
+
+
+::: {.cell}
+::: {.cell-output .cell-output-stdout}
+
+```
+Sepal.Length,Sepal.Width,Petal.Length,Petal.Width,Species
+5.1,3.5,1.4,0.2,setosa
+4.9,3,1.4,0.2,setosa
+4.7,3.2,1.3,0.2,setosa
+4.6,3.1,1.5,0.2,setosa
+5,3.6,1.4,0.2,setosa
+```
+
+
+:::
+:::
+
+
+
+
+## CSV files
+
+Many packages support writing/reading csv files;
+
+-   base R (`utils` package): basic, slow
+-   `readr` from `tidyverse`: fast, functional
+-   `vroom`, `data.table`: extremely fast and functional
+
+We use `readr` package and will discuss I/O speed later.
+
+## CSV files
+
+To write a `data.frame` to a csv file: `write_csv()`
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# saves csv file on current working directory
+write_csv(iris, 'iris_file.csv') 
+
+iris |> write_csv('iris_file.csv') # same
+```
+:::
+
+
+
+
+------------------------------------------------------------------------
+
+To read a `.csv` file to a data.frame: `read_csv()`
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+my_iris <- read_csv('iris_file.csv')
+```
+:::
+
+
+
+
+## Other data formats
+
+There are other common data formats:
+
+-   ".tsv" : tab delimited text
+-   ".xlsx": excel spread sheets
+-   ".json": javascript object notation (NoSQL)
+-   ".parquet": columnar big data storage
+-   '.sas7bdat', '.dta'
+
+# R Data.frame class
+
+## Data frames
+
+One of the most important data class in R, built on top of list type.
+
+-   Stores data structure in 2D tabular form:
+
+    -   with rows (observations, or records)
+
+    -   and columns (variables)
+
+-   columns can be different types!
+
+------------------------------------------------------------------------
+
+Creating a data.frame is almost identical to list.
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# creating data.frame is similar to creating a list
+my_dataframe = data.frame(
+  a = c(1,2,3),
+  b = c('a','b','c'),
+  c = c(TRUE, FALSE, FALSE)
+)
+print(my_dataframe)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+  a b     c
+1 1 a  TRUE
+2 2 b FALSE
+3 3 c FALSE
+```
+
+
+:::
+:::
+
+
+
+
+## Exercise
+
+Create a dataframe named as `my_dataframe`:
+
+-   5 columns: Name, Age, Sex, Income, Housing
+    -   Name: Amy, Bill, Charles, Donna, Eckert
+    -   Age: 21, 25, 30, 38, 49
+    -   Sex: Female, Male, Male, Female, Male
+    -   Income: 36000, 53000, 89000, 82000, 166000
+    -   Housing: "Rent", "Rent", "Own", "Own", "Rent"
+
+What are the type (class) of each column automatically recognized by R? - What should be their type (class) in theory?
+
+## Tibble class
+
+Essentially the same as dataframe class, with some fix:
+
+-   Fixes old inconsistencies in R data.frame class
+-   Safer executions
+-   Better console displays
+
+`as_tibble()` converts `data.frame` class to `tibble` class.
+
+## Example
+
+A toy dataset, `iris` dataframe:
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+head(iris, 3)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1          5.1         3.5          1.4         0.2  setosa
+2          4.9         3.0          1.4         0.2  setosa
+3          4.7         3.2          1.3         0.2  setosa
+```
+
+
+:::
+:::
+
+
+
+
+Class of iris:
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+class(iris)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "data.frame"
+```
+
+
+:::
+:::
+
+
+
+
+------------------------------------------------------------------------
+
+Convert `iris` to *tibble* class:
+
+-   Prints the dimension
+-   Prints data class by column
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+library(tidyverse)
+iris_tb <- as_tibble(iris)
+head(iris_tb,3)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+# A tibble: 3 × 5
+  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+         <dbl>       <dbl>        <dbl>       <dbl> <fct>  
+1          5.1         3.5          1.4         0.2 setosa 
+2          4.9         3            1.4         0.2 setosa 
+3          4.7         3.2          1.3         0.2 setosa 
+```
+
+
+:::
+:::
+
+
+
+
+`iris_tb` is a multi-class object that is both tibble and dataframe.
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+class(iris_tb)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "tbl_df"     "tbl"        "data.frame"
+```
+
+
+:::
+:::
+
+
+
+
+## Access operations
+
+As it is built on lists, access operations with `[`, `[[`, `$` works on data.frames.
+
+-   bracket operations align more consistently with `tibble` class
+
+Dataframe can be subsetted with `df[i,j]`
+
+-   `i` part operates on row (called filtering)
+-   `j` part selects columns
+
+## Bracket `[`, `[[` subsetting
+
+1st row, 1st column, in original class (tibble)
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+iris_tb[1,1]
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+# A tibble: 1 × 1
+  Sepal.Length
+         <dbl>
+1          5.1
+```
+
+
+:::
+:::
+
+
+
+
+1st row, 1st column, in element class (numeric)
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+iris_tb[[1,1]]
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 5.1
+```
+
+
+:::
+:::
+
+
+
+
+Other examples:
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# try!
+iris_tb[, c("Sepal.Length", "Petal.Width")]
+iris_tb[1:5, 1:2]
+iris_tb[iris_tb[["Sepal.Length"]] > 3.1, 1] # filtering rows
+```
+:::
+
+
+
+
+::: callout-caution
+Double bracket `[[` only accepts `,` when both row and columns are mentioned. That is, `iris_tb[1,]` works, but `iris_tb[[1,]]` doesn't work.
+:::
+
+------------------------------------------------------------------------
+
+If comma is not provided, it always assumes a column index.
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# try!
+iris_tb[1]
+iris_tb["Sepal.Length"]
+iris_tb[["Sepal.Length"]]
+```
+:::
+
+
+
+
+------------------------------------------------------------------------
+
+### `$` subsetting
+
+`$` pulls a single column in element's class.
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+iris_tb$Sepal.Length
+```
+:::
+
+
+
+
+## Exercise
+
+1.  Generate `iris_tb` by converting `iris` using `as_tibble()`.
+
+2.  How can you access all rows in the 2nd column:
+
+-   Use single bracket and integer index `iris_tb[2]`
+-   Use double bracket and integer index `iris_tb[[2]]`
+-   Use single bracket and column name `iris_tb[colname]`
+-   Use single bracket and column name `iris_tb[[colname]]`
+-   Use `$`
+
+3.  Filter rows with "Sepal.Length \> 5". How many rows do you observe?
+
+## Chained subset call
+
+Subsetting can be chained
+
+-   Pause and take a look at example. What is happening?
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+iris_tb[21:100, c('Petal.Length', 'Sepal.Length')][25,] 
+```
+:::
+
+
+
+
+## Exercise
+
+On `iris_tb`,
+
+-   Filter with "Petal.Length \> 4.5"
+-   Select columns "Species", "Petal.Length"
+-   then slice rows from 1 to 10
+-   Store this as `filtered_iris`
+
+**Q**. Confirm the average of Petal.Length from `filtered_iris` is **4.74**. Use `mean(dataframe$column)`.
+
+
+
+
+
+
+
+
+
+## Assign and remove column
+
+To assign a new variable within the data.frame, use:
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+data.frame["NEW_COLUMN_NAME"] <- NEW_COLUMN
+
+# EXAMPLE
+iris_tb["Petal.Area"] <- iris$Petal.Length * iris$Petal.Width
+```
+:::
+
+
+
+
+To remove a variable within the data.frame, use:
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+data.frame["EXISTING_NAME"] <- NULL
+```
+:::
+
+
+
+
+## dplyr package
+
+![](images/image-576723870.png)
+
+R package for **dataframe** manipulation tasks.
+
+-   A modern approach in R
+-   Replaces the use of `[`, `[[`, `$` in most cases
+-   A **grammar** of data manipulation
+-   Intuitive and easy to understance
+-   Fast, written in C++
+
+## dplyr grammar
+
+### Key verbs
+
+-   Verbs for the core functionality
+-   Those verbs are used with pipe operator `|>`
+
+1.  `select()` : select subset of columns
+    -   `rename()` : rename columns
+    -   `relocate()` : change column positions
+    -   `pull()` : extract single column as vector
+2.  `filter()` : select subset of rows with condition
+    -   `slice()` : extract specific rows
+    -   `distinct()` : remove duplicate rows
+3.  `arrange()` : reorder rows
+4.  `mutate()` : add new columns (variables)
+5.  `summarize()` : generate summary table
+    -   `group_by()` / `ungroup()`
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# read_csv("https://usfedu-my.sharepoint.com/personal/gson_usf_edu/_layouts/15/download.aspx?share=EdZpIn6zZkhNp1ERuz5luiMB_8KbXuFSv3obiAOkrC73qg")
+```
+:::
+
+
+
+
+# Character class
+
+## print() and cat()
+
+# Lab Exercise
+
+## Lab Problem 1
+
+### Class coercion
+
+Objects can be explicitly coerced to have certain class. Try converting vector `x <- 1:6` with
+
+-   `as.numeric(x)`
+
+-   `as.logical(x)`
+
+-   `as.character(x)`
+
+and check their type and class with `typeof()` and `class()`
+
+## Answer
+
+Define functions
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+cube <- function(x){
+  return(x^3)
+}
+square_root <- function(x){
+  return(sqrt(x))
+}
+fourth_power <- function(x){
+  return(x^4)
+}
+```
+:::
+
+
+
+
+Call functions in chain that solve $(\sqrt{2^3})^4$
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+library(tidyverse)
+2 |> 
+  cube() |> 
+  square_root() |> 
+  fourth_power()
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 64
+```
+
+
+:::
+:::
+
+
+
+
+Equivalent to:
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+fourth_power(square_root(cube(2)))
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 64
+```
+
+
+:::
+:::
+
+
+
+
+
+
+# logical vectors
+
+
+## Modulo
+
+The modulo operator (`%%`) is very useful for testing the divisibility of numbers
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# Create a vector of numbers
+numbers <- 1:10
+
+# Identify even numbers: A number is even if it leaves a remainder of 0 when divided by 2.
+even_numbers <- numbers[numbers %% 2 == 0]
+even_numbers  # 2, 4, 6, 8, 10
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1]  2  4  6  8 10
+```
+
+
+:::
+
+```{.r .cell-code}
+# Identify odd numbers: A number is odd if it leaves a remainder of 1 when divided by 2.
+odd_numbers <- numbers[numbers %% 2 == 1]
+odd_numbers  # 1, 3, 5, 7, 9
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 1 3 5 7 9
+```
+
+
+:::
+:::
+
+
+
+
+-->
 </section>
 </section>
 
