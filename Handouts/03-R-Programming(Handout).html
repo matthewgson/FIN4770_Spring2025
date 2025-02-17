@@ -3297,6 +3297,8 @@ window.Quarto = {
   <li><a href="#rewriting-to-prefix-form" id="toc-rewriting-to-prefix-form" class="nav-link" data-scroll-target="#rewriting-to-prefix-form">Rewriting to prefix form</a></li>
   <li><a href="#defining-a-function" id="toc-defining-a-function" class="nav-link" data-scroll-target="#defining-a-function">Defining a function</a></li>
   <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6">Exercise</a></li>
+  <li><a href="#returning-values-in-functions" id="toc-returning-values-in-functions" class="nav-link" data-scroll-target="#returning-values-in-functions">Returning Values in Functions</a></li>
+  <li><a href="#function-fundamentals" id="toc-function-fundamentals" class="nav-link" data-scroll-target="#function-fundamentals">Function Fundamentals</a></li>
   <li><a href="#getting-help-on-functions" id="toc-getting-help-on-functions" class="nav-link" data-scroll-target="#getting-help-on-functions">Getting Help on Functions</a></li>
   <li><a href="#build-a-perpetuity-calculator" id="toc-build-a-perpetuity-calculator" class="nav-link" data-scroll-target="#build-a-perpetuity-calculator">Build a Perpetuity Calculator</a></li>
   <li><a href="#defining-a-function-1" id="toc-defining-a-function-1" class="nav-link" data-scroll-target="#defining-a-function-1">Defining a function</a></li>
@@ -3310,6 +3312,18 @@ window.Quarto = {
   <li><a href="#pipe-operator-function-chain" id="toc-pipe-operator-function-chain" class="nav-link" data-scroll-target="#pipe-operator-function-chain">Pipe operator &amp; Function Chain</a></li>
   <li><a href="#exercise-challenge" id="toc-exercise-challenge" class="nav-link" data-scroll-target="#exercise-challenge">Exercise (challenge!)</a></li>
   <li><a href="#external-packages" id="toc-external-packages" class="nav-link" data-scroll-target="#external-packages">External packages</a></li>
+  </ul></li>
+  <li><a href="#control-structure" id="toc-control-structure" class="nav-link" data-scroll-target="#control-structure">Control Structure</a>
+  <ul class="collapse">
+  <li><a href="#control-structure-1" id="toc-control-structure-1" class="nav-link" data-scroll-target="#control-structure-1">Control Structure?</a></li>
+  <li><a href="#if-else" id="toc-if-else" class="nav-link" data-scroll-target="#if-else">If-else</a></li>
+  <li><a href="#exercise-9" id="toc-exercise-9" class="nav-link" data-scroll-target="#exercise-9">Exercise</a></li>
+  <li><a href="#for-loops" id="toc-for-loops" class="nav-link" data-scroll-target="#for-loops">For loops</a></li>
+  <li><a href="#for-loop-preallocation" id="toc-for-loop-preallocation" class="nav-link" data-scroll-target="#for-loop-preallocation">For loop: preallocation</a></li>
+  <li><a href="#benchmark-example" id="toc-benchmark-example" class="nav-link" data-scroll-target="#benchmark-example">Benchmark Example</a></li>
+  <li><a href="#next-and-break" id="toc-next-and-break" class="nav-link" data-scroll-target="#next-and-break">next and break</a></li>
+  <li><a href="#for-loop-compound-interest" id="toc-for-loop-compound-interest" class="nav-link" data-scroll-target="#for-loop-compound-interest">For loop: Compound interest</a></li>
+  <li><a href="#exercise-10" id="toc-exercise-10" class="nav-link" data-scroll-target="#exercise-10">Exercise</a></li>
   </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="03-R-Programming(Slides).html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
@@ -4139,11 +4153,11 @@ Tip
 <span id="cb91-2"><a href="#cb91-2"></a>now <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>() <span class="co"># returns time now</span></span>
 <span id="cb91-3"><a href="#cb91-3"></a><span class="fu">print</span>(today)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] &quot;2025-02-15&quot;</code></pre>
+<pre><code>[1] &quot;2025-02-17&quot;</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb93"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1"></a><span class="fu">print</span>(now)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] &quot;2025-02-15 09:13:27 EST&quot;</code></pre>
+<pre><code>[1] &quot;2025-02-17 14:17:52 EST&quot;</code></pre>
 </div>
 </div>
 <hr>
@@ -4191,11 +4205,11 @@ Tip
 <div class="cell">
 <div class="sourceCode cell-code" id="cb107"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb107-1"><a href="#cb107-1"></a><span class="fu">print</span>(today <span class="sc">+</span> <span class="dv">1</span>) <span class="co"># adds one day</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] &quot;2025-02-16&quot;</code></pre>
+<pre><code>[1] &quot;2025-02-18&quot;</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb109"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb109-1"><a href="#cb109-1"></a><span class="fu">print</span>(now <span class="sc">+</span> <span class="dv">1</span>) <span class="co"># adds one seconds</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] &quot;2025-02-15 09:13:28 EST&quot;</code></pre>
+<pre><code>[1] &quot;2025-02-17 14:17:53 EST&quot;</code></pre>
 </div>
 </div>
 <p><strong>Q</strong>: Why +1 yield different results?</p>
@@ -4207,11 +4221,11 @@ Tip
 <div class="sourceCode cell-code" id="cb111"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb111-1"><a href="#cb111-1"></a><span class="co"># strip off class attribute (only)</span></span>
 <span id="cb111-2"><a href="#cb111-2"></a><span class="fu">unclass</span>(today)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 20134</code></pre>
+<pre><code>[1] 20136</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb113"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb113-1"><a href="#cb113-1"></a><span class="fu">unclass</span>(now)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1739628807</code></pre>
+<pre><code>[1] 1739819873</code></pre>
 </div>
 </div>
 <ul>
@@ -4230,21 +4244,21 @@ Tip
 <div class="sourceCode cell-code" id="cb115"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb115-1"><a href="#cb115-1"></a>now <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
 <span id="cb115-2"><a href="#cb115-2"></a><span class="fu">print</span>(now) <span class="co"># EDT time zone</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] &quot;2025-02-15 09:13:27 EST&quot;</code></pre>
+<pre><code>[1] &quot;2025-02-17 14:17:52 EST&quot;</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb117"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb117-1"><a href="#cb117-1"></a><span class="fu">unclass</span>(now) <span class="co"># a double number</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1739628808</code></pre>
+<pre><code>[1] 1739819873</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb119"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb119-1"><a href="#cb119-1"></a><span class="co"># set attribute tzone to UTC</span></span>
 <span id="cb119-2"><a href="#cb119-2"></a><span class="fu">attr</span>(now, <span class="st">&quot;tzone&quot;</span>) <span class="ot">&lt;-</span> <span class="st">&quot;UTC&quot;</span></span>
 <span id="cb119-3"><a href="#cb119-3"></a><span class="fu">print</span>(now) <span class="co"># formatted for UTC zone</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] &quot;2025-02-15 14:13:27 UTC&quot;</code></pre>
+<pre><code>[1] &quot;2025-02-17 19:17:52 UTC&quot;</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb121"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb121-1"><a href="#cb121-1"></a><span class="fu">unclass</span>(now) <span class="co"># same underlying number</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1739628808
+<pre><code>[1] 1739819873
 attr(,&quot;tzone&quot;)
 [1] &quot;UTC&quot;</code></pre>
 </div>
@@ -4985,8 +4999,59 @@ Everything that <strong>happens</strong> is a function call.</p>
 <li><p>Now tweak the function to accept an argument, <code>name</code>. It prints “Hello, {name}!”</p></li>
 </ol>
 <ul>
-<li>Check out <code>str_glue(&quot;Hello, {name}!&quot;)</code></li>
+<li>Load <code>stringr</code> package <code>library(stringr)</code></li>
+<li>Use <code>str_glue(&quot;Hello, {name}!&quot;)</code></li>
 </ul>
+</section>
+<section id="returning-values-in-functions" class="level2">
+<h2 class="anchored" data-anchor-id="returning-values-in-functions">Returning Values in Functions</h2>
+<p><code>return()</code> in function can be served as an early exit: all remaining code won’t be executed.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb230"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb230-1"><a href="#cb230-1"></a>my_second_function <span class="ot">&lt;-</span> <span class="cf">function</span>(a, <span class="at">b =</span> <span class="dv">1</span>) {</span>
+<span id="cb230-2"><a href="#cb230-2"></a>  </span>
+<span id="cb230-3"><a href="#cb230-3"></a>  c <span class="ot">&lt;-</span> a <span class="sc">+</span> b  </span>
+<span id="cb230-4"><a href="#cb230-4"></a>  <span class="fu">return</span>(c)</span>
+<span id="cb230-5"><a href="#cb230-5"></a></span>
+<span id="cb230-6"><a href="#cb230-6"></a>  <span class="fu">print</span>(a)</span>
+<span id="cb230-7"><a href="#cb230-7"></a>}</span>
+<span id="cb230-8"><a href="#cb230-8"></a><span class="fu">my_second_function</span>(<span class="at">a =</span> <span class="dv">1</span>, <span class="at">b =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+</div>
+</section>
+<section id="function-fundamentals" class="level2">
+<h2 class="anchored" data-anchor-id="function-fundamentals">Function Fundamentals</h2>
+<p>A function has three parts:</p>
+<ol type="1">
+<li><p>The <code>formals()</code>: list of arguments</p></li>
+<li><p>The <code>body()</code>: code inside the function</p></li>
+<li><p>The <code>environment()</code>: where you defined the function</p>
+<ul>
+<li>“GlobalEnv” : top-level workspace in the R session</li>
+</ul></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb232"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb232-1"><a href="#cb232-1"></a>some_function <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">y =</span> <span class="dv">1</span>) {</span>
+<span id="cb232-2"><a href="#cb232-2"></a>  i <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb232-3"><a href="#cb232-3"></a>  ans <span class="ot">&lt;-</span> x <span class="sc">+</span> y <span class="sc">+</span> i</span>
+<span id="cb232-4"><a href="#cb232-4"></a>  <span class="fu">return</span>(ans)</span>
+<span id="cb232-5"><a href="#cb232-5"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<hr>
+<p>Check <code>formals()</code>, <code>body()</code> and <code>environment()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb233"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb233-1"><a href="#cb233-1"></a><span class="co"># formals: list of arguments</span></span>
+<span id="cb233-2"><a href="#cb233-2"></a><span class="fu">formals</span>(some_function) <span class="co"># Is i included? check.</span></span>
+<span id="cb233-3"><a href="#cb233-3"></a><span class="co"># body: code inside of function</span></span>
+<span id="cb233-4"><a href="#cb233-4"></a><span class="fu">body</span>(some_function)</span>
+<span id="cb233-5"><a href="#cb233-5"></a><span class="co"># environment: where is the function object located</span></span>
+<span id="cb233-6"><a href="#cb233-6"></a><span class="fu">environment</span>(some_function)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Some functions are found from external packages:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb234"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb234-1"><a href="#cb234-1"></a><span class="fu">environment</span>(stringr<span class="sc">::</span>str_glue) <span class="co"># glue function from stringr package</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="getting-help-on-functions" class="level2">
 <h2 class="anchored" data-anchor-id="getting-help-on-functions">Getting Help on Functions</h2>
@@ -4994,11 +5059,11 @@ Everything that <strong>happens</strong> is a function call.</p>
 <p>For detailed description of any function, use <code>?</code> followed by the function’s name.</p>
 <p>For example, try below code in your console:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb230"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb230-1"><a href="#cb230-1"></a>?seq</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb235"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb235-1"><a href="#cb235-1"></a>?seq</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Or, use <code>help()</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb231"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb231-1"><a href="#cb231-1"></a><span class="fu">help</span>(seq)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb236"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb236-1"><a href="#cb236-1"></a><span class="fu">help</span>(seq)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="build-a-perpetuity-calculator" class="level2">
@@ -5019,24 +5084,24 @@ PV_{PER} = \frac{PMT}{r - g}
 <h2 class="anchored" data-anchor-id="defining-a-function-1">Defining a function</h2>
 <p>You can design your perpetuity function in R with following syntax:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb232"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb232-1"><a href="#cb232-1"></a>pv_per <span class="ot">&lt;-</span> <span class="cf">function</span>(pmt, r, g) {</span>
-<span id="cb232-2"><a href="#cb232-2"></a>  <span class="co"># write what the function would to with arguments</span></span>
-<span id="cb232-3"><a href="#cb232-3"></a>  n <span class="ot">&lt;-</span> pmt</span>
-<span id="cb232-4"><a href="#cb232-4"></a>  d <span class="ot">&lt;-</span> r <span class="sc">-</span> g</span>
-<span id="cb232-5"><a href="#cb232-5"></a></span>
-<span id="cb232-6"><a href="#cb232-6"></a>  <span class="co"># then return the result</span></span>
-<span id="cb232-7"><a href="#cb232-7"></a>  <span class="fu">return</span>(n <span class="sc">/</span> d)</span>
-<span id="cb232-8"><a href="#cb232-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb237"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb237-1"><a href="#cb237-1"></a>pv_per <span class="ot">&lt;-</span> <span class="cf">function</span>(pmt, r, g) {</span>
+<span id="cb237-2"><a href="#cb237-2"></a>  <span class="co"># write what the function would to with arguments</span></span>
+<span id="cb237-3"><a href="#cb237-3"></a>  n <span class="ot">&lt;-</span> pmt</span>
+<span id="cb237-4"><a href="#cb237-4"></a>  d <span class="ot">&lt;-</span> r <span class="sc">-</span> g</span>
+<span id="cb237-5"><a href="#cb237-5"></a></span>
+<span id="cb237-6"><a href="#cb237-6"></a>  <span class="co"># then return the result</span></span>
+<span id="cb237-7"><a href="#cb237-7"></a>  <span class="fu">return</span>(n <span class="sc">/</span> d)</span>
+<span id="cb237-8"><a href="#cb237-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="calling-a-function" class="level2">
-<h2 class="anchored" data-anchor-id="calling-a-function">Calling a function</h2>
+<section id="calling-a-function" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="calling-a-function">Calling a function</h2>
 <p>Let’s call the function above:</p>
 <ul>
 <li>What is the PV of perpetuity, when PMT = $10,000, r = 7% and g = 3%?</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb233"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb233-1"><a href="#cb233-1"></a><span class="fu">pv_per</span>(<span class="at">pmt =</span> <span class="dv">10000</span>, <span class="at">r =</span> <span class="fl">0.07</span>, <span class="at">g =</span> <span class="fl">0.03</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb238"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb238-1"><a href="#cb238-1"></a><span class="fu">pv_per</span>(<span class="at">pmt =</span> <span class="dv">10000</span>, <span class="at">r =</span> <span class="fl">0.07</span>, <span class="at">g =</span> <span class="fl">0.03</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 250000</code></pre>
 </div>
@@ -5045,8 +5110,8 @@ PV_{PER} = \frac{PMT}{r - g}
 <li>Assign the result value of the function</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb235"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb235-1"><a href="#cb235-1"></a>answer <span class="ot">&lt;-</span> <span class="fu">pv_per</span>(<span class="dv">10000</span>, <span class="fl">0.07</span>, <span class="fl">0.03</span>)</span>
-<span id="cb235-2"><a href="#cb235-2"></a><span class="fu">print</span>(answer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb240"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb240-1"><a href="#cb240-1"></a>answer <span class="ot">&lt;-</span> <span class="fu">pv_per</span>(<span class="dv">10000</span>, <span class="fl">0.07</span>, <span class="fl">0.03</span>)</span>
+<span id="cb240-2"><a href="#cb240-2"></a><span class="fu">print</span>(answer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 250000</code></pre>
 </div>
@@ -5055,13 +5120,13 @@ PV_{PER} = \frac{PMT}{r - g}
 <li>Vector can be the input (vectorized)</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb237"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb237-1"><a href="#cb237-1"></a><span class="fu">pv_per</span>(<span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">1000</span>, <span class="dv">10000</span>), <span class="fl">0.07</span>, <span class="fl">0.03</span>) <span class="co"># r, g broadcasted</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb242"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb242-1"><a href="#cb242-1"></a><span class="fu">pv_per</span>(<span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">1000</span>, <span class="dv">10000</span>), <span class="fl">0.07</span>, <span class="fl">0.03</span>) <span class="co"># r, g broadcasted</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1]   2500  25000 250000</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb239"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb239-1"><a href="#cb239-1"></a><span class="fu">pv_per</span>(<span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">1000</span>, <span class="dv">10000</span>), <span class="fu">c</span>(<span class="fl">0.07</span>, <span class="fl">0.05</span>, <span class="fl">0.04</span>), <span class="fl">0.03</span>) <span class="co"># g broadcasted</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb244"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb244-1"><a href="#cb244-1"></a><span class="fu">pv_per</span>(<span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">1000</span>, <span class="dv">10000</span>), <span class="fu">c</span>(<span class="fl">0.07</span>, <span class="fl">0.05</span>, <span class="fl">0.04</span>), <span class="fl">0.03</span>) <span class="co"># g broadcasted</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1]    2500   50000 1000000</code></pre>
 </div>
@@ -5078,7 +5143,7 @@ PV_{PER} = \frac{PMT}{r - g}
 <h2 class="anchored" data-anchor-id="default-arguments">Default Arguments</h2>
 <p>What happens if user doesn’t specify one argument?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb241"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb241-1"><a href="#cb241-1"></a><span class="fu">pv_per</span>(<span class="dv">10000</span>, <span class="fl">0.07</span>) <span class="co"># g is missing!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb246"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb246-1"><a href="#cb246-1"></a><span class="fu">pv_per</span>(<span class="dv">10000</span>, <span class="fl">0.07</span>) <span class="co"># g is missing!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in pv_per(10000, 0.07): argument &quot;g&quot; is missing, with no default</code></pre>
 </div>
@@ -5086,15 +5151,15 @@ PV_{PER} = \frac{PMT}{r - g}
 <hr>
 <p>You can set default values for arguments, allowing them to be omitted when calling the function.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb243"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb243-1"><a href="#cb243-1"></a><span class="co"># set default g to be zero</span></span>
-<span id="cb243-2"><a href="#cb243-2"></a>pv_per2 <span class="ot">&lt;-</span> <span class="cf">function</span>(pmt, r, <span class="at">g =</span> <span class="dv">0</span>) {</span>
-<span id="cb243-3"><a href="#cb243-3"></a>  n <span class="ot">&lt;-</span> pmt</span>
-<span id="cb243-4"><a href="#cb243-4"></a>  d <span class="ot">&lt;-</span> r <span class="sc">-</span> g</span>
-<span id="cb243-5"><a href="#cb243-5"></a>  <span class="co"># then return the result</span></span>
-<span id="cb243-6"><a href="#cb243-6"></a>  <span class="fu">return</span>(n <span class="sc">/</span> d)</span>
-<span id="cb243-7"><a href="#cb243-7"></a>}</span>
-<span id="cb243-8"><a href="#cb243-8"></a><span class="co"># prefix call without g specified</span></span>
-<span id="cb243-9"><a href="#cb243-9"></a><span class="fu">pv_per2</span>(<span class="dv">10000</span>, <span class="fl">0.07</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb248"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb248-1"><a href="#cb248-1"></a><span class="co"># set default g to be zero</span></span>
+<span id="cb248-2"><a href="#cb248-2"></a>pv_per2 <span class="ot">&lt;-</span> <span class="cf">function</span>(pmt, r, <span class="at">g =</span> <span class="dv">0</span>) {</span>
+<span id="cb248-3"><a href="#cb248-3"></a>  n <span class="ot">&lt;-</span> pmt</span>
+<span id="cb248-4"><a href="#cb248-4"></a>  d <span class="ot">&lt;-</span> r <span class="sc">-</span> g</span>
+<span id="cb248-5"><a href="#cb248-5"></a>  <span class="co"># then return the result</span></span>
+<span id="cb248-6"><a href="#cb248-6"></a>  <span class="fu">return</span>(n <span class="sc">/</span> d)</span>
+<span id="cb248-7"><a href="#cb248-7"></a>}</span>
+<span id="cb248-8"><a href="#cb248-8"></a><span class="co"># prefix call without g specified</span></span>
+<span id="cb248-9"><a href="#cb248-9"></a><span class="fu">pv_per2</span>(<span class="dv">10000</span>, <span class="fl">0.07</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 142857.1</code></pre>
 </div>
@@ -5103,10 +5168,10 @@ PV_{PER} = \frac{PMT}{r - g}
 <section id="anonymous-function" class="level2">
 <h2 class="anchored" data-anchor-id="anonymous-function">Anonymous function</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb245"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb245-1"><a href="#cb245-1"></a><span class="co"># Anonymous function example</span></span>
-<span id="cb245-2"><a href="#cb245-2"></a><span class="cf">function</span>(x, y) {</span>
-<span id="cb245-3"><a href="#cb245-3"></a>  <span class="fu">return</span>(x <span class="sc">+</span> y <span class="sc">+</span> <span class="dv">1</span>)</span>
-<span id="cb245-4"><a href="#cb245-4"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb250"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb250-1"><a href="#cb250-1"></a><span class="co"># Anonymous function example</span></span>
+<span id="cb250-2"><a href="#cb250-2"></a><span class="cf">function</span>(x, y) {</span>
+<span id="cb250-3"><a href="#cb250-3"></a>  <span class="fu">return</span>(x <span class="sc">+</span> y <span class="sc">+</span> <span class="dv">1</span>)</span>
+<span id="cb250-4"><a href="#cb250-4"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Functions are typically <strong>named</strong> so they can be reused multiple times.</p>
 <p>However, you can skip naming a custom function, and they are called <em>anonymous function</em>.</p>
@@ -5132,20 +5197,20 @@ Note
 </div>
 <p>(Anonymous) functions can be defined with syntactic sugar (concise expression):</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb246"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb246-1"><a href="#cb246-1"></a>\(x, y) x <span class="sc">+</span> y <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb246-2"><a href="#cb246-2"></a></span>
-<span id="cb246-3"><a href="#cb246-3"></a>\(x, y) {</span>
-<span id="cb246-4"><a href="#cb246-4"></a>  x <span class="sc">+</span> y <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb246-5"><a href="#cb246-5"></a>} <span class="co"># or with curly braces</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb251"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb251-1"><a href="#cb251-1"></a>\(x, y) x <span class="sc">+</span> y <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb251-2"><a href="#cb251-2"></a></span>
+<span id="cb251-3"><a href="#cb251-3"></a>\(x, y) {</span>
+<span id="cb251-4"><a href="#cb251-4"></a>  x <span class="sc">+</span> y <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb251-5"><a href="#cb251-5"></a>} <span class="co"># or with curly braces</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="exercise-8" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-8">Exercise</h2>
 <p>Convert below perpetuity function (<code>pv_per</code>) to anonymous function:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb247"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb247-1"><a href="#cb247-1"></a>pv_per <span class="ot">&lt;-</span> <span class="cf">function</span>(pmt, r, g) {</span>
-<span id="cb247-2"><a href="#cb247-2"></a>  <span class="fu">return</span>(pmt <span class="sc">/</span> (r <span class="sc">-</span> g))</span>
-<span id="cb247-3"><a href="#cb247-3"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb252"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb252-1"><a href="#cb252-1"></a>pv_per <span class="ot">&lt;-</span> <span class="cf">function</span>(pmt, r, g) {</span>
+<span id="cb252-2"><a href="#cb252-2"></a>  <span class="fu">return</span>(pmt <span class="sc">/</span> (r <span class="sc">-</span> g))</span>
+<span id="cb252-3"><a href="#cb252-3"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="syntactic-sugar-pipe-operator" class="level2">
@@ -5171,17 +5236,17 @@ Note
 <hr>
 <p>When we have composite function calls such as</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb248"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb248-1"><a href="#cb248-1"></a><span class="fu">f</span>(<span class="fu">g</span>(<span class="fu">h</span>(<span class="fu">k</span>(x))))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb253"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb253-1"><a href="#cb253-1"></a><span class="fu">f</span>(<span class="fu">g</span>(<span class="fu">h</span>(<span class="fu">k</span>(x))))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The call sequence is <code>x -&gt; k() -&gt; h() -&gt; g() -&gt; f()</code>.</p>
 <p>It is rather easier to read, write and debug if we can write a code like:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb249"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb249-1"><a href="#cb249-1"></a><span class="co"># Note: this is not a real code!</span></span>
-<span id="cb249-2"><a href="#cb249-2"></a>x then</span>
-<span id="cb249-3"><a href="#cb249-3"></a>  call <span class="fu">k</span>() on above and then</span>
-<span id="cb249-4"><a href="#cb249-4"></a>  call <span class="fu">h</span>() on above output and then </span>
-<span id="cb249-5"><a href="#cb249-5"></a>  call <span class="fu">g</span>() on above output and then</span>
-<span id="cb249-6"><a href="#cb249-6"></a>  call <span class="fu">f</span>() on above output</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb254"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb254-1"><a href="#cb254-1"></a><span class="co"># Note: this is not a real code!</span></span>
+<span id="cb254-2"><a href="#cb254-2"></a>x then</span>
+<span id="cb254-3"><a href="#cb254-3"></a>  call <span class="fu">k</span>() on above and then</span>
+<span id="cb254-4"><a href="#cb254-4"></a>  call <span class="fu">h</span>() on above output and then </span>
+<span id="cb254-5"><a href="#cb254-5"></a>  call <span class="fu">g</span>() on above output and then</span>
+<span id="cb254-6"><a href="#cb254-6"></a>  call <span class="fu">f</span>() on above output</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="pipe-operator-function-chain" class="level2">
@@ -5189,11 +5254,11 @@ Note
 <p>This is where pipe operator <code>|&gt;</code> becomes handy in R.</p>
 <p>The pipe operator does <strong>“and then”</strong> job, and it can be written as:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb250"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb250-1"><a href="#cb250-1"></a>x <span class="sc">|&gt;</span></span>
-<span id="cb250-2"><a href="#cb250-2"></a>  <span class="fu">k</span>() <span class="sc">|&gt;</span></span>
-<span id="cb250-3"><a href="#cb250-3"></a>  <span class="fu">h</span>() <span class="sc">|&gt;</span></span>
-<span id="cb250-4"><a href="#cb250-4"></a>  <span class="fu">g</span>() <span class="sc">|&gt;</span></span>
-<span id="cb250-5"><a href="#cb250-5"></a>  <span class="fu">f</span>() <span class="co"># Do not put pipe at the end!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb255"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb255-1"><a href="#cb255-1"></a>x <span class="sc">|&gt;</span></span>
+<span id="cb255-2"><a href="#cb255-2"></a>  <span class="fu">k</span>() <span class="sc">|&gt;</span></span>
+<span id="cb255-3"><a href="#cb255-3"></a>  <span class="fu">h</span>() <span class="sc">|&gt;</span></span>
+<span id="cb255-4"><a href="#cb255-4"></a>  <span class="fu">g</span>() <span class="sc">|&gt;</span></span>
+<span id="cb255-5"><a href="#cb255-5"></a>  <span class="fu">f</span>() <span class="co"># Do not put pipe at the end!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -5233,16 +5298,17 @@ Tip
 <p><strong>Packages</strong> are add-on libraries that extend the functionality of R.</p>
 <ul>
 <li>They provide additional <strong>functions</strong>, datasets, and tools for various tasks</li>
-<li>Can be easily installed and loaded in R</li>
+<li>Can be easily installed with <code>install.packages()</code></li>
+<li>And loaded in R session with <code>library()</code></li>
 </ul>
 <hr>
-<p>Install packages:</p>
+<p>Installing packages:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb251"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb251-1"><a href="#cb251-1"></a><span class="co"># Installs tidyverse package if not installed</span></span>
-<span id="cb251-2"><a href="#cb251-2"></a><span class="co"># Once installed, you don&#39;t need to install again</span></span>
-<span id="cb251-3"><a href="#cb251-3"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">&quot;tidyverse&quot;</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
-<span id="cb251-4"><a href="#cb251-4"></a>  <span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span>
-<span id="cb251-5"><a href="#cb251-5"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb256"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb256-1"><a href="#cb256-1"></a><span class="co"># Installs tidyverse package if not installed</span></span>
+<span id="cb256-2"><a href="#cb256-2"></a><span class="co"># Once installed, you don&#39;t need to install again</span></span>
+<span id="cb256-3"><a href="#cb256-3"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">&quot;tidyverse&quot;</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
+<span id="cb256-4"><a href="#cb256-4"></a>  <span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span>
+<span id="cb256-5"><a href="#cb256-5"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 <p>Load packages: you need to load packages to use its functionality.</p>
@@ -5250,495 +5316,339 @@ Tip
 <li>Need to load only once per session</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb252"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb252-1"><a href="#cb252-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb257"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb257-1"><a href="#cb257-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+</section>
+<section id="control-structure" class="level1">
+<h1>Control Structure</h1>
+<section id="control-structure-1" class="level2">
+<h2 class="anchored" data-anchor-id="control-structure-1">Control Structure?</h2>
+<p>Control structure dictates <strong>which</strong> code gets executed and <strong>when</strong>.</p>
+<ol type="1">
+<li>Conditional Statements:
+<ul>
+<li><strong><code>if</code> statements</strong>: Execute code if a condition is true.</li>
+<li><strong><code>else</code>/<code>else if</code> statements</strong>: Execute code if the condition is false.</li>
+</ul></li>
+<li>Loops:
+<ul>
+<li><strong><code>for</code> loops</strong>: Repeat code block a specified number of times.</li>
+<li><strong><code>while</code> loops</strong>: Continue executing code as long as a condition is true.</li>
+</ul></li>
+<li>Map (apply):
+<ul>
+<li>Map a <strong>function</strong> to each element of a collection <em>without explicitly writing loops</em>.</li>
+</ul></li>
+</ol>
+</section>
+<section id="if-else" class="level2">
+<h2 class="anchored" data-anchor-id="if-else">If-else</h2>
+<p>The basic form of <code>if</code> and <code>if-else</code> statement in R:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb258"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb258-1"><a href="#cb258-1"></a><span class="co"># Simple form</span></span>
+<span id="cb258-2"><a href="#cb258-2"></a><span class="cf">if</span> (condition) true_action</span>
+<span id="cb258-3"><a href="#cb258-3"></a><span class="cf">if</span> (condition) true_action <span class="cf">else</span> false_action</span>
+<span id="cb258-4"><a href="#cb258-4"></a><span class="co"># Full form</span></span>
+<span id="cb258-5"><a href="#cb258-5"></a></span>
+<span id="cb258-6"><a href="#cb258-6"></a><span class="cf">if</span> (condition) {</span>
+<span id="cb258-7"><a href="#cb258-7"></a>  true_action</span>
+<span id="cb258-8"><a href="#cb258-8"></a>} <span class="cf">else</span> {</span>
+<span id="cb258-9"><a href="#cb258-9"></a>  false_action</span>
+<span id="cb258-10"><a href="#cb258-10"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<hr>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb259"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb259-1"><a href="#cb259-1"></a><span class="co"># Simple form</span></span>
+<span id="cb259-2"><a href="#cb259-2"></a>x1 <span class="ot">&lt;-</span> <span class="cf">if</span> (<span class="cn">TRUE</span>) <span class="dv">1</span> <span class="cf">else</span> <span class="dv">2</span></span>
+<span id="cb259-3"><a href="#cb259-3"></a><span class="co"># Full form</span></span>
+<span id="cb259-4"><a href="#cb259-4"></a>x2 <span class="ot">&lt;-</span> <span class="cf">if</span> (<span class="cn">FALSE</span>) {</span>
+<span id="cb259-5"><a href="#cb259-5"></a>  <span class="dv">1</span> </span>
+<span id="cb259-6"><a href="#cb259-6"></a>} <span class="cf">else</span> {</span>
+<span id="cb259-7"><a href="#cb259-7"></a>  <span class="dv">2</span></span>
+<span id="cb259-8"><a href="#cb259-8"></a>}</span>
+<span id="cb259-9"><a href="#cb259-9"></a><span class="fu">print</span>(<span class="fu">c</span>(x1, x2))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 2</code></pre>
+</div>
+</div>
+<hr>
+<p>Example 1: <em>if</em> and <em>else</em> executes code based on logical conditions.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb261"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb261-1"><a href="#cb261-1"></a>stock_price <span class="ot">&lt;-</span> <span class="dv">115</span></span>
+<span id="cb261-2"><a href="#cb261-2"></a><span class="cf">if</span> (stock_price <span class="sc">&gt;</span> <span class="dv">110</span>) {</span>
+<span id="cb261-3"><a href="#cb261-3"></a>  <span class="fu">print</span>(<span class="st">&quot;The stock price has increased significantly!&quot;</span>)</span>
+<span id="cb261-4"><a href="#cb261-4"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] &quot;The stock price has increased significantly!&quot;</code></pre>
+</div>
+</div>
+<hr>
+<p>Example 2: If condition is not met, then nothing happens (skipped).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb263"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb263-1"><a href="#cb263-1"></a>stock_price <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb263-2"><a href="#cb263-2"></a><span class="cf">if</span> (stock_price <span class="sc">&gt;</span> <span class="dv">105</span>) {</span>
+<span id="cb263-3"><a href="#cb263-3"></a>  <span class="fu">print</span>(<span class="st">&quot;The stock price has increased!&quot;</span>)</span>
+<span id="cb263-4"><a href="#cb263-4"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<hr>
+<p>Example 3: <em>else if</em> checks one more logic condition:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb264"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb264-1"><a href="#cb264-1"></a>stock_price <span class="ot">&lt;-</span> <span class="dv">115</span></span>
+<span id="cb264-2"><a href="#cb264-2"></a><span class="cf">if</span> (stock_price <span class="sc">&gt;</span> <span class="dv">120</span>) {</span>
+<span id="cb264-3"><a href="#cb264-3"></a>  <span class="fu">print</span>(<span class="st">&quot;The stock price has surged!&quot;</span>)</span>
+<span id="cb264-4"><a href="#cb264-4"></a>} <span class="cf">else</span> <span class="cf">if</span> (stock_price <span class="sc">&gt;</span> <span class="dv">110</span>) {</span>
+<span id="cb264-5"><a href="#cb264-5"></a>  <span class="fu">print</span>(<span class="st">&quot;The stock price has increased moderately.&quot;</span>)</span>
+<span id="cb264-6"><a href="#cb264-6"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] &quot;The stock price has increased moderately.&quot;</code></pre>
+</div>
+</div>
+<hr>
+<p>Example 4: There can be multiple <em>else if</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb266"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb266-1"><a href="#cb266-1"></a>stock_price <span class="ot">&lt;-</span> <span class="dv">108</span></span>
+<span id="cb266-2"><a href="#cb266-2"></a><span class="cf">if</span> (stock_price <span class="sc">&gt;</span> <span class="dv">120</span>) {</span>
+<span id="cb266-3"><a href="#cb266-3"></a>  <span class="fu">print</span>(<span class="st">&quot;The stock price has surged!&quot;</span>)</span>
+<span id="cb266-4"><a href="#cb266-4"></a>} <span class="cf">else</span> <span class="cf">if</span> (stock_price <span class="sc">&gt;</span> <span class="dv">110</span>) {</span>
+<span id="cb266-5"><a href="#cb266-5"></a>  <span class="fu">print</span>(<span class="st">&quot;The stock price has increased moderately.&quot;</span>)</span>
+<span id="cb266-6"><a href="#cb266-6"></a>} <span class="cf">else</span> <span class="cf">if</span> (stock_price <span class="sc">&gt;</span> <span class="dv">105</span>) {</span>
+<span id="cb266-7"><a href="#cb266-7"></a>  <span class="fu">print</span>(<span class="st">&quot;The stock price has increased slightly.&quot;</span>)</span>
+<span id="cb266-8"><a href="#cb266-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] &quot;The stock price has increased slightly.&quot;</code></pre>
+</div>
+</div>
+<hr>
+<p>Example 5: <em>else</em> is executed when all of if conditions are not met.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb268"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb268-1"><a href="#cb268-1"></a>stock_price <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb268-2"><a href="#cb268-2"></a><span class="cf">if</span> (stock_price <span class="sc">&gt;</span> <span class="dv">120</span>) {</span>
+<span id="cb268-3"><a href="#cb268-3"></a>  <span class="fu">print</span>(<span class="st">&quot;The stock price has surged!&quot;</span>)</span>
+<span id="cb268-4"><a href="#cb268-4"></a>} <span class="cf">else</span> <span class="cf">if</span> (stock_price <span class="sc">&gt;</span> <span class="dv">110</span>) {</span>
+<span id="cb268-5"><a href="#cb268-5"></a>  <span class="fu">print</span>(<span class="st">&quot;The stock price has increased moderately.&quot;</span>)</span>
+<span id="cb268-6"><a href="#cb268-6"></a>} <span class="cf">else</span> <span class="cf">if</span> (stock_price <span class="sc">&gt;</span> <span class="dv">100</span>) {</span>
+<span id="cb268-7"><a href="#cb268-7"></a>  <span class="fu">print</span>(<span class="st">&quot;The stock price has increased slightly.&quot;</span>)</span>
+<span id="cb268-8"><a href="#cb268-8"></a>} <span class="cf">else</span> {</span>
+<span id="cb268-9"><a href="#cb268-9"></a>  <span class="fu">print</span>(<span class="st">&quot;The stock price has decreased.&quot;</span>)</span>
+<span id="cb268-10"><a href="#cb268-10"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] &quot;The stock price has decreased.&quot;</code></pre>
+</div>
+</div>
+</section>
+<section id="exercise-9" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-9">Exercise</h2>
+<p>Write an if-else statement:</p>
+<ul>
+<li>If PMT &gt; 1000, add PMT with 10000 (i.e., <code>PMT &lt;- PMT + 10000</code>)</li>
+<li>Else if PMT &gt; 500, add PMT with 100</li>
+<li>Else, set PMT = 0</li>
+</ul>
+<p>What is the outcome of above if-else, if initial PMT was 750?</p>
+</section>
+<section id="for-loops" class="level2">
+<h2 class="anchored" data-anchor-id="for-loops">For loops</h2>
+<p>For loops are used when code has to be <em>iterated</em> a specified number of times.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb270"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb270-1"><a href="#cb270-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) {</span>
+<span id="cb270-2"><a href="#cb270-2"></a>  <span class="co"># i is a symbol for iterator</span></span>
+<span id="cb270-3"><a href="#cb270-3"></a>  <span class="co"># 1:5 is iterable</span></span>
+<span id="cb270-4"><a href="#cb270-4"></a>  <span class="fu">print</span>(i)</span>
+<span id="cb270-5"><a href="#cb270-5"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1
+[1] 2
+[1] 3
+[1] 4
+[1] 5</code></pre>
+</div>
+</div>
+<hr>
+<p>To use number index for each element: use <code>seq_along()</code> in the loop.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb272"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb272-1"><a href="#cb272-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&#39;a&#39;</span>, <span class="st">&#39;b&#39;</span>, <span class="st">&#39;c&#39;</span>, <span class="st">&#39;d&#39;</span>)</span>
+<span id="cb272-2"><a href="#cb272-2"></a><span class="cf">for</span> (a <span class="cf">in</span> <span class="fu">seq_along</span>(x)) {</span>
+<span id="cb272-3"><a href="#cb272-3"></a>  <span class="fu">print</span>(x[a])</span>
+<span id="cb272-4"><a href="#cb272-4"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] &quot;a&quot;
+[1] &quot;b&quot;
+[1] &quot;c&quot;
+[1] &quot;d&quot;</code></pre>
+</div>
+</div>
+<hr>
+<p>What does seq_along() do?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb274"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb274-1"><a href="#cb274-1"></a><span class="fu">seq_along</span>(x) <span class="co"># generate integer squence along the vector x</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 2 3 4</code></pre>
+</div>
+</div>
+<hr>
+<p><code>x</code> itself can be a iterable</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb276"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb276-1"><a href="#cb276-1"></a><span class="cf">for</span> (el <span class="cf">in</span> x) {</span>
+<span id="cb276-2"><a href="#cb276-2"></a>  <span class="co"># direct elements</span></span>
+<span id="cb276-3"><a href="#cb276-3"></a>  <span class="fu">print</span>(el)</span>
+<span id="cb276-4"><a href="#cb276-4"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] &quot;a&quot;
+[1] &quot;b&quot;
+[1] &quot;c&quot;
+[1] &quot;d&quot;</code></pre>
+</div>
+</div>
+</section>
+<section id="for-loop-preallocation" class="level2">
+<h2 class="anchored" data-anchor-id="for-loop-preallocation">For loop: preallocation</h2>
+<p>When generating an output, make sure to <strong>preallocate</strong> output container.</p>
+<ul>
+<li>Generate empty output container with specified <strong>type</strong> and <strong>length</strong></li>
+<li>Combining scheme with <code>c()</code> is <strong>strongly discouraged</strong></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb278"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb278-1"><a href="#cb278-1"></a><span class="co"># Think about the type and length of output before loop</span></span>
+<span id="cb278-2"><a href="#cb278-2"></a>N <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb278-3"><a href="#cb278-3"></a>output <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">mode =</span> <span class="st">&quot;list&quot;</span>, <span class="at">length =</span> N) <span class="co"># empty output container</span></span>
+<span id="cb278-4"><a href="#cb278-4"></a></span>
+<span id="cb278-5"><a href="#cb278-5"></a><span class="cf">for</span> (n <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>N) {</span>
+<span id="cb278-6"><a href="#cb278-6"></a>  output[[n]] <span class="ot">&lt;-</span> n<span class="sc">**</span><span class="dv">2</span> <span class="co"># same as n^2</span></span>
+<span id="cb278-7"><a href="#cb278-7"></a>}</span>
+<span id="cb278-8"><a href="#cb278-8"></a><span class="fu">print</span>(output)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[1] 1
+
+[[2]]
+[1] 4
+
+[[3]]
+[1] 9
+
+[[4]]
+[1] 16
+
+[[5]]
+[1] 25
+
+[[6]]
+[1] 36
+
+[[7]]
+[1] 49
+
+[[8]]
+[1] 64
+
+[[9]]
+[1] 81
+
+[[10]]
+[1] 100</code></pre>
+</div>
+</div>
+</section>
+<section id="benchmark-example" class="level2">
+<h2 class="anchored" data-anchor-id="benchmark-example">Benchmark Example</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb280"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb280-1"><a href="#cb280-1"></a>N <span class="ot">&lt;-</span> <span class="dv">5000</span></span>
+<span id="cb280-2"><a href="#cb280-2"></a>appending <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="st">&quot;list&quot;</span>)</span>
+<span id="cb280-3"><a href="#cb280-3"></a>no_prealloc <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="st">&quot;list&quot;</span>)</span>
+<span id="cb280-4"><a href="#cb280-4"></a>prealloc <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="at">length =</span> N)</span>
+<span id="cb280-5"><a href="#cb280-5"></a></span>
+<span id="cb280-6"><a href="#cb280-6"></a>bench<span class="sc">::</span><span class="fu">mark</span>(</span>
+<span id="cb280-7"><a href="#cb280-7"></a>  <span class="at">appending_method =</span> <span class="cf">for</span> (n <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>N) {</span>
+<span id="cb280-8"><a href="#cb280-8"></a>    appending <span class="ot">&lt;-</span> <span class="fu">c</span>(appending, n<span class="sc">**</span><span class="dv">2</span>)</span>
+<span id="cb280-9"><a href="#cb280-9"></a>  },</span>
+<span id="cb280-10"><a href="#cb280-10"></a>  <span class="at">no_prealloc_method =</span> <span class="cf">for</span> (n <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>N) {</span>
+<span id="cb280-11"><a href="#cb280-11"></a>    no_prealloc[[n]] <span class="ot">&lt;-</span> n<span class="sc">**</span><span class="dv">2</span></span>
+<span id="cb280-12"><a href="#cb280-12"></a>  },</span>
+<span id="cb280-13"><a href="#cb280-13"></a>  <span class="at">prealloc_method =</span> <span class="cf">for</span> (n <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>N) {</span>
+<span id="cb280-14"><a href="#cb280-14"></a>    prealloc[[n]] <span class="ot">&lt;-</span> n<span class="sc">**</span><span class="dv">2</span></span>
+<span id="cb280-15"><a href="#cb280-15"></a>  },</span>
+<span id="cb280-16"><a href="#cb280-16"></a>  <span class="at">iterations =</span> <span class="dv">2</span>,</span>
+<span id="cb280-17"><a href="#cb280-17"></a>  <span class="at">check =</span> <span class="cn">FALSE</span></span>
+<span id="cb280-18"><a href="#cb280-18"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 6
+  expression              min   median `itr/sec` mem_alloc `gc/sec`
+  &lt;bch:expr&gt;         &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;
+1 appending_method   239.35ms 316.96ms      3.15    95.6MB     25.2
+2 no_prealloc_method   1.31ms   1.45ms    692.     830.1KB      0  
+3 prealloc_method      1.01ms   1.05ms    950.      54.8KB      0  </code></pre>
+</div>
+</div>
+</section>
+<section id="next-and-break" class="level2">
+<h2 class="anchored" data-anchor-id="next-and-break">next and break</h2>
+<p>Generally used with if-else condition tests inside loop.</p>
+<p><code>next</code> is used to skip an iteration of loop.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb282"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb282-1"><a href="#cb282-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) {</span>
+<span id="cb282-2"><a href="#cb282-2"></a>  <span class="cf">if</span> (i <span class="sc">==</span> <span class="dv">3</span>) {</span>
+<span id="cb282-3"><a href="#cb282-3"></a>    <span class="co"># skip if i == 3</span></span>
+<span id="cb282-4"><a href="#cb282-4"></a>    <span class="cf">next</span></span>
+<span id="cb282-5"><a href="#cb282-5"></a>  }</span>
+<span id="cb282-6"><a href="#cb282-6"></a>  <span class="fu">print</span>(i)</span>
+<span id="cb282-7"><a href="#cb282-7"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1
+[1] 2
+[1] 4
+[1] 5</code></pre>
+</div>
+</div>
+<hr>
+<p><code>break</code> is used to exit loop immediately.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb284"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb284-1"><a href="#cb284-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) {</span>
+<span id="cb284-2"><a href="#cb284-2"></a>  <span class="cf">if</span> (i <span class="sc">==</span> <span class="dv">4</span>) {</span>
+<span id="cb284-3"><a href="#cb284-3"></a>    <span class="cf">break</span></span>
+<span id="cb284-4"><a href="#cb284-4"></a>  }</span>
+<span id="cb284-5"><a href="#cb284-5"></a>  <span class="fu">print</span>(i)</span>
+<span id="cb284-6"><a href="#cb284-6"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1
+[1] 2
+[1] 3</code></pre>
+</div>
+</div>
+</section>
+<section id="for-loop-compound-interest" class="level2">
+<h2 class="anchored" data-anchor-id="for-loop-compound-interest">For loop: Compound interest</h2>
+<p>How to calculate compound interest over multiple years using a <code>for</code> loop?</p>
+<ul>
+<li>Principal: $10,000</li>
+<li>Interest rate: 5%</li>
+<li>Number of years: 10</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb286"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb286-1"><a href="#cb286-1"></a>principal <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
+<span id="cb286-2"><a href="#cb286-2"></a>rate <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb286-3"><a href="#cb286-3"></a>num_periods <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb286-4"><a href="#cb286-4"></a><span class="co"># generate placeholder vector for the amount output</span></span>
+<span id="cb286-5"><a href="#cb286-5"></a>amount <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="st">&quot;numeric&quot;</span>, <span class="at">length =</span> num_periods)</span>
+<span id="cb286-6"><a href="#cb286-6"></a></span>
+<span id="cb286-7"><a href="#cb286-7"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>num_periods) {</span>
+<span id="cb286-8"><a href="#cb286-8"></a>  amount[[i]] <span class="ot">&lt;-</span> principal <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">+</span> rate)<span class="sc">^</span>i</span>
+<span id="cb286-9"><a href="#cb286-9"></a>}</span>
+<span id="cb286-10"><a href="#cb286-10"></a><span class="fu">print</span>(amount)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 10500.00 11025.00 11576.25 12155.06 12762.82 13400.96 14071.00 14774.55
+ [9] 15513.28 16288.95</code></pre>
+</div>
+</div>
+</section>
+<section id="exercise-10" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-10">Exercise</h2>
+<p>Based on the previous example, do the following:</p>
+<ul>
+<li><p>Q1. Skip the first year using if and next</p></li>
+<li><p>Q2. Stop the calculation if amount exceeds $14,000</p></li>
+</ul>
 <!-- 
-# Control Structure
-
-## Control Structure?
-
-Control structure dictates **which** code gets executed and **when**.
-
-1.  Conditional Statements:
-    -   **`if` statements**: Execute code if a condition is true.
-    -   **`else`/`else if` statements**: Execute alternative code if the condition is false.
-2.  Loops:
-    -   **`for` loops**: Repeat code block a specified number of times.
-    -   **`while` loops**: Continue executing code as long as a condition is true.
-3.  Map (apply):
-    -   Map a **function** to each element of a collection *without explicitly writing loops*.
-
-## If-else
-
-The basic form of `if` and `if-else` statement in R:
-
-
-
-
-::: {.cell}
-
-```{.r .cell-code}
-if (condition) true_action
-if (condition) true_action else false_action
-```
-:::
-
-::: {.cell}
-
-```{.r .cell-code}
-x1 <- if (TRUE) 1 else 2
-x2 <- if (FALSE) 1 else 2
-print(c(x1, x2))
-```
-
-::: {.cell-output .cell-output-stdout}
-
-```
-[1] 1 2
-```
-
-
-:::
-:::
-
-
-
-
-------------------------------------------------------------------------
-
-Example 1: *if* and *else* executes code based on logical conditions.
-
-
-
-
-::: {.cell}
-
-```{.r .cell-code}
-stock_price <- 115
-if (stock_price > 110) {
-  print("The stock price has increased significantly!")
-}
-```
-
-::: {.cell-output .cell-output-stdout}
-
-```
-[1] "The stock price has increased significantly!"
-```
-
-
-:::
-:::
-
-
-
-
-------------------------------------------------------------------------
-
-Example 2: If condition is not met, then nothing happens (skipped).
-
-
-
-
-::: {.cell}
-
-```{.r .cell-code}
-stock_price <- 100
-if (stock_price > 105) {
-  print("The stock price has increased!")
-}
-```
-:::
-
-
-
-
-------------------------------------------------------------------------
-
-Example 3: *else if* checks one more logic condition:
-
-
-
-
-::: {.cell}
-
-```{.r .cell-code}
-stock_price <- 115
-if (stock_price > 120) {
-  print("The stock price has surged!")
-} else if (stock_price > 110) {
-  print("The stock price has increased moderately.")
-}
-```
-
-::: {.cell-output .cell-output-stdout}
-
-```
-[1] "The stock price has increased moderately."
-```
-
-
-:::
-:::
-
-
-
-
-------------------------------------------------------------------------
-
-Example 4: There can be multiple *else if*
-
-
-
-
-::: {.cell}
-
-```{.r .cell-code}
-stock_price <- 108
-if (stock_price > 120) {
-  print("The stock price has surged!")
-} else if (stock_price > 110) {
-  print("The stock price has increased moderately.")
-} else if (stock_price > 105) {
-  print("The stock price has increased slightly.")
-}
-```
-
-::: {.cell-output .cell-output-stdout}
-
-```
-[1] "The stock price has increased slightly."
-```
-
-
-:::
-:::
-
-
-
-
-------------------------------------------------------------------------
-
-Example 5: *else* is executed when all of if conditions are not met.
-
-
-
-
-::: {.cell}
-
-```{.r .cell-code}
-stock_price <- 100
-if (stock_price > 120) {
-  print("The stock price has surged!")
-} else if (stock_price > 110) {
-  print("The stock price has increased moderately.")
-} else if (stock_price > 100) {
-  print("The stock price has increased slightly.")
-} else {
-  print("The stock price has decreased.")
-}
-```
-
-::: {.cell-output .cell-output-stdout}
-
-```
-[1] "The stock price has decreased."
-```
-
-
-:::
-:::
-
-
-
-
-## Exercise
-
-Write an if-else statement:
-
--   If PMT \> 1000, add PMT with 10000 (i.e., `PMT <- PMT + 10000`)
--   Else if PMT \> 500, add PMT with 100
--   Else, set PMT = 0
-
-What is the outcome of above if-else, if initial PMT was 750?
-
-## For loops
-
-For loops are used when code has to be *iterated* a specified number of times.
-
-
-
-
-::: {.cell}
-
-```{.r .cell-code}
-for (i in 1:5) {
-  # i is a symbol for iterator
-  # 1:5 is iterable
-  print(i)
-}
-```
-
-::: {.cell-output .cell-output-stdout}
-
-```
-[1] 1
-[1] 2
-[1] 3
-[1] 4
-[1] 5
-```
-
-
-:::
-:::
-
-
-
-
-------------------------------------------------------------------------
-
-To use number index for each element: use `seq_along()` in the loop.
-
-
-
-
-::: {.cell}
-
-```{.r .cell-code}
-x <- c('a', 'b', 'c', 'd')
-for (a in seq_along(x)) {
-  print(x[a])
-}
-```
-
-::: {.cell-output .cell-output-stdout}
-
-```
-[1] "a"
-[1] "b"
-[1] "c"
-[1] "d"
-```
-
-
-:::
-:::
-
-
-
-
-------------------------------------------------------------------------
-
-What does seq_along() do?
-
-
-
-
-::: {.cell}
-
-```{.r .cell-code}
-seq_along(x) # generate integer squence along the vector x
-```
-
-::: {.cell-output .cell-output-stdout}
-
-```
-[1] 1 2 3 4
-```
-
-
-:::
-:::
-
-
-
-
-------------------------------------------------------------------------
-
-`x` itself can be a iterable
-
-
-
-
-::: {.cell}
-
-```{.r .cell-code}
-for (el in x) {
-  # direct elements
-  print(el)
-}
-```
-
-::: {.cell-output .cell-output-stdout}
-
-```
-[1] "a"
-[1] "b"
-[1] "c"
-[1] "d"
-```
-
-
-:::
-:::
-
-
-
-
-------------------------------------------------------------------------
-
-When using for loop for generating an output, make sure to **preallocate** output container.
-
-Otherwise, for loop will be **very slow**!
-
-
-
-
-::: {.cell}
-
-```{.r .cell-code}
-# Think about the type and length of output before loop
-N <- 10
-output <- vector(mode = 'numeric', length = N) # container
-
-for (n in 1:N) {
-  output[[n]] <- n**2 # same as n^2
-}
-print(output)
-```
-
-::: {.cell-output .cell-output-stdout}
-
-```
- [1]   1   4   9  16  25  36  49  64  81 100
-```
-
-
-:::
-:::
-
-
-
-
-## next and break
-
-Generally used with if-else condition tests inside loop.
-
-`next` is used to skip an iteration of loop.
-
-
-
-
-::: {.cell}
-
-```{.r .cell-code}
-for (i in 1:5) {
-  if (i == 3) {
-    # skip if i == 3
-    next
-  }
-  print(i)
-}
-```
-
-::: {.cell-output .cell-output-stdout}
-
-```
-[1] 1
-[1] 2
-[1] 4
-[1] 5
-```
-
-
-:::
-:::
-
-
-
-
-------------------------------------------------------------------------
-
-`break` is used to exit loop immediately.
-
-
-
-
-::: {.cell}
-
-```{.r .cell-code}
-for (i in 1:5) {
-  if (i == 4) {
-    break
-  }
-  print(i)
-}
-```
-
-::: {.cell-output .cell-output-stdout}
-
-```
-[1] 1
-[1] 2
-[1] 3
-```
-
-
-:::
-:::
-
-
-
-
-## For loop: Compound interest
-
-How to calculate compound interest over multiple years using a `for` loop?
-
--   Principal: \$10,000
--   Interest rate: 5%
--   Number of years: 10
-
-
-
-
-::: {.cell}
-
-```{.r .cell-code}
-principal <- 10000
-rate <- 0.05
-num_years_after <- 10
-# generate placeholder vector for the amount output
-amount <- vector("numeric", length = num_years_after)
-
-for (i in 1:num_years_after) {
-  amount[[i]] <- principal * (1 + rate)^i
-}
-print(amount)
-```
-
-::: {.cell-output .cell-output-stdout}
-
-```
- [1] 10500.00 11025.00 11576.25 12155.06 12762.82 13400.96 14071.00 14774.55
- [9] 15513.28 16288.95
-```
-
-
-:::
-:::
-
-
-
-
-## Exercise
-
-Based on the previous example, do the following:
-
--   Q1. Skip the first year using if and next
-
--   Q2. Stop the calculation if amount exceeds \$14,000
-
 ## While loops
 
 While loops begin with testing condition, and iterates the code **as long as** the condition is `TRUE`.
@@ -5776,8 +5686,15 @@ while (count < 3) {
 ## Exercise
 
 1.  Write code that print 1 to 10 using for loop.
+
 2.  Achieve same result using while loop instead.
+
+    - Start by defining `a <- 1` outside of the loop
+
 3.  Based on 2, tweak the code that skips printing number if it is 5.
+
+    - Be careful not get into infinite loop!
+
 
 
 
@@ -5793,7 +5710,7 @@ Write a **function** that checks class of an input.
 
 If the input is `numeric`, print "Numeric input!", otherwise, print "Not numeric!"
 
--   use `is.numeric()` for logical test.
+-   use `inherits(x, "numeric")` for logical test.
 
 
 
@@ -5833,20 +5750,20 @@ my_function(c('a', 'b', 'c'))
 
 
 
-## function mapping
+## Function mapping
 
 ![](images/paste-3.png){fig-align="center"}
 
-*map* or *apply* is an implicit function loop.
+*map* function from `purrr` is an implicit function loop.
 
 -   a function `f` is an input arg for `map()`
--   `map()` requires `tidyverse` or `purrr` package
 -   Succinct and easy to read than `for` loops
+-   `map()` requires `tidyverse` or `purrr` package
 
 ::: callout-note
-Functions that take other function as inputs are called **functionals** in R.
+Functions that take other function as inputs are called **functionals** in R, like `map()`.
 
-If vectorized operation is possible, avoid using for loops or map.
+Remember, though, if vectorized operation is possible, avoid using for loops or map.
 :::
 
 ## Example: `map()`
@@ -5862,8 +5779,8 @@ If vectorized operation is possible, avoid using for loops or map.
 plus_one <- function(x) {
   return(x + 1)
 }
-# need to import package to use map()
-library(tidyverse)
+# need to import tidyverse to use map()
+# library(tidyverse)
 map(1:3, plus_one) # 1 2 3 is input for plus_one()
 ```
 
@@ -5889,7 +5806,7 @@ map(1:3, plus_one) # 1 2 3 is input for plus_one()
 
 ------------------------------------------------------------------------
 
-If for loop was used:
+With for loop, code tends to be longer and requires preallocation.
 
 
 
@@ -5927,13 +5844,15 @@ print(temp_list)
 
 
 
-With for loop, code tends to be longer and requires creating pre-allocated empty container list.
 
 ## Exercise
 
 1.  Generate `times_two()` function that multiplies input by 2.
+
 2.  map `times_two` function over `1:10`
+
 3.  Achieve same result with for loop.
+
 
 ## map function 2
 
@@ -5989,7 +5908,7 @@ Most function operations in R are vectorized by default.
 
 ------------------------------------------------------------------------
 
-### Example: portfolio value
+**Example: portfolio value**
 
 
 
@@ -6001,7 +5920,7 @@ stock_prices <- c(150, 250, 100)
 shares_held <- c(10, 5, 20)
 # multiplication is vectorized
 portfolio_value = stock_prices * shares_held
-print(portfolio_value) # easy!
+print(portfolio_value) # easy and faster
 ```
 
 ::: {.cell-output .cell-output-stdout}
@@ -6018,10 +5937,6 @@ print(portfolio_value) # easy!
 
 
 ------------------------------------------------------------------------
-
-If `for` loop or `map` was used for `*` multiplication:
-
--   It loops over each single elements of a vector
 
 A `for` loop approach:
 
@@ -6062,7 +5977,7 @@ print(portfolio_value)
 
 ------------------------------------------------------------------------
 
-`map` approach:
+A `map` approach:
 
 -   map `*` function to two input vectors (price, share)
 -   `map2()` for this case, see `?map2` for more info
@@ -6121,6 +6036,7 @@ Generate portfolio value of each asset, using:
 2.  for loop
 3.  map (implicit loop)
 
+
 ## Vectorized if-else
 
 `ifelse()` function is a vectorized if else statement.
@@ -6143,7 +6059,7 @@ ifelse(test, yes, no)
 
 ------------------------------------------------------------------------
 
-### Example: Dividend Payments
+**Example: Dividend Payments**
 
 
 
@@ -6194,7 +6110,7 @@ Practice `ifelse()`:
 
 -   if stock price is greater than 53, assign "Bull"
 -   otherwise "Bear"\
--   assign it to `sentiment`
+-   assign it to `sentiment` object.
 
 ## Vectorized if-else 2
 
@@ -6230,7 +6146,481 @@ print(sentiment2)
 
 
 
+
+## Exercise 2
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+stock_prices <- c(45, 60, 52, 48, 55, 49)
+```
+:::
+
+
+
+
+Practice `case_when()`:
+
+-   if stock price is greater than 58, assign "Bull"
+-   if stock price is greater than 50, assign "Normal"
+-   otherwise "Bear"\
+-   assign it to `sentiment2` object.
+
+
+
+# R Data frame (and tibble) class
+
+## Data frames
+
+One of the most important data class in R, built on top of list type.
+
+-   Stores data structure in 2D tabular form:
+
+    -   with rows (observations, or records)
+
+    -   and columns (variables)
+
+-   Columns can be different types!
+
+## Create data frame
+
+Creating a data.frame is almost identical to list.
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# creating data.frame is similar to creating a list
+my_dataframe <- data.frame(
+  a = c(1, 2, 3),
+  b = c('a', 'b', 'c'),
+  c = c(TRUE, FALSE, FALSE)
+)
+print(my_dataframe)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+  a b     c
+1 1 a  TRUE
+2 2 b FALSE
+3 3 c FALSE
+```
+
+
+:::
+:::
+
+
+
+
+## Exercise
+
+Create a dataframe named as `my_dataframe`:
+
+-   5 columns: Name, Age, Sex, Income, Housing
+    -   Name: Amy, Bill, Charles, Donna, Eckert
+    -   Age: 21, 25, 30, 38, 49
+    -   Sex: Female, Male, Male, Female, Male
+    -   Income: 36000, 53000, 89000, 82000, 166000
+    -   Housing: "Rent", "Rent", "Own", "Own", "Rent"
+
+What are the type (class) of each column automatically recognized by R? Check with `str(my_dataframe)`.
+
+**Q**: What should be their type (class) in theory?
+
+
+## Tibble class
+
+**Essentially the same** as dataframe class, with some fix:
+
+-   Fixes *old inconsistencies* in R data.frame class
+-   Safer executions
+-   Better console displays
+
+`as_tibble()` converts `data.frame` class to `tibble` class.
+
+
+## Example
+
+A toy dataset, `iris` dataframe:
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+head(iris, 3)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1          5.1         3.5          1.4         0.2  setosa
+2          4.9         3.0          1.4         0.2  setosa
+3          4.7         3.2          1.3         0.2  setosa
+```
+
+
+:::
+:::
+
+
+
+
+Class of iris:
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+class(iris)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "data.frame"
+```
+
+
+:::
+:::
+
+
+
+
+------------------------------------------------------------------------
+
+Convert `iris` to *tibble* class:
+
+-   Prints the dimension
+-   Prints data class by column
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+iris_tb <- as_tibble(iris)
+head(iris_tb, 3)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+# A tibble: 3 × 5
+  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+         <dbl>       <dbl>        <dbl>       <dbl> <fct>  
+1          5.1         3.5          1.4         0.2 setosa 
+2          4.9         3            1.4         0.2 setosa 
+3          4.7         3.2          1.3         0.2 setosa 
+```
+
+
+:::
+:::
+
+
+
+
+`iris_tb` is a multi-class object that is both tibble and dataframe.
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+class(iris_tb)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "tbl_df"     "tbl"        "data.frame"
+```
+
+
+:::
+:::
+
+
+
+
+## Access operations
+
+As it is built on lists, `[`, `[[`, `$` also works on data.frames.
+
+-   bracket operations align more consistently with `tibble` class
+
+Dataframe can be subsetted with `df[i,j]`
+
+-   `i` part operates on row (called filtering)
+-   `j` part selects columns
+
+
+## Bracket `[`, `[[` subsetting
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+iris_tb[, 1] # all rows, 1st column, in original class (tibble)
+iris_tb[1, 1] # 1st row, 1st column, in original class (tibble)
+iris_tb[1,] # 1st row, all columns, in original class (tibble)
+```
+:::
+
+
+
+
+1st row, 1st column, in element class (numeric vector)
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+iris_tb[[1, 1]]
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 5.1
+```
+
+
+:::
+:::
+
+
+
+
+::: callout-caution
+Double bracket `[[` works with `,` only when both row and columns are mentioned. 
+That is, `iris_tb[[1,1]]` works, but `iris_tb[[,1]]` doesn't. Should use `iris_tb[,1]`.
+:::
+
+------------------------------------------------------------------------
+
+Other examples:
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# Exercise: try!
+iris_tb[, c("Sepal.Length", "Petal.Width")]
+iris_tb[1:5, 1:2]
+iris_tb[iris_tb[["Sepal.Length"]] > 3.1, 1] # filtering
+```
+:::
+
+
+
+
+------------------------------------------------------------------------
+
+If comma is not provided, it **assumes a column index**.
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# try and see the difference!
+iris_tb[1]
+iris_tb["Sepal.Length"]
+iris_tb[["Sepal.Length"]]
+```
+:::
+
+
+
+
+------------------------------------------------------------------------
+
+**`$` subsetting**
+
+`$` pulls a single column in element's class from data frame (tibble).
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+iris_tb$Sepal.Length
+```
+:::
+
+
+
+
+## Exercise
+
+1.  Generate `iris_tb` by converting `iris` using `as_tibble()`.
+
+2.  Exercise all subsetting methods on rows in the 2nd column:
+
+-   Use single bracket and integer index `iris_tb[2]`
+-   Use double bracket and integer index `iris_tb[[2]]`
+-   Use single bracket and column name `iris_tb[colname]`
+-   Use single bracket and column name `iris_tb[[colname]]`
+-   Use `$`
+
+3.  Filter rows with "Sepal.Length \> 5". How many rows do you observe?
+
+-   use `nrow()` to check the number of rows.
+
+## Chained subset call
+
+Subsetting can be chained
+
+-   Pause and take a look at example. What is happening?
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+iris_tb[21:100, c('Petal.Length', 'Sepal.Length')][25, ]
+```
+:::
+
+
+
+
+## Exercise
+
+On `iris_tb`,
+
+-   Filter with "Petal.Length \> 4.5"
+-   Select columns "Species", "Petal.Length"
+-   then slice rows from 1 to 10
+-   Store this as `filtered_iris`
+
+**Q**. Confirm the average of Petal.Length from `filtered_iris` is **4.74**. Use `mean(dataframe$column)`.
+
+
+
+
+
+
+
+
+
+## Assign and remove column
+
+They operate as same as lists. To assign a new variable within the data.frame, use:
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+data.frame["NEW_COLUMN_NAME"] <- NEW_COLUMN
+
+# EXAMPLE
+iris_tb["Petal.Area"] <- iris$Petal.Length * iris$Petal.Width
+```
+:::
+
+
+
+
+To remove a variable from the data.frame, use:
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+data.frame["EXISTING_NAME"] <- NULL
+```
+:::
+
+
+
+
+## dplyr package
+
+![](images/image-576723870.png)
+
+R package for **dataframe** manipulation tasks.
+
+-   A modern approach in R
+-   Replaces the use of `[`, `[[`, `$` in most cases
+-   A **grammar** of data manipulation
+-   Intuitive and easy to understance
+-   Fast, written in C++
+
+## dplyr grammar
+
+### Key verbs
+
+-   Verbs for the core functionality
+-   Those verbs are used with pipe operator `|>`
+
+1.  `select()` : select subset of columns
+    -   `rename()` : rename columns
+    -   `relocate()` : change column positions
+    -   `pull()` : extract single column as vector
+2.  `filter()` : select subset of rows with condition
+    -   `slice()` : extract specific rows
+    -   `distinct()` : remove duplicate rows
+3.  `arrange()` : reorder rows
+4.  `mutate()` : add new columns (variables)
+5.  `summarize()` : generate summary table
+    -   `group_by()` / `ungroup()`
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# read_csv("https://usfedu-my.sharepoint.com/personal/gson_usf_edu/_layouts/15/download.aspx?share=EdZpIn6zZkhNp1ERuz5luiMB_8KbXuFSv3obiAOkrC73qg")
+```
+:::
+
+
+
+
+
+
+
 # Logical Vectors
+
+
+
+
+
+
+
+
 
 # File Systems in R
 
@@ -6496,441 +6886,6 @@ There are other common data formats:
 -   ".json": javascript object notation (NoSQL)
 -   ".parquet": columnar big data storage
 -   '.sas7bdat', '.dta'
-
-# R Data.frame class
-
-## Data frames
-
-One of the most important data class in R, built on top of list type.
-
--   Stores data structure in 2D tabular form:
-
-    -   with rows (observations, or records)
-
-    -   and columns (variables)
-
--   columns can be different types!
-
-------------------------------------------------------------------------
-
-Creating a data.frame is almost identical to list.
-
-
-
-
-::: {.cell}
-
-```{.r .cell-code}
-# creating data.frame is similar to creating a list
-my_dataframe = data.frame(
-  a = c(1, 2, 3),
-  b = c('a', 'b', 'c'),
-  c = c(TRUE, FALSE, FALSE)
-)
-print(my_dataframe)
-```
-
-::: {.cell-output .cell-output-stdout}
-
-```
-  a b     c
-1 1 a  TRUE
-2 2 b FALSE
-3 3 c FALSE
-```
-
-
-:::
-:::
-
-
-
-
-## Exercise
-
-Create a dataframe named as `my_dataframe`:
-
--   5 columns: Name, Age, Sex, Income, Housing
-    -   Name: Amy, Bill, Charles, Donna, Eckert
-    -   Age: 21, 25, 30, 38, 49
-    -   Sex: Female, Male, Male, Female, Male
-    -   Income: 36000, 53000, 89000, 82000, 166000
-    -   Housing: "Rent", "Rent", "Own", "Own", "Rent"
-
-What are the type (class) of each column automatically recognized by R?
-
-```         
-- What should be their type (class) in theory?
-```
-
-## Tibble class
-
-Essentially the same as dataframe class, with some fix:
-
--   Fixes old inconsistencies in R data.frame class
--   Safer executions
--   Better console displays
-
-`as_tibble()` converts `data.frame` class to `tibble` class.
-
-## Example
-
-A toy dataset, `iris` dataframe:
-
-
-
-
-::: {.cell}
-
-```{.r .cell-code}
-head(iris, 3)
-```
-
-::: {.cell-output .cell-output-stdout}
-
-```
-  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
-1          5.1         3.5          1.4         0.2  setosa
-2          4.9         3.0          1.4         0.2  setosa
-3          4.7         3.2          1.3         0.2  setosa
-```
-
-
-:::
-:::
-
-
-
-
-Class of iris:
-
-
-
-
-::: {.cell}
-
-```{.r .cell-code}
-class(iris)
-```
-
-::: {.cell-output .cell-output-stdout}
-
-```
-[1] "data.frame"
-```
-
-
-:::
-:::
-
-
-
-
-------------------------------------------------------------------------
-
-Convert `iris` to *tibble* class:
-
--   Prints the dimension
--   Prints data class by column
-
-
-
-
-::: {.cell}
-
-```{.r .cell-code}
-library(tidyverse)
-iris_tb <- as_tibble(iris)
-head(iris_tb, 3)
-```
-
-::: {.cell-output .cell-output-stdout}
-
-```
-# A tibble: 3 × 5
-  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
-         <dbl>       <dbl>        <dbl>       <dbl> <fct>  
-1          5.1         3.5          1.4         0.2 setosa 
-2          4.9         3            1.4         0.2 setosa 
-3          4.7         3.2          1.3         0.2 setosa 
-```
-
-
-:::
-:::
-
-
-
-
-`iris_tb` is a multi-class object that is both tibble and dataframe.
-
-
-
-
-::: {.cell}
-
-```{.r .cell-code}
-class(iris_tb)
-```
-
-::: {.cell-output .cell-output-stdout}
-
-```
-[1] "tbl_df"     "tbl"        "data.frame"
-```
-
-
-:::
-:::
-
-
-
-
-## Access operations
-
-As it is built on lists, access operations with `[`, `[[`, `$` works on data.frames.
-
--   bracket operations align more consistently with `tibble` class
-
-Dataframe can be subsetted with `df[i,j]`
-
--   `i` part operates on row (called filtering)
--   `j` part selects columns
-
-## Bracket `[`, `[[` subsetting
-
-
-
-
-::: {.cell}
-
-```{.r .cell-code}
-iris_tb[, 1] # all rows, 1st column, in original class (tibble)
-iris_tb[1, 1] # 1st row, 1st column, in original class (tibble)
-itis_tb[1,] # 1st row, all columns, in original class (tibble)
-```
-:::
-
-
-
-
-1st row, 1st column, in element class (numeric)
-
-
-
-
-::: {.cell}
-
-```{.r .cell-code}
-iris_tb[[1, 1]]
-```
-
-::: {.cell-output .cell-output-stdout}
-
-```
-[1] 5.1
-```
-
-
-:::
-:::
-
-
-
-
-::: callout-caution
-Double bracket `[[` works with `,` only when both row and columns are mentioned. That is, `iris_tb[[1,1]]` works, but `iris_tb[[,1]]` doesn't. Should use `iris_tb[,1]`.
-:::
-
-------------------------------------------------------------------------
-
-Other examples:
-
-
-
-
-::: {.cell}
-
-```{.r .cell-code}
-# Exercise: try!
-iris_tb[, c("Sepal.Length", "Petal.Width")]
-iris_tb[1:5, 1:2]
-iris_tb[iris_tb[["Sepal.Length"]] > 3.1, 1] # filtering
-```
-:::
-
-
-
-
-------------------------------------------------------------------------
-
-If comma is not provided, it **assumes a column index**.
-
-
-
-
-::: {.cell}
-
-```{.r .cell-code}
-# try!
-iris_tb[1]
-iris_tb["Sepal.Length"]
-iris_tb[["Sepal.Length"]]
-```
-:::
-
-
-
-
-------------------------------------------------------------------------
-
-**`$` subsetting**
-
-`$` pulls a single column in element's class from data.frame.
-
-
-
-
-::: {.cell}
-
-```{.r .cell-code}
-iris_tb$Sepal.Length
-```
-:::
-
-
-
-
-## Exercise
-
-1.  Generate `iris_tb` by converting `iris` using `as_tibble()`.
-
-2.  How can you access all rows in the 2nd column:
-
--   Use single bracket and integer index `iris_tb[2]`
--   Use double bracket and integer index `iris_tb[[2]]`
--   Use single bracket and column name `iris_tb[colname]`
--   Use single bracket and column name `iris_tb[[colname]]`
--   Use `$`
-
-3.  Filter rows with "Sepal.Length \> 5". How many rows do you observe?
-
--   use `nrow()`
-
-## Chained subset call
-
-Subsetting can be chained
-
--   Pause and take a look at example. What is happening?
-
-
-
-
-::: {.cell}
-
-```{.r .cell-code}
-iris_tb[21:100, c('Petal.Length', 'Sepal.Length')][25, ]
-```
-:::
-
-
-
-
-## Exercise
-
-On `iris_tb`,
-
--   Filter with "Petal.Length \> 4.5"
--   Select columns "Species", "Petal.Length"
--   then slice rows from 1 to 10
--   Store this as `filtered_iris`
-
-**Q**. Confirm the average of Petal.Length from `filtered_iris` is **4.74**. Use `mean(dataframe$column)`.
-
-
-
-
-
-
-
-
-
-## Assign and remove column
-
-To assign a new variable within the data.frame, use:
-
-
-
-
-::: {.cell}
-
-```{.r .cell-code}
-data.frame["NEW_COLUMN_NAME"] <- NEW_COLUMN
-
-# EXAMPLE
-iris_tb["Petal.Area"] <- iris$Petal.Length * iris$Petal.Width
-```
-:::
-
-
-
-
-To remove a variable within the data.frame, use:
-
-
-
-
-::: {.cell}
-
-```{.r .cell-code}
-data.frame["EXISTING_NAME"] <- NULL
-```
-:::
-
-
-
-
-## dplyr package
-
-![](images/image-576723870.png)
-
-R package for **dataframe** manipulation tasks.
-
--   A modern approach in R
--   Replaces the use of `[`, `[[`, `$` in most cases
--   A **grammar** of data manipulation
--   Intuitive and easy to understance
--   Fast, written in C++
-
-## dplyr grammar
-
-### Key verbs
-
--   Verbs for the core functionality
--   Those verbs are used with pipe operator `|>`
-
-1.  `select()` : select subset of columns
-    -   `rename()` : rename columns
-    -   `relocate()` : change column positions
-    -   `pull()` : extract single column as vector
-2.  `filter()` : select subset of rows with condition
-    -   `slice()` : extract specific rows
-    -   `distinct()` : remove duplicate rows
-3.  `arrange()` : reorder rows
-4.  `mutate()` : add new columns (variables)
-5.  `summarize()` : generate summary table
-    -   `group_by()` / `ungroup()`
-
-
-
-
-::: {.cell}
-
-```{.r .cell-code}
-# read_csv("https://usfedu-my.sharepoint.com/personal/gson_usf_edu/_layouts/15/download.aspx?share=EdZpIn6zZkhNp1ERuz5luiMB_8KbXuFSv3obiAOkrC73qg")
-```
-:::
-
 
 
 
