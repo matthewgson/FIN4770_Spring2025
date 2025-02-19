@@ -10,3 +10,7 @@ say_hello("Tiago")
 
 \(pmt, r, g) pmt / (r - g)
 pv(100, 0.04, 0.01)
+
+2 |>
+  cube() |>
+  sqrt()
