@@ -119,9 +119,12 @@ ranks <- crypto_data |>
 ranks <- ranks |>
   mutate(volume_rank = ntile(avg_daily_volume, 5)) # 5 being highest (ascending)
 
+ranks
 # get future data to test
 
 future_crypto <- tq_get(crypto_coins, from = "2023-01-02", to = "2023-02-01")
+
+
 future_crypto <- future_crypto |>
   arrange(symbol, date) |>
   group_by(symbol) |>
@@ -133,4 +136,6 @@ future_crypto <- future_crypto |>
 
 future_crypto |>
   group_by(volume_rank) |>
-  summarize(avg_daily_ret = mean(dail_ret, na.rm = TRUE))
+  summarize(avg_daily_ret = mean(daily_ret, na.rm = TRUE)) |>
+  ggplot(aes(x = volume_rank, y = avg_daily_ret)) +
+  geom_col()
