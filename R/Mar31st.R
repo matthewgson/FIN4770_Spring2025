@@ -84,3 +84,12 @@ library(tidyverse)
 
 iris |>
   filter(Species %in% c("Banana", "setosa"))
+
+
+daily_returns <- c(0.01, NA, -0.005, 0.02, NA)
+
+(daily_returns > 0) |> any()
+
+all(daily_returns > 0)
+
+daily_returns > 0

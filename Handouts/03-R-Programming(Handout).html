@@ -3381,7 +3381,7 @@ window.Quarto = {
   <li><a href="#lab-problem-year-over-year-growth-calculation" id="toc-lab-problem-year-over-year-growth-calculation" class="nav-link" data-scroll-target="#lab-problem-year-over-year-growth-calculation">Lab Problem: Year-over-Year Growth Calculation</a></li>
   <li><a href="#dplyr-grammar-summary" id="toc-dplyr-grammar-summary" class="nav-link" data-scroll-target="#dplyr-grammar-summary">dplyr grammar summary</a></li>
   </ul></li>
-  <li><a href="#mini-finance-project" id="toc-mini-finance-project" class="nav-link" data-scroll-target="#mini-finance-project">Mini Finance Project</a>
+  <li><a href="#portfolio-sorting-with-crypto" id="toc-portfolio-sorting-with-crypto" class="nav-link" data-scroll-target="#portfolio-sorting-with-crypto">Portfolio Sorting with Crypto</a>
   <ul class="collapse">
   <li><a href="#incorporating-ai-for-coding" id="toc-incorporating-ai-for-coding" class="nav-link" data-scroll-target="#incorporating-ai-for-coding">Incorporating AI for Coding</a></li>
   <li><a href="#sample-genais-for-code" id="toc-sample-genais-for-code" class="nav-link" data-scroll-target="#sample-genais-for-code">Sample GenAIs for code</a></li>
@@ -3393,9 +3393,9 @@ window.Quarto = {
   <li><a href="#visualize-metrics" id="toc-visualize-metrics" class="nav-link" data-scroll-target="#visualize-metrics">Visualize metrics</a></li>
   <li><a href="#portfolio-sorting-trading-volume" id="toc-portfolio-sorting-trading-volume" class="nav-link" data-scroll-target="#portfolio-sorting-trading-volume">Portfolio Sorting: Trading volume</a></li>
   </ul></li>
-  <li><a href="#factors" id="toc-factors" class="nav-link" data-scroll-target="#factors">Factors</a>
+  <li><a href="#factor-vectors" id="toc-factor-vectors" class="nav-link" data-scroll-target="#factor-vectors">Factor Vectors</a>
   <ul class="collapse">
-  <li><a href="#factor-vectors" id="toc-factor-vectors" class="nav-link" data-scroll-target="#factor-vectors">Factor Vectors</a></li>
+  <li><a href="#factors" id="toc-factors" class="nav-link" data-scroll-target="#factors">Factors</a></li>
   <li><a href="#why-use-factors" id="toc-why-use-factors" class="nav-link" data-scroll-target="#why-use-factors">Why Use Factors?</a></li>
   <li><a href="#creating-factor-variables" id="toc-creating-factor-variables" class="nav-link" data-scroll-target="#creating-factor-variables">Creating Factor Variables</a></li>
   <li><a href="#accessing-factor-levels" id="toc-accessing-factor-levels" class="nav-link" data-scroll-target="#accessing-factor-levels">Accessing Factor Levels</a></li>
@@ -3411,6 +3411,7 @@ window.Quarto = {
   <li><a href="#logical-vectors" id="toc-logical-vectors" class="nav-link" data-scroll-target="#logical-vectors">Logical Vectors</a>
   <ul class="collapse">
   <li><a href="#logical-vectors-1" id="toc-logical-vectors-1" class="nav-link" data-scroll-target="#logical-vectors-1">Logical vectors</a></li>
+  <li><a href="#na-in-other-types" id="toc-na-in-other-types" class="nav-link" data-scroll-target="#na-in-other-types">NA in other types</a></li>
   <li><a href="#review-logic" id="toc-review-logic" class="nav-link" data-scroll-target="#review-logic">Review Logic</a></li>
   <li><a href="#missing-values-na-1" id="toc-missing-values-na-1" class="nav-link" data-scroll-target="#missing-values-na-1">Missing Values: NA</a></li>
   <li><a href="#na-and-logical-operators" id="toc-na-and-logical-operators" class="nav-link" data-scroll-target="#na-and-logical-operators">NA and Logical Operators</a></li>
@@ -3423,6 +3424,19 @@ window.Quarto = {
   <li><a href="#floating-point-comparison" id="toc-floating-point-comparison" class="nav-link" data-scroll-target="#floating-point-comparison">Floating point comparison</a></li>
   <li><a href="#logical-summaries" id="toc-logical-summaries" class="nav-link" data-scroll-target="#logical-summaries">Logical Summaries</a></li>
   <li><a href="#exercise-21" id="toc-exercise-21" class="nav-link" data-scroll-target="#exercise-21">Exercise</a></li>
+  </ul></li>
+  <li><a href="#numeric-vectors" id="toc-numeric-vectors" class="nav-link" data-scroll-target="#numeric-vectors">Numeric Vectors</a>
+  <ul class="collapse">
+  <li><a href="#numeric-vectors-1" id="toc-numeric-vectors-1" class="nav-link" data-scroll-target="#numeric-vectors-1">Numeric Vectors</a></li>
+  <li><a href="#parse-numbers" id="toc-parse-numbers" class="nav-link" data-scroll-target="#parse-numbers">Parse numbers</a></li>
+  <li><a href="#pmin-pmax" id="toc-pmin-pmax" class="nav-link" data-scroll-target="#pmin-pmax">pmin, pmax</a></li>
+  <li><a href="#modular-arithmetic" id="toc-modular-arithmetic" class="nav-link" data-scroll-target="#modular-arithmetic">Modular Arithmetic</a></li>
+  <li><a href="#logarithms" id="toc-logarithms" class="nav-link" data-scroll-target="#logarithms">Logarithms</a></li>
+  <li><a href="#rounding" id="toc-rounding" class="nav-link" data-scroll-target="#rounding">Rounding</a></li>
+  <li><a href="#cuts" id="toc-cuts" class="nav-link" data-scroll-target="#cuts">Cuts</a></li>
+  <li><a href="#offsets" id="toc-offsets" class="nav-link" data-scroll-target="#offsets">Offsets</a></li>
+  <li><a href="#positions" id="toc-positions" class="nav-link" data-scroll-target="#positions">Positions</a></li>
+  <li><a href="#exercise-22" id="toc-exercise-22" class="nav-link" data-scroll-target="#exercise-22">Exercise</a></li>
   </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="03-R-Programming(Slides).html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
@@ -4261,11 +4275,11 @@ Tip
 <span id="cb92-2"><a href="#cb92-2"></a>now <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>() <span class="co"># returns time now</span></span>
 <span id="cb92-3"><a href="#cb92-3"></a><span class="fu">print</span>(today)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] &quot;2025-03-31&quot;</code></pre>
+<pre><code>[1] &quot;2025-04-02&quot;</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb94"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1"></a><span class="fu">print</span>(now)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] &quot;2025-03-31 14:39:49 EDT&quot;</code></pre>
+<pre><code>[1] &quot;2025-04-02 13:34:35 EDT&quot;</code></pre>
 </div>
 </div>
 <hr>
@@ -4313,11 +4327,11 @@ Tip
 <div class="cell">
 <div class="sourceCode cell-code" id="cb108"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a href="#cb108-1"></a><span class="fu">print</span>(today <span class="sc">+</span> <span class="dv">1</span>) <span class="co"># adds one day</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] &quot;2025-04-01&quot;</code></pre>
+<pre><code>[1] &quot;2025-04-03&quot;</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb110"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a href="#cb110-1"></a><span class="fu">print</span>(now <span class="sc">+</span> <span class="dv">1</span>) <span class="co"># adds one seconds</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] &quot;2025-03-31 14:39:50 EDT&quot;</code></pre>
+<pre><code>[1] &quot;2025-04-02 13:34:36 EDT&quot;</code></pre>
 </div>
 </div>
 <p><strong>Q</strong>: Why +1 yield different results?</p>
@@ -4329,11 +4343,11 @@ Tip
 <div class="sourceCode cell-code" id="cb112"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb112-1"><a href="#cb112-1"></a><span class="co"># strip off class attribute (only)</span></span>
 <span id="cb112-2"><a href="#cb112-2"></a><span class="fu">unclass</span>(today)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 20178</code></pre>
+<pre><code>[1] 20180</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb114"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb114-1"><a href="#cb114-1"></a><span class="fu">unclass</span>(now)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1743446389</code></pre>
+<pre><code>[1] 1743615275</code></pre>
 </div>
 </div>
 <ul>
@@ -4352,21 +4366,21 @@ Tip
 <div class="sourceCode cell-code" id="cb116"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a href="#cb116-1"></a>now <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
 <span id="cb116-2"><a href="#cb116-2"></a><span class="fu">print</span>(now) <span class="co"># EDT time zone</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] &quot;2025-03-31 14:39:49 EDT&quot;</code></pre>
+<pre><code>[1] &quot;2025-04-02 13:34:35 EDT&quot;</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb118"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb118-1"><a href="#cb118-1"></a><span class="fu">unclass</span>(now) <span class="co"># a double number</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1743446389</code></pre>
+<pre><code>[1] 1743615275</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb120"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb120-1"><a href="#cb120-1"></a><span class="co"># set attribute tzone to UTC</span></span>
 <span id="cb120-2"><a href="#cb120-2"></a><span class="fu">attr</span>(now, <span class="st">&quot;tzone&quot;</span>) <span class="ot">&lt;-</span> <span class="st">&quot;UTC&quot;</span></span>
 <span id="cb120-3"><a href="#cb120-3"></a><span class="fu">print</span>(now) <span class="co"># formatted for UTC zone</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] &quot;2025-03-31 18:39:49 UTC&quot;</code></pre>
+<pre><code>[1] &quot;2025-04-02 17:34:35 UTC&quot;</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb122"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb122-1"><a href="#cb122-1"></a><span class="fu">unclass</span>(now) <span class="co"># same underlying number</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1743446389
+<pre><code>[1] 1743615275
 attr(,&quot;tzone&quot;)
 [1] &quot;UTC&quot;</code></pre>
 </div>
@@ -5862,9 +5876,9 @@ Tip
 <pre><code># A tibble: 3 × 6
   expression              min   median `itr/sec` mem_alloc `gc/sec`
   &lt;bch:expr&gt;         &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;
-1 appending_method      229ms 292.99ms      3.41    95.6MB     27.3
-2 no_prealloc_method    951µs    1.1ms    908.     830.1KB      0  
-3 prealloc_method       983µs   1.01ms    994.      54.8KB      0  </code></pre>
+1 appending_method      230ms 289.08ms      3.46    95.6MB     27.7
+2 no_prealloc_method    934µs   1.13ms    887.     830.1KB      0  
+3 prealloc_method       937µs 950.65µs   1052.      54.8KB      0  </code></pre>
 </div>
 </div>
 </section>
@@ -6175,9 +6189,9 @@ Note
 <pre><code># A tibble: 3 × 6
   expression             min   median `itr/sec` mem_alloc `gc/sec`
   &lt;bch:expr&gt;        &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;
-1 vectorizing           41ns     82ns  9065320.        0B      0  
-2 map2                45.4µs   51.3µs    18631.      264B      0  
-3 for_loop_prealloc  864.6µs  946.8µs     1048.    20.1KB     21.4</code></pre>
+1 vectorizing           41ns     82ns  9678672.        0B      0  
+2 map2                45.5µs   48.6µs    19810.      264B      0  
+3 for_loop_prealloc  875.1µs  952.2µs      864.    20.1KB     17.6</code></pre>
 </div>
 </div>
 </section>
@@ -6845,9 +6859,9 @@ Caution
 </ul>
 </section>
 </section>
-<section id="mini-finance-project" class="level1">
-<h1>Mini Finance Project</h1>
-<p>Crypto Analytics &amp; Portfolio Sorting</p>
+<section id="portfolio-sorting-with-crypto" class="level1">
+<h1>Portfolio Sorting with Crypto</h1>
+<p>A mini finance project</p>
 <section id="incorporating-ai-for-coding" class="level2">
 <h2 class="anchored" data-anchor-id="incorporating-ai-for-coding">Incorporating AI for Coding</h2>
 <p>From now on, I’ll introduce how to leverage AI for coding.</p>
@@ -7232,10 +7246,10 @@ Caution
 </ul>
 </section>
 </section>
-<section id="factors" class="level1">
-<h1>Factors</h1>
-<section id="factor-vectors" class="level2">
-<h2 class="anchored" data-anchor-id="factor-vectors">Factor Vectors</h2>
+<section id="factor-vectors" class="level1">
+<h1>Factor Vectors</h1>
+<section id="factors" class="level2">
+<h2 class="anchored" data-anchor-id="factors">Factors</h2>
 <p>Factors represent categorical variables that contains a <strong>fixed and known set of possible values</strong>.</p>
 <p>They’re useful when you want to display character vectors in a specific, <strong>non-alphabetical order</strong>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -7487,7 +7501,7 @@ Levels: A AA B BBB CCC Other</code></pre>
 <span id="cb440-4"><a href="#cb440-4"></a>anonymous_ratings <span class="ot">&lt;-</span> <span class="fu">fct_anon</span>(ratings)</span>
 <span id="cb440-5"><a href="#cb440-5"></a>anonymous_ratings</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 3 2 1 5 4
+<pre><code>[1] 2 3 1 4 5
 Levels: 1 2 3 4 5</code></pre>
 </div>
 </div>
@@ -7540,6 +7554,16 @@ Levels: 1 2 3 4 5</code></pre>
 <section id="logical-vectors-1" class="level2">
 <h2 class="anchored" data-anchor-id="logical-vectors-1">Logical vectors</h2>
 <p>They contain three possible values: <code>TRUE</code>, <code>FALSE</code>, and <code>NA</code>. Used extensively in data filtering, comparisons, and conditional transformations.</p>
+</section>
+<section id="na-in-other-types" class="level2">
+<h2 class="anchored" data-anchor-id="na-in-other-types">NA in other types</h2>
+<p>Though <code>NA</code> is logical, since other atomic vectors (<code>integer</code>,<code>double</code>,<code>character</code>) can contain missing values, there are corresponding <code>NA</code>s for each types:</p>
+<ol type="1">
+<li><p><code>NA_integer_</code> for <code>integer</code></p></li>
+<li><p><code>NA_real_</code> for <code>double</code></p></li>
+<li><p><code>NA_character_</code> for <code>character</code></p></li>
+</ol>
+<p>R handles the type conversion automatically when needed, so users don’t need to use it manually.</p>
 </section>
 <section id="review-logic" class="level2">
 <h2 class="anchored" data-anchor-id="review-logic">Review Logic</h2>
@@ -7783,7 +7807,179 @@ Levels: 1 2 3 4 5</code></pre>
 <ul>
 <li>Check documentation <code>?any()</code> and <code>?all()</code></li>
 </ul>
+</section>
+</section>
+<section id="numeric-vectors" class="level1">
+<h1>Numeric Vectors</h1>
+<section id="numeric-vectors-1" class="level2">
+<h2 class="anchored" data-anchor-id="numeric-vectors-1">Numeric Vectors</h2>
+<p>Numeric vectors are the backbone of financial data. Numerics include:</p>
+<ul>
+<li>Integer</li>
+<li>Double (real, or float)</li>
+</ul>
+<p>We will use tidyverse verbs—to manipulate numeric data in real-world finance examples.</p>
+</section>
+<section id="parse-numbers" class="level2">
+<h2 class="anchored" data-anchor-id="parse-numbers">Parse numbers</h2>
+<p>Sometimes numbers are stored as <strong>strings</strong> (characters), especially when data was imported from external sources.</p>
+<ul>
+<li><p><strong>parse_double()</strong> converts strings that are purely numeric</p></li>
+<li><p><strong>parse_number()</strong> extracts numeric parts from strings</p></li>
+</ul>
+<hr>
+<p><strong>parse_double()</strong> example:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb481"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb481-1"><a href="#cb481-1"></a><span class="co"># library(tidyverse)</span></span>
+<span id="cb481-2"><a href="#cb481-2"></a>price_str <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;123.45&quot;</span>, <span class="st">&quot;67.89&quot;</span>, <span class="st">&quot;1e3&quot;</span>)</span>
+<span id="cb481-3"><a href="#cb481-3"></a><span class="fu">typeof</span>(price_str) <span class="co"># character</span></span>
+<span id="cb481-4"><a href="#cb481-4"></a></span>
+<span id="cb481-5"><a href="#cb481-5"></a>parsed_price <span class="ot">&lt;-</span> <span class="fu">parse_double</span>(price_str)</span>
+<span id="cb481-6"><a href="#cb481-6"></a><span class="fu">print</span>(parsed_price)</span>
+<span id="cb481-7"><a href="#cb481-7"></a><span class="fu">typeof</span>(price_str)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<hr>
+<p><strong>parse_number()</strong> example:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb482"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb482-1"><a href="#cb482-1"></a><span class="co"># Bond yields recorded with currency symbols</span></span>
+<span id="cb482-2"><a href="#cb482-2"></a>yield_str <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;5.25 percent&quot;</span>, <span class="st">&quot;Yield 4.75&quot;</span>, <span class="st">&quot;It is 6.00%&quot;</span>)</span>
+<span id="cb482-3"><a href="#cb482-3"></a>parsed_yields <span class="ot">&lt;-</span> <span class="fu">parse_number</span>(yield_str)</span>
+<span id="cb482-4"><a href="#cb482-4"></a><span class="fu">print</span>(parsed_yields)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="pmin-pmax" class="level2">
+<h2 class="anchored" data-anchor-id="pmin-pmax">pmin, pmax</h2>
+<p>These functions compare values element-wise (rowwise in tibble).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb483"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb483-1"><a href="#cb483-1"></a>bond_yields1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">3.5</span>, <span class="fl">3.6</span>, <span class="fl">3.7</span>)</span>
+<span id="cb483-2"><a href="#cb483-2"></a>bond_yields2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">3.8</span>, <span class="fl">3.4</span>, <span class="fl">3.9</span>)</span>
+<span id="cb483-3"><a href="#cb483-3"></a>yields <span class="ot">&lt;-</span> <span class="fu">tibble</span>(bond_yields1, bond_yields2)</span>
+<span id="cb483-4"><a href="#cb483-4"></a>yields <span class="sc">|&gt;</span> </span>
+<span id="cb483-5"><a href="#cb483-5"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb483-6"><a href="#cb483-6"></a>    <span class="at">min_yield =</span> <span class="fu">pmin</span>(bond_yields1, bond_yields2), </span>
+<span id="cb483-7"><a href="#cb483-7"></a>    <span class="at">max_yield =</span> <span class="fu">pmax</span>(bond_yields1, bond_yields2))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="modular-arithmetic" class="level2">
+<h2 class="anchored" data-anchor-id="modular-arithmetic">Modular Arithmetic</h2>
+<p>Modular arithmetic is useful for breaking down composite numbers.</p>
+<ul>
+<li><code>%/%</code> integer division (quotient)</li>
+<li><code>%%</code> modulo operator (remainder)</li>
+</ul>
+<p>For example, convert a time value in HHMM format to hours and minutes:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb484"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb484-1"><a href="#cb484-1"></a><span class="co"># Suppose bond market closes at 1559 (3:59 PM)</span></span>
+<span id="cb484-2"><a href="#cb484-2"></a>close_time <span class="ot">&lt;-</span> <span class="dv">1559</span></span>
+<span id="cb484-3"><a href="#cb484-3"></a>hour <span class="ot">&lt;-</span> close_time <span class="sc">%/%</span> <span class="dv">100</span> <span class="co"># quotient</span></span>
+<span id="cb484-4"><a href="#cb484-4"></a>minute <span class="ot">&lt;-</span> close_time <span class="sc">%%</span> <span class="dv">100</span> <span class="co"># remainder</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="logarithms" class="level2">
+<h2 class="anchored" data-anchor-id="logarithms">Logarithms</h2>
+<p>In Finance, logarithmic returns are often used. In R, <code>log()</code> is natural log. <code>log2()</code> and <code>log10()</code> have base of 2 and 10.</p>
+<p><strong>Logarithmic (Log) Returns</strong></p>
+<p>Calculated as the natural logarithm of the ratio of consecutive prices:</p>
+<p><span class="math display">\[
+r_{log} = \ln\left(\frac{P_t}{P_{t-1}}\right)
+\]</span></p>
+<p>Log returns are additive over time, which makes cumulative calculations more straightforward.</p>
+<hr>
+<p>Key Differences between arithmetic and logarithmic returns:</p>
+<p><strong>Additivity</strong></p>
+<p>Log returns can be summed over time to get the cumulative return, whereas arithmetic returns must be compounded.</p>
+<p><strong>Approximation</strong></p>
+<p>For small returns, log returns are very similar to arithmetic returns, but the difference becomes significant for larger returns.</p>
+<hr>
+<p><strong>Returns comparison</strong></p>
+<p>Let’s see how to compute cumulative returns using both methods.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb485"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb485-1"><a href="#cb485-1"></a>prices <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">102</span>, <span class="dv">101</span>, <span class="dv">105</span>, <span class="dv">107</span>)</span>
+<span id="cb485-2"><a href="#cb485-2"></a>results <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb485-3"><a href="#cb485-3"></a>  <span class="at">Day =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(prices),</span>
+<span id="cb485-4"><a href="#cb485-4"></a>  <span class="at">Price =</span> prices</span>
+<span id="cb485-5"><a href="#cb485-5"></a>)</span>
+<span id="cb485-6"><a href="#cb485-6"></a>results <span class="ot">&lt;-</span> results <span class="sc">|&gt;</span> </span>
+<span id="cb485-7"><a href="#cb485-7"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb485-8"><a href="#cb485-8"></a>    <span class="at">arith_ret =</span> Price <span class="sc">/</span> <span class="fu">lag</span>(Price) <span class="sc">-</span> <span class="dv">1</span>,</span>
+<span id="cb485-9"><a href="#cb485-9"></a>    <span class="at">log_ret =</span> <span class="fu">log</span>(Price <span class="sc">/</span> <span class="fu">lag</span>(Price)),</span>
+<span id="cb485-10"><a href="#cb485-10"></a>    <span class="at">log_ret_convert =</span> <span class="fu">exp</span>(log_ret) <span class="sc">-</span> <span class="dv">1</span>,</span>
+<span id="cb485-11"><a href="#cb485-11"></a>    ) <span class="sc">|&gt;</span> </span>
+<span id="cb485-12"><a href="#cb485-12"></a>  <span class="fu">drop_na</span>()</span>
+<span id="cb485-13"><a href="#cb485-13"></a><span class="fu">print</span>(results)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<hr>
+<p><strong>Cumulative Returns</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb486"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb486-1"><a href="#cb486-1"></a>results <span class="ot">&lt;-</span> results <span class="sc">|&gt;</span> <span class="fu">mutate</span>(</span>
+<span id="cb486-2"><a href="#cb486-2"></a>    <span class="at">cumprod_ari_ret =</span> <span class="fu">cumprod</span>(<span class="dv">1</span> <span class="sc">+</span> arith_ret) <span class="sc">-</span> <span class="dv">1</span>,</span>
+<span id="cb486-3"><a href="#cb486-3"></a>    <span class="at">cumsum_log_ret =</span> <span class="fu">cumsum</span>(log_ret),</span>
+<span id="cb486-4"><a href="#cb486-4"></a>    <span class="at">cumsum_log_ret_convert =</span> <span class="fu">exp</span>(cumsum_log_ret) <span class="sc">-</span><span class="dv">1</span></span>
+<span id="cb486-5"><a href="#cb486-5"></a>  )</span>
+<span id="cb486-6"><a href="#cb486-6"></a><span class="fu">print</span>(results)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="rounding" class="level2">
+<h2 class="anchored" data-anchor-id="rounding">Rounding</h2>
+<p>Rounding is key for reporting. Use round(), floor(), and ceiling().</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb487"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb487-1"><a href="#cb487-1"></a>price <span class="ot">&lt;-</span> <span class="fl">123.456</span></span>
+<span id="cb487-2"><a href="#cb487-2"></a><span class="fu">floor</span>(price)         <span class="co"># 123</span></span>
+<span id="cb487-3"><a href="#cb487-3"></a><span class="fu">floor</span>(price <span class="sc">*</span> <span class="dv">100</span>) <span class="sc">/</span> <span class="dv">100</span> <span class="co"># round down to the 2nd decimal</span></span>
+<span id="cb487-4"><a href="#cb487-4"></a><span class="fu">ceiling</span>(price)       <span class="co"># 124</span></span>
+<span id="cb487-5"><a href="#cb487-5"></a><span class="fu">round</span>(price, <span class="dv">2</span>)      <span class="co"># 123.46 (nearest number)</span></span>
+<span id="cb487-6"><a href="#cb487-6"></a><span class="fu">round</span>(price, <span class="sc">-</span><span class="dv">1</span>)     <span class="co"># 120 (to the nearest ten)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="cuts" class="level2">
+<h2 class="anchored" data-anchor-id="cuts">Cuts</h2>
+<p><code>cut()</code> bins numeric values into discrete intervals with custom breaks.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb488"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb488-1"><a href="#cb488-1"></a>div_yields <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.02</span>, <span class="fl">0.03</span>, <span class="fl">0.05</span>, <span class="fl">0.07</span>, <span class="fl">0.1</span>)</span>
+<span id="cb488-2"><a href="#cb488-2"></a>yield_bins <span class="ot">&lt;-</span> <span class="fu">cut</span>(div_yields, <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.03</span>, <span class="fl">0.06</span>, <span class="fl">0.1</span>))</span>
+<span id="cb488-3"><a href="#cb488-3"></a>yield_bins <span class="ot">&lt;-</span> <span class="fu">cut</span>(div_yields, <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.03</span>, <span class="fl">0.06</span>, <span class="fl">0.1</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Low&quot;</span>, <span class="st">&quot;Medium&quot;</span>, <span class="st">&quot;High&quot;</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="offsets" class="level2">
+<h2 class="anchored" data-anchor-id="offsets">Offsets</h2>
+<p><code>dplyr::lead()</code> and <code>dplyr::lag()</code> allow you refer to values just before or after.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb489"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb489-1"><a href="#cb489-1"></a>prices <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">150</span>, <span class="dv">155</span>, <span class="dv">160</span>, <span class="dv">158</span>)</span>
+<span id="cb489-2"><a href="#cb489-2"></a><span class="fu">lag</span>(prices) <span class="co"># previous</span></span>
+<span id="cb489-3"><a href="#cb489-3"></a><span class="fu">lag</span>(prices,<span class="dv">2</span>) <span class="co"># 2 times previous</span></span>
+<span id="cb489-4"><a href="#cb489-4"></a><span class="fu">lead</span>(prices) <span class="co"># after</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="positions" class="level2">
+<h2 class="anchored" data-anchor-id="positions">Positions</h2>
+<p>Extract positions: <code>first()</code>, <code>last()</code>, <code>nth()</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb490"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb490-1"><a href="#cb490-1"></a>prices <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">150</span>, <span class="dv">155</span>, <span class="dv">160</span>, <span class="dv">158</span>)</span>
+<span id="cb490-2"><a href="#cb490-2"></a><span class="fu">first</span>(prices) </span>
+<span id="cb490-3"><a href="#cb490-3"></a><span class="fu">last</span>(prices) </span>
+<span id="cb490-4"><a href="#cb490-4"></a><span class="fu">nth</span>(prices,<span class="dv">3</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="exercise-22" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-22">Exercise</h2>
+<p>For the price:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb491"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb491-1"><a href="#cb491-1"></a>price <span class="ot">&lt;-</span> <span class="fl">987.654</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Round price to</p>
+<ol type="1">
+<li>The nearest whole number</li>
+<li>Two decimal places</li>
+<li>Nearest ten</li>
+</ol>
+<hr>
+<p>Parse below character vector of prices properly:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb492"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb492-1"><a href="#cb492-1"></a>price_str <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;120.50&quot;</span>, <span class="st">&quot;99.99&quot;</span>, <span class="st">&quot;1e2&quot;</span>)</span>
+<span id="cb492-2"><a href="#cb492-2"></a>price_str2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;The price is $152&quot;</span>, <span class="st">&quot;aiming $199 dollars per stock&quot;</span>, <span class="st">&quot;reached $358 dollars&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <!-- 
+
 # File Systems in R
 
 ## Package fs
