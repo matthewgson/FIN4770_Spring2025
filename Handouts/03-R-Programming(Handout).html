@@ -3438,6 +3438,29 @@ window.Quarto = {
   <li><a href="#positions" id="toc-positions" class="nav-link" data-scroll-target="#positions">Positions</a></li>
   <li><a href="#exercise-22" id="toc-exercise-22" class="nav-link" data-scroll-target="#exercise-22">Exercise</a></li>
   </ul></li>
+  <li><a href="#datetime-vectors" id="toc-datetime-vectors" class="nav-link" data-scroll-target="#datetime-vectors">Date/Time Vectors</a>
+  <ul class="collapse">
+  <li><a href="#dates-and-time-in-finance" id="toc-dates-and-time-in-finance" class="nav-link" data-scroll-target="#dates-and-time-in-finance">Dates and Time in Finance</a></li>
+  <li><a href="#create-date-and-time" id="toc-create-date-and-time" class="nav-link" data-scroll-target="#create-date-and-time">Create date and time</a></li>
+  <li><a href="#simple-date-and-time-vectors" id="toc-simple-date-and-time-vectors" class="nav-link" data-scroll-target="#simple-date-and-time-vectors">Simple Date and Time Vectors</a></li>
+  <li><a href="#parse-date-when-import" id="toc-parse-date-when-import" class="nav-link" data-scroll-target="#parse-date-when-import">Parse Date when Import</a></li>
+  <li><a href="#parse-date-with-manual-formatters" id="toc-parse-date-with-manual-formatters" class="nav-link" data-scroll-target="#parse-date-with-manual-formatters">Parse Date with Manual Formatters</a></li>
+  <li><a href="#datetime-formatters" id="toc-datetime-formatters" class="nav-link" data-scroll-target="#datetime-formatters">Date/Time formatters</a></li>
+  <li><a href="#exercise-guess-the-format" id="toc-exercise-guess-the-format" class="nav-link" data-scroll-target="#exercise-guess-the-format">Exercise: Guess the Format!</a></li>
+  <li><a href="#parse-strings-to-date" id="toc-parse-strings-to-date" class="nav-link" data-scroll-target="#parse-strings-to-date">Parse Strings to Date</a></li>
+  <li><a href="#parse-strings-to-datetime" id="toc-parse-strings-to-datetime" class="nav-link" data-scroll-target="#parse-strings-to-datetime">Parse Strings to Datetime</a></li>
+  <li><a href="#time-zones" id="toc-time-zones" class="nav-link" data-scroll-target="#time-zones">Time zones</a></li>
+  <li><a href="#robust-time-zones" id="toc-robust-time-zones" class="nav-link" data-scroll-target="#robust-time-zones">Robust Time Zones</a></li>
+  <li><a href="#changing-time-zones" id="toc-changing-time-zones" class="nav-link" data-scroll-target="#changing-time-zones">Changing Time Zones</a></li>
+  <li><a href="#keep-the-instance-but-formatting" id="toc-keep-the-instance-but-formatting" class="nav-link" data-scroll-target="#keep-the-instance-but-formatting">Keep the instance but formatting</a></li>
+  <li><a href="#exercise-23" id="toc-exercise-23" class="nav-link" data-scroll-target="#exercise-23">Exercise</a></li>
+  <li><a href="#keep-the-formatting-but-instance" id="toc-keep-the-formatting-but-instance" class="nav-link" data-scroll-target="#keep-the-formatting-but-instance">Keep the formatting but instance</a></li>
+  <li><a href="#exercise-24" id="toc-exercise-24" class="nav-link" data-scroll-target="#exercise-24">Exercise</a></li>
+  <li><a href="#datetime-components" id="toc-datetime-components" class="nav-link" data-scroll-target="#datetime-components">Date/Time Components</a></li>
+  <li><a href="#exercise-25" id="toc-exercise-25" class="nav-link" data-scroll-target="#exercise-25">Exercise</a></li>
+  <li><a href="#rounding-dates" id="toc-rounding-dates" class="nav-link" data-scroll-target="#rounding-dates">Rounding Dates</a></li>
+  <li><a href="#exercise-26" id="toc-exercise-26" class="nav-link" data-scroll-target="#exercise-26">Exercise</a></li>
+  </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="03-R-Programming(Slides).html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
 </div>
@@ -3997,7 +4020,7 @@ Caution
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>“<strong>numeric</strong>” is a collective term for both double and integers but often used as if it were <strong>a synonym for “double” or “real number”</strong> in practice.</p>
+<p><strong>numeric</strong> is a collective term for both double and integers but often used as if it were <strong>a synonym for “double” or “real number”</strong> in practice.</p>
 </div>
 </div>
 <hr>
@@ -4275,11 +4298,11 @@ Tip
 <span id="cb92-2"><a href="#cb92-2"></a>now <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>() <span class="co"># returns time now</span></span>
 <span id="cb92-3"><a href="#cb92-3"></a><span class="fu">print</span>(today)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] &quot;2025-04-02&quot;</code></pre>
+<pre><code>[1] &quot;2025-04-07&quot;</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb94"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1"></a><span class="fu">print</span>(now)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] &quot;2025-04-02 13:34:35 EDT&quot;</code></pre>
+<pre><code>[1] &quot;2025-04-07 13:42:51 EDT&quot;</code></pre>
 </div>
 </div>
 <hr>
@@ -4327,11 +4350,11 @@ Tip
 <div class="cell">
 <div class="sourceCode cell-code" id="cb108"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a href="#cb108-1"></a><span class="fu">print</span>(today <span class="sc">+</span> <span class="dv">1</span>) <span class="co"># adds one day</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] &quot;2025-04-03&quot;</code></pre>
+<pre><code>[1] &quot;2025-04-08&quot;</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb110"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a href="#cb110-1"></a><span class="fu">print</span>(now <span class="sc">+</span> <span class="dv">1</span>) <span class="co"># adds one seconds</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] &quot;2025-04-02 13:34:36 EDT&quot;</code></pre>
+<pre><code>[1] &quot;2025-04-07 13:42:52 EDT&quot;</code></pre>
 </div>
 </div>
 <p><strong>Q</strong>: Why +1 yield different results?</p>
@@ -4343,11 +4366,11 @@ Tip
 <div class="sourceCode cell-code" id="cb112"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb112-1"><a href="#cb112-1"></a><span class="co"># strip off class attribute (only)</span></span>
 <span id="cb112-2"><a href="#cb112-2"></a><span class="fu">unclass</span>(today)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 20180</code></pre>
+<pre><code>[1] 20185</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb114"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb114-1"><a href="#cb114-1"></a><span class="fu">unclass</span>(now)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1743615275</code></pre>
+<pre><code>[1] 1744047771</code></pre>
 </div>
 </div>
 <ul>
@@ -4366,21 +4389,21 @@ Tip
 <div class="sourceCode cell-code" id="cb116"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a href="#cb116-1"></a>now <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
 <span id="cb116-2"><a href="#cb116-2"></a><span class="fu">print</span>(now) <span class="co"># EDT time zone</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] &quot;2025-04-02 13:34:35 EDT&quot;</code></pre>
+<pre><code>[1] &quot;2025-04-07 13:42:51 EDT&quot;</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb118"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb118-1"><a href="#cb118-1"></a><span class="fu">unclass</span>(now) <span class="co"># a double number</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1743615275</code></pre>
+<pre><code>[1] 1744047771</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb120"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb120-1"><a href="#cb120-1"></a><span class="co"># set attribute tzone to UTC</span></span>
 <span id="cb120-2"><a href="#cb120-2"></a><span class="fu">attr</span>(now, <span class="st">&quot;tzone&quot;</span>) <span class="ot">&lt;-</span> <span class="st">&quot;UTC&quot;</span></span>
 <span id="cb120-3"><a href="#cb120-3"></a><span class="fu">print</span>(now) <span class="co"># formatted for UTC zone</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] &quot;2025-04-02 17:34:35 UTC&quot;</code></pre>
+<pre><code>[1] &quot;2025-04-07 17:42:51 UTC&quot;</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb122"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb122-1"><a href="#cb122-1"></a><span class="fu">unclass</span>(now) <span class="co"># same underlying number</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1743615275
+<pre><code>[1] 1744047771
 attr(,&quot;tzone&quot;)
 [1] &quot;UTC&quot;</code></pre>
 </div>
@@ -5270,9 +5293,7 @@ Everything that <strong>happens</strong> is a function call.</p>
 <section id="build-a-perpetuity-calculator" class="level2">
 <h2 class="anchored" data-anchor-id="build-a-perpetuity-calculator">Build a Perpetuity Calculator</h2>
 <p>The present value of a perpetuity, where the cash flow grows at a constant rate <strong>g</strong>, is given by:</p>
-<p><span class="math display">\[
-PV_{PER} = \frac{PMT}{r - g}
-\]</span></p>
+<p>[ PV_{PER} = ]</p>
 <p>where</p>
 <ul>
 <li>PMT is the payment or cash flow.</li>
@@ -5876,9 +5897,9 @@ Tip
 <pre><code># A tibble: 3 × 6
   expression              min   median `itr/sec` mem_alloc `gc/sec`
   &lt;bch:expr&gt;         &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;
-1 appending_method      230ms 289.08ms      3.46    95.6MB     27.7
-2 no_prealloc_method    934µs   1.13ms    887.     830.1KB      0  
-3 prealloc_method       937µs 950.65µs   1052.      54.8KB      0  </code></pre>
+1 appending_method   238.54ms 307.32ms      3.25    95.6MB     27.7
+2 no_prealloc_method   1.05ms   1.25ms    801.     830.1KB      0  
+3 prealloc_method      1.06ms   1.08ms    924.      54.8KB      0  </code></pre>
 </div>
 </div>
 </section>
@@ -6189,9 +6210,9 @@ Note
 <pre><code># A tibble: 3 × 6
   expression             min   median `itr/sec` mem_alloc `gc/sec`
   &lt;bch:expr&gt;        &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;
-1 vectorizing           41ns     82ns  9678672.        0B      0  
-2 map2                45.5µs   48.6µs    19810.      264B      0  
-3 for_loop_prealloc  875.1µs  952.2µs      864.    20.1KB     17.6</code></pre>
+1 vectorizing           82ns     82ns  8103072.        0B      0  
+2 map2                49.7µs  52.01µs    18908.      264B      0  
+3 for_loop_prealloc  914.9µs   1.01ms      974.    20.1KB     19.9</code></pre>
 </div>
 </div>
 </section>
@@ -6825,10 +6846,13 @@ Caution
 <p>From <code>fin_data</code>:</p>
 <ol type="1">
 <li><p>Arrange the dataset by ticker and year in ascending order. Then, group the data by ticker.</p></li>
-<li><p>Use mutate() along with the lag() function to calculate the year-over-year growth rate for current_assets. Name the variable as <code>yearly_asset_growth</code>. <span class="math display">\[
-\mathrm{growth} = \frac{\mathrm{current_assets} - \mathrm{lag(current_assets)}}{\mathrm{lag(current_assets)}}
-\]</span></p></li>
-<li><p>Summarize the average of yearly growth rate by each tickers.</p></li>
+<li><p>Use mutate() along with the lag() function to calculate the year-over-year growth rate for current_assets. Name the variable as <code>yearly_asset_growth</code>.</p></li>
+</ol>
+<ul>
+<li><span class="math inline">\(\frac{\mathrm{current_assets} - \mathrm{lag(current_assets)}}{\mathrm{lag(current_assets)}}\)</span></li>
+</ul>
+<ol start="3" type="1">
+<li>Summarize the average of yearly growth rate by each tickers.</li>
 </ol>
 </section>
 <section id="dplyr-grammar-summary" class="level2">
@@ -7501,7 +7525,7 @@ Levels: A AA B BBB CCC Other</code></pre>
 <span id="cb440-4"><a href="#cb440-4"></a>anonymous_ratings <span class="ot">&lt;-</span> <span class="fu">fct_anon</span>(ratings)</span>
 <span id="cb440-5"><a href="#cb440-5"></a>anonymous_ratings</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2 3 1 4 5
+<pre><code>[1] 5 4 3 1 2
 Levels: 1 2 3 4 5</code></pre>
 </div>
 </div>
@@ -7557,12 +7581,10 @@ Levels: 1 2 3 4 5</code></pre>
 </section>
 <section id="na-in-other-types" class="level2">
 <h2 class="anchored" data-anchor-id="na-in-other-types">NA in other types</h2>
-<p>Though <code>NA</code> is logical, since other atomic vectors (<code>integer</code>,<code>double</code>,<code>character</code>) can contain missing values, there are corresponding <code>NA</code>s for each types:</p>
-<ol type="1">
-<li><p><code>NA_integer_</code> for <code>integer</code></p></li>
-<li><p><code>NA_real_</code> for <code>double</code></p></li>
-<li><p><code>NA_character_</code> for <code>character</code></p></li>
-</ol>
+<p>Though <code>NA</code> is logical, since other atomic vectors (<code>integer</code>,<code>double</code>,<code>character</code>) can contain missing values. There are corresponding <code>NA</code>s for each types:</p>
+<p><code>NA_integer_</code> for <code>integer</code></p>
+<p><code>NA_real_</code> for <code>double</code></p>
+<p><code>NA_character_</code> for <code>character</code></p>
 <p>R handles the type conversion automatically when needed, so users don’t need to use it manually.</p>
 </section>
 <section id="review-logic" class="level2">
@@ -7880,16 +7902,14 @@ Levels: 1 2 3 4 5</code></pre>
 <p>In Finance, logarithmic returns are often used. In R, <code>log()</code> is natural log. <code>log2()</code> and <code>log10()</code> have base of 2 and 10.</p>
 <p><strong>Logarithmic (Log) Returns</strong></p>
 <p>Calculated as the natural logarithm of the ratio of consecutive prices:</p>
-<p><span class="math display">\[
-r_{log} = \ln\left(\frac{P_t}{P_{t-1}}\right)
-\]</span></p>
+<p><span class="math inline">\(r_{log} = \ln\left(\frac{P_t}{P_{t-1}}\right)\)</span></p>
 <p>Log returns are additive over time, which makes cumulative calculations more straightforward.</p>
 <hr>
 <p>Key Differences between arithmetic and logarithmic returns:</p>
 <p><strong>Additivity</strong></p>
-<p>Log returns can be summed over time to get the cumulative return, whereas arithmetic returns must be compounded.</p>
+<p>Log returns can be summed get the cumulative return, arithmetic returns must be compounded</p>
 <p><strong>Approximation</strong></p>
-<p>For small returns, log returns are very similar to arithmetic returns, but the difference becomes significant for larger returns.</p>
+<p>For small returns, log returns are very similar to arithmetic returns, but the difference becomes significant for larger returns</p>
 <hr>
 <p><strong>Returns comparison</strong></p>
 <p>Let’s see how to compute cumulative returns using both methods.</p>
@@ -7978,7 +7998,517 @@ r_{log} = \ln\left(\frac{P_t}{P_{t-1}}\right)
 <div class="sourceCode cell-code" id="cb492"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb492-1"><a href="#cb492-1"></a>price_str <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;120.50&quot;</span>, <span class="st">&quot;99.99&quot;</span>, <span class="st">&quot;1e2&quot;</span>)</span>
 <span id="cb492-2"><a href="#cb492-2"></a>price_str2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;The price is $152&quot;</span>, <span class="st">&quot;aiming $199 dollars per stock&quot;</span>, <span class="st">&quot;reached $358 dollars&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+</section>
+<section id="datetime-vectors" class="level1">
+<h1>Date/Time Vectors</h1>
+<section id="dates-and-time-in-finance" class="level2">
+<h2 class="anchored" data-anchor-id="dates-and-time-in-finance">Dates and Time in Finance</h2>
+<p>In finance, tracking dates and times is critical for modeling transactions, trade dates, settlement dates, and market events.</p>
+<p>Although dates and times seem straightforward, they involve complexities such as:</p>
+<ul>
+<li>leap years</li>
+<li>time zones</li>
+<li>daylight saving time</li>
+</ul>
+</section>
+<section id="create-date-and-time" class="level2">
+<h2 class="anchored" data-anchor-id="create-date-and-time">Create date and time</h2>
+<p>There are three types:</p>
+<ul>
+<li>A date, tibble prints as <code>&lt;date&gt;</code></li>
+<li>A datetime, tibble prints as <code>&lt;dttm&gt;</code> also referred “POSIXct”</li>
+<li>A time, tibble prints as <code>&lt;time&gt;</code> from <code>hms</code></li>
+</ul>
+<p>R doesn’t have a native class for time, but <code>tidyverse (hms)</code> offers it.</p>
+</section>
+<section id="simple-date-and-time-vectors" class="level2">
+<h2 class="anchored" data-anchor-id="simple-date-and-time-vectors">Simple Date and Time Vectors</h2>
+<p><code>today()</code> and <code>now()</code> creates <code>date</code> and <code>datetime</code> class vectors.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb493"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb493-1"><a href="#cb493-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb493-2"><a href="#cb493-2"></a></span>
+<span id="cb493-3"><a href="#cb493-3"></a><span class="co"># Current date and time</span></span>
+<span id="cb493-4"><a href="#cb493-4"></a>current_date <span class="ot">&lt;-</span> <span class="fu">today</span>()       </span>
+<span id="cb493-5"><a href="#cb493-5"></a>current_datetime <span class="ot">&lt;-</span> <span class="fu">now</span>()      </span>
+<span id="cb493-6"><a href="#cb493-6"></a><span class="fu">class</span>(current_date)</span>
+<span id="cb493-7"><a href="#cb493-7"></a><span class="fu">class</span>(current_datetime)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="parse-date-when-import" class="level2">
+<h2 class="anchored" data-anchor-id="parse-date-when-import">Parse Date when Import</h2>
+<p>If external data has standard (i.e, ISO8601) date and datetime, <code>read_csv()</code> will automatically parse it.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb494"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb494-1"><a href="#cb494-1"></a>csv <span class="ot">&lt;-</span> <span class="st">&quot;</span></span>
+<span id="cb494-2"><a href="#cb494-2"></a><span class="st">  date, datetime</span></span>
+<span id="cb494-3"><a href="#cb494-3"></a><span class="st">  2022-01-02,2022-01-02 05:12</span></span>
+<span id="cb494-4"><a href="#cb494-4"></a><span class="st">&quot;</span></span>
+<span id="cb494-5"><a href="#cb494-5"></a><span class="fu">read_csv</span>(csv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="parse-date-with-manual-formatters" class="level2">
+<h2 class="anchored" data-anchor-id="parse-date-with-manual-formatters">Parse Date with Manual Formatters</h2>
+<p>If external data has an ambiguous format, you can manually specify the format to handle.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb495"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb495-1"><a href="#cb495-1"></a><span class="co"># Which is day, month, year?</span></span>
+<span id="cb495-2"><a href="#cb495-2"></a>csv <span class="ot">&lt;-</span> <span class="st">&quot;</span></span>
+<span id="cb495-3"><a href="#cb495-3"></a><span class="st">  date</span></span>
+<span id="cb495-4"><a href="#cb495-4"></a><span class="st">  01/02/15</span></span>
+<span id="cb495-5"><a href="#cb495-5"></a><span class="st">&quot;</span></span>
+<span id="cb495-6"><a href="#cb495-6"></a><span class="fu">read_csv</span>(csv, <span class="at">col_types =</span> <span class="fu">cols</span>(<span class="at">date =</span> <span class="fu">col_date</span>(<span class="st">&quot;%m/%d/%y&quot;</span>)))</span>
+<span id="cb495-7"><a href="#cb495-7"></a><span class="fu">read_csv</span>(csv, <span class="at">col_types =</span> <span class="fu">cols</span>(<span class="at">date =</span> <span class="fu">col_date</span>(<span class="st">&quot;%d/%m/%y&quot;</span>)))</span>
+<span id="cb495-8"><a href="#cb495-8"></a><span class="fu">read_csv</span>(csv, <span class="at">col_types =</span> <span class="fu">cols</span>(<span class="at">date =</span> <span class="fu">col_date</span>(<span class="st">&quot;%y/%m/%d&quot;</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="datetime-formatters" class="level2">
+<h2 class="anchored" data-anchor-id="datetime-formatters">Date/Time formatters</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Code</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Year</td>
+<td><code>%Y</code></td>
+<td>4 digit year</td>
+<td>2021</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><code>%y</code></td>
+<td>2 digit year</td>
+<td>21</td>
+</tr>
+<tr class="odd">
+<td>Month</td>
+<td><code>%m</code></td>
+<td>Number</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><code>%b</code></td>
+<td>Abbreviated name</td>
+<td>Feb</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><code>%B</code></td>
+<td>Full name</td>
+<td>February</td>
+</tr>
+<tr class="even">
+<td>Day</td>
+<td><code>%d</code></td>
+<td>One or two digits</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>Time</td>
+<td><code>%H</code></td>
+<td>24-hour hour</td>
+<td>13</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><code>%M</code></td>
+<td>Minutes</td>
+<td>35</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><code>%S</code></td>
+<td>Seconds</td>
+<td>45</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><code>%I</code></td>
+<td>12-hour hour</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><code>%p</code></td>
+<td>AM/PM</td>
+<td>pm</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><code>%Z</code></td>
+<td>Time zone name</td>
+<td>America/Chicago</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="exercise-guess-the-format" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exercise-guess-the-format">Exercise: Guess the Format!</h2>
+<p>Guess the correct Date/Time Format:</p>
+<ol type="1">
+<li>“2021-07-25”</li>
+<li>“Jan, 1, 2011”</li>
+<li>“07/25/21”</li>
+<li>“2021-07-25 14:35:45”</li>
+<li>“07/25/2021 02:35 PM”</li>
+<li>“2021-07-25 14:35:45 EST”</li>
+<li>“25 July 2021”</li>
+</ol>
+</section>
+<section id="parse-strings-to-date" class="level2">
+<h2 class="anchored" data-anchor-id="parse-strings-to-date">Parse Strings to Date</h2>
+<p>Some cases are not handled perfectly by datetime format such as:</p>
+<ul>
+<li>“May 1st, 2023”</li>
+<li>“May 23rd, 2023”</li>
+</ul>
+<p><code>lubridate</code> package has nice handlers for those cases.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb496"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb496-1"><a href="#cb496-1"></a>date_str1 <span class="ot">&lt;-</span> <span class="st">&quot;Dec 25th, 2017&quot;</span></span>
+<span id="cb496-2"><a href="#cb496-2"></a>date_str2 <span class="ot">&lt;-</span> <span class="st">&quot;2020-05-18&quot;</span></span>
+<span id="cb496-3"><a href="#cb496-3"></a>date_str3 <span class="ot">&lt;-</span> <span class="st">&quot;5 October, 2023&quot;</span></span>
+<span id="cb496-4"><a href="#cb496-4"></a>date_str4 <span class="ot">&lt;-</span> <span class="st">&quot;09/25/1986&quot;</span></span>
+<span id="cb496-5"><a href="#cb496-5"></a>date_str5 <span class="ot">&lt;-</span> <span class="st">&quot;1988-9-4&quot;</span></span>
+<span id="cb496-6"><a href="#cb496-6"></a></span>
+<span id="cb496-7"><a href="#cb496-7"></a><span class="fu">mdy</span>(date_str1)</span>
+<span id="cb496-8"><a href="#cb496-8"></a><span class="fu">ymd</span>(date_str2)</span>
+<span id="cb496-9"><a href="#cb496-9"></a><span class="fu">dmy</span>(date_str3)</span>
+<span id="cb496-10"><a href="#cb496-10"></a><span class="fu">mdy</span>(date_str4)</span>
+<span id="cb496-11"><a href="#cb496-11"></a><span class="fu">ymd</span>(date_str5)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="parse-strings-to-datetime" class="level2">
+<h2 class="anchored" data-anchor-id="parse-strings-to-datetime">Parse Strings to Datetime</h2>
+<p><code>lubridate</code> package has nice handlers for datetime as well. Timezone must be specified correctly.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb497"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb497-1"><a href="#cb497-1"></a>trade_datetime_24 <span class="ot">&lt;-</span> <span class="st">&quot;2023-05-15 09:30:00&quot;</span></span>
+<span id="cb497-2"><a href="#cb497-2"></a>trade_datetime_12 <span class="ot">&lt;-</span> <span class="st">&quot;May 15, 2023 09:30 AM&quot;</span></span>
+<span id="cb497-3"><a href="#cb497-3"></a>trade_datetime_24_tz <span class="ot">&lt;-</span> <span class="st">&quot;2023-05-15 09:30:00 EST&quot;</span></span>
+<span id="cb497-4"><a href="#cb497-4"></a></span>
+<span id="cb497-5"><a href="#cb497-5"></a><span class="fu">ymd_hms</span>(trade_datetime_24) <span class="co"># UTC by default</span></span>
+<span id="cb497-6"><a href="#cb497-6"></a><span class="fu">ymd_hms</span>(trade_datetime_24, <span class="at">tz =</span> <span class="st">&quot;EST&quot;</span>) <span class="co"># set time zone at EST</span></span>
+<span id="cb497-7"><a href="#cb497-7"></a><span class="fu">mdy_hm</span>(trade_datetime_12)</span>
+<span id="cb497-8"><a href="#cb497-8"></a><span class="fu">ymd_hms</span>(trade_datetime_24_tz) <span class="co"># time zone should be mentioned</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="time-zones" class="level2">
+<h2 class="anchored" data-anchor-id="time-zones">Time zones</h2>
+<p>Time zones is not just a formatting. It changes underlying values especially when datetime is parsed from strings.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb498"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb498-1"><a href="#cb498-1"></a>trade_datetime_24 <span class="ot">&lt;-</span> <span class="st">&quot;2023-05-15 09:30:00&quot;</span></span>
+<span id="cb498-2"><a href="#cb498-2"></a>utc <span class="ot">&lt;-</span> <span class="fu">ymd_hms</span>(trade_datetime_24, <span class="at">tz =</span> <span class="st">&quot;UTC&quot;</span>)</span>
+<span id="cb498-3"><a href="#cb498-3"></a>est <span class="ot">&lt;-</span> <span class="fu">ymd_hms</span>(trade_datetime_24, <span class="at">tz =</span> <span class="st">&quot;EST&quot;</span>)</span>
+<span id="cb498-4"><a href="#cb498-4"></a></span>
+<span id="cb498-5"><a href="#cb498-5"></a><span class="fu">unclass</span>(utc) <span class="co"># 1684143000</span></span>
+<span id="cb498-6"><a href="#cb498-6"></a><span class="fu">unclass</span>(est) <span class="co"># 1684161000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="robust-time-zones" class="level2">
+<h2 class="anchored" data-anchor-id="robust-time-zones">Robust Time Zones</h2>
+<p>If you’re American you’ll know “EST” for Eastern Standard Time, but both Austrailia and Canada also have EST!</p>
+<p>R uses international standard, IANA time zones, <code>{area}/{location}</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb499"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb499-1"><a href="#cb499-1"></a><span class="co"># To browse all time zone names, OlsonNames.</span></span>
+<span id="cb499-2"><a href="#cb499-2"></a><span class="fu">OlsonNames</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="changing-time-zones" class="level2">
+<h2 class="anchored" data-anchor-id="changing-time-zones">Changing Time Zones</h2>
+<p>There are two scenarios that you want to change time zones:</p>
+<ol type="1">
+<li>Keep the instance but change time formatting</li>
+</ol>
+<ul>
+<li>Like converting time using world clock</li>
+</ul>
+<ol start="2" type="1">
+<li>Keep the time formatting but change instance</li>
+</ol>
+<ul>
+<li>Usually to fix the data error</li>
+</ul>
+</section>
+<section id="keep-the-instance-but-formatting" class="level2">
+<h2 class="anchored" data-anchor-id="keep-the-instance-but-formatting">Keep the instance but formatting</h2>
+<p><code>with_tz()</code> will keep the instance but change the time zone.</p>
+<ul>
+<li>As you would see from world clock!</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb500"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb500-1"><a href="#cb500-1"></a>datetime <span class="ot">&lt;-</span> <span class="fu">ymd_hms</span>(<span class="st">&quot;2023-01-01 12:00:00&quot;</span>, <span class="at">tz =</span> <span class="st">&quot;America/New_York&quot;</span>)</span>
+<span id="cb500-2"><a href="#cb500-2"></a><span class="fu">print</span>(datetime)</span>
+<span id="cb500-3"><a href="#cb500-3"></a></span>
+<span id="cb500-4"><a href="#cb500-4"></a><span class="fu">with_tz</span>(datetime, <span class="at">tzone =</span> <span class="st">&quot;America/Los_Angeles&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="exercise-23" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-23">Exercise</h2>
+<p>For following timezone, change time zone to <em>Chicago</em> keeping the instance.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb501"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb501-1"><a href="#cb501-1"></a>market_close <span class="ot">&lt;-</span> <span class="fu">ymd_hms</span>(<span class="st">&quot;2023-01-01 16:00:00&quot;</span>, <span class="at">tz =</span> <span class="st">&quot;America/New_York&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="keep-the-formatting-but-instance" class="level2">
+<h2 class="anchored" data-anchor-id="keep-the-formatting-but-instance">Keep the formatting but instance</h2>
+<p><code>force_tz()</code> will keep the time formatting but change the instance.</p>
+<ul>
+<li>To fix the data error</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb502"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb502-1"><a href="#cb502-1"></a>market_close <span class="ot">&lt;-</span> <span class="fu">ymd_hms</span>(<span class="st">&quot;2023-01-01 16:00:00&quot;</span>, <span class="at">tz =</span> <span class="st">&quot;America/Chicago&quot;</span>) </span>
+<span id="cb502-2"><a href="#cb502-2"></a><span class="fu">print</span>(market_close)</span>
+<span id="cb502-3"><a href="#cb502-3"></a></span>
+<span id="cb502-4"><a href="#cb502-4"></a><span class="fu">force_tz</span>(market_close, <span class="at">tzone =</span> <span class="st">&quot;America/New_York&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="exercise-24" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-24">Exercise</h2>
+<p>For following timezone, change time zone to <em>Chicago</em> keeping the instance.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb503"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb503-1"><a href="#cb503-1"></a>market_close <span class="ot">&lt;-</span> <span class="fu">ymd_hms</span>(<span class="st">&quot;2023-01-01 15:00:00&quot;</span>, <span class="at">tz =</span> <span class="st">&quot;America/New_York&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="datetime-components" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="datetime-components">Date/Time Components</h2>
+<p>You can pull out individual parts of the date with the accessor functions.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb504"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb504-1"><a href="#cb504-1"></a>datetime <span class="ot">&lt;-</span> <span class="fu">ymd_hms</span>(<span class="st">&quot;2026-07-08 12:34:56&quot;</span>)</span>
+<span id="cb504-2"><a href="#cb504-2"></a><span class="fu">class</span>(datetime) <span class="co"># POSIXct</span></span>
+<span id="cb504-3"><a href="#cb504-3"></a></span>
+<span id="cb504-4"><a href="#cb504-4"></a><span class="fu">year</span>(datetime)</span>
+<span id="cb504-5"><a href="#cb504-5"></a><span class="fu">month</span>(datetime)</span>
+<span id="cb504-6"><a href="#cb504-6"></a><span class="fu">day</span>(datetime)</span>
+<span id="cb504-7"><a href="#cb504-7"></a><span class="fu">mday</span>(datetime) <span class="co"># same as day()</span></span>
+<span id="cb504-8"><a href="#cb504-8"></a><span class="fu">yday</span>(datetime)</span>
+<span id="cb504-9"><a href="#cb504-9"></a><span class="fu">wday</span>(datetime)</span>
+<span id="cb504-10"><a href="#cb504-10"></a><span class="fu">wday</span>(datetime, <span class="at">label =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb504-11"><a href="#cb504-11"></a><span class="fu">hour</span>(datetime)</span>
+<span id="cb504-12"><a href="#cb504-12"></a><span class="fu">minute</span>(datetime)</span>
+<span id="cb504-13"><a href="#cb504-13"></a><span class="fu">second</span>(datetime)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="exercise-25" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-25">Exercise</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb505"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb505-1"><a href="#cb505-1"></a>example_datetime <span class="ot">&lt;-</span> <span class="fu">now</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>What is the</p>
+<ul>
+<li>weekday</li>
+<li>month day</li>
+<li>yearday</li>
+<li>month</li>
+<li>second</li>
+</ul>
+<p>of <code>example_datetime</code>?</p>
+</section>
+<section id="rounding-dates" class="level2">
+<h2 class="anchored" data-anchor-id="rounding-dates">Rounding Dates</h2>
+<p>In Finance, flooring date / time is often used to matche frequency and most relevant information at a specific time.</p>
+<p><code>floor_date()</code>, <code>ceiling_date()</code> and <code>round_date()</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb506"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb506-1"><a href="#cb506-1"></a>last_traded_time <span class="ot">&lt;-</span> <span class="fu">ymd_hms</span>(<span class="st">&quot;2024-09-08 13:33:45.653 EST&quot;</span>, <span class="at">tz =</span> <span class="st">&quot;EST&quot;</span>) <span class="co"># milliseconds</span></span>
+<span id="cb506-2"><a href="#cb506-2"></a><span class="fu">floor_date</span>(last_traded_time) <span class="co"># by default, second</span></span>
+<span id="cb506-3"><a href="#cb506-3"></a><span class="fu">ceiling_date</span>(last_traded_time)</span>
+<span id="cb506-4"><a href="#cb506-4"></a><span class="fu">floor_date</span>(last_traded_time, <span class="at">unit =</span> <span class="st">&quot;10 seconds&quot;</span>)</span>
+<span id="cb506-5"><a href="#cb506-5"></a><span class="fu">floor_date</span>(last_traded_time, <span class="at">unit =</span> <span class="st">&quot;15 mins&quot;</span>)</span>
+<span id="cb506-6"><a href="#cb506-6"></a><span class="fu">floor_date</span>(last_traded_time, <span class="at">unit =</span> <span class="st">&quot;2 hours&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="exercise-26" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-26">Exercise</h2>
+<ol type="1">
+<li>Convert the string into datetime object. Use Time zone: <code>America/New_York</code></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb507"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb507-1"><a href="#cb507-1"></a>last_traded_time <span class="ot">&lt;-</span> <span class="st">&quot;2024-09-08 13:33:45.653 EST&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li>Round down above trading time by “1 day”, “10 hours”, “5 minutes”, “10 seconds”</li>
+</ol>
 <!-- 
+# Character Vectors
+
+## Strings
+
+Characters (Strings) store text information in finance such as 
+
+- earnings announcements
+- analyst opinions
+- descriptions
+- investment sentiments, etc.
+
+We'll use `stringr` package (included in tidyverse)
+
+## Generate Strings
+
+You can create strings by wrapping values with singgle quote (`'`) or double quotes (`"`).
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+announcement1 <- 'Tariff will be 25%'
+announcement2 <- "Actually, it will be 30%!"
+quote_in_quotes <- 'If you want to include "quote" inside, mix them.'
+```
+:::
+
+
+
+
+
+## Print Strings
+
+There are multiple string printing functions in R: `print()`,`cat()` and `str_view()`
+
+- `print()` gives you full structure of underlying string
+
+- `cat()` shows rendered string output
+
+- `str_view()` shows rendered output (robust)
+
+## Escape Strings
+
+Special characters (quotes, backslash, backticks, etc.) has their reserved use, and if you want to include them, you have to escape with backslash `\`.
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+double_quotes <- c("\"", '"')
+print(double_quotes) 
+cat(double_quotes)
+str_view(double_quotes)
+
+backslashes <- c("\\", '\\')
+print(backslashes)
+cat(backslashes)
+str_view(backslashes)
+```
+:::
+
+
+
+
+## Other Special Characters
+
+There are some other special characters worth remembering:
+
+- `\n` newline
+- `\t` tab
+- `\U` Unicode escapes
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+x <- c("one\ntwo", "one\ttwo", "\U0001f604")
+print(double_quotes) # print gives you the structure
+cat(x)
+str_view(x)
+```
+:::
+
+
+
+
+
+## Tricky Escapes
+
+Creating a string with multiple quotes, backslashes, gets confusing so quickly! For example:
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+tricky <- "
+Double backslashes \\\\ and 
+double double quotes '\"\"' with quotes
+will make you crazy."
+cat(tricky)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+
+Double backslashes \\ and 
+double double quotes '""' with quotes
+will make you crazy.
+```
+
+
+:::
+:::
+
+
+
+
+This is called [Leaning Toothpick Syndrome](https://en.wikipedia.org/wiki/Leaning_toothpick_syndrome)
+
+
+## Raw Strings
+
+To eliminate escaping, you can use **raw string** with `r"()"`
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+not_so_tricky <- r"(
+Double backslashes \\ and
+double double quotes '""' with quotes
+will make you crazy.
+)"
+cat(not_so_tricky)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+
+Double backslashes \\ and
+double double quotes '""' with quotes
+will make you crazy.
+```
+
+
+:::
+:::
+
+
+
+
+
+## Exercise
+
+Create strings that contain the following values:
+
+  - He said "We have a beautiful announcement today!"
+  - \a\b\c\d
+  - \\\\\\
+
+
+
+
+
+
 
 # File Systems in R
 
@@ -8263,88 +8793,7 @@ There are other common data formats:
 -   ".parquet": columnar big data storage
 -   '.sas7bdat', '.dta'
 
-# Mini Finance Project
-
-Analyzing Massive Financial Datasets
-
-# Character class
-
-## print() and cat()
-
-# Lab Exercise
-
-## Lab Problem 1
-
-### Class coercion
-
-Objects can be explicitly coerced to have certain class. Try converting vector `x <- 1:6` with
-
--   `as.numeric(x)`
-
--   `as.logical(x)`
-
--   `as.character(x)`
-
-and check their type and class with `typeof()` and `class()`
-
-## Answer
-
-Define functions
-
-
-
-
-::: {.cell}
-
-```{.r .cell-code}
-cube <- function(x) {
-  return(x^3)
-}
-square_root <- function(x) {
-  return(sqrt(x))
-}
-fourth_power <- function(x) {
-  return(x^4)
-}
-```
-:::
-
-
-
-
-Call functions in chain that solve $(\sqrt{2^3})^4$
-
-
-
-
-::: {.cell}
-
-```{.r .cell-code}
-library(tidyverse)
-2 |>
-  cube() |>
-  square_root() |>
-  fourth_power()
-```
-
-::: {.cell-output .cell-output-stdout}
-
-```
-[1] 64
-```
-
-
-:::
-:::
-
-
-
-
-Equivalent to:
-
-
-fourth_power(square_root(cube(2)))
-``` -->
+-->
 </section>
 </section>
 
